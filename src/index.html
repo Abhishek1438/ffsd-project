@@ -1,14 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Property Wala</title>
-    <link rel="stylesheet" href="./styles/index.css" />
-  </head>
-  <body>
-    <a href="./login.html">Login</a>
-    <a href="./register.html">register</a>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Wala</title>
+  <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+  <div class="navBar">
+    <p class="logoName"><a href="">PropertyWala</a></p>
+    <div class="navItems">
+      <p><a href="">Rent</a></p>
+      <p><a href="">Buy</a></p>
+      <p><a href="">Sell</a></p>
+      <select name="portfolioDropdown" id="" class="navBarOptions">
+        <option value="" class="portfolioDropdownOption"><a href="#">My properties</a></option>
+        <option value="" class="portfolioDropdownOption"><a href="#">Property analysis</a></option>
+      </select>
+      <select name="resourcesDropdown" id="" class="navBarOptions">
+        <option value="" class="portfolioDropdownOption"><a href="#">Blog Post</a></option>
+        <option value="" class="portfolioDropdownOption"><a href="#">Help</a></option>
+
+      </select>
+    </div>
+
+    <div class="navButton">
+      <button class="navLogin"><a href="./login.html">Login</a></button>
+      <button class="navSignup"><a href="./register.html">register</a></button>
+    </div>
+  </div>
+
+  <div class="HeroBackground">
+    <div class="Hero">
+      <div class="heroSlogan">
+        <span class="heroText">Searching for your</span><br>
+        <span class="heroText"> dream property?</span>
+        <p class="heroDesc">Look no further than PropertyWala</p>
+        <p class="heroDesc">- your gateway to a world of real estate possibilities!</p>
+        <div class="propertyNumbers">
+          <span class="colorText"><span class="faded">|</span>50k+</span>
+          <span class="colorText"><span class="faded">|</span>10k+</span>
+        </div>
+      </div>
+
+      <div class="propertyCard">
+        <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+        <div class="propertyCard_info">
+          <span class="colouredText">$2500</span><span class="greyText">/month</span>
+          <p class="pcBigText">Sri City</p>
+          <p class="greyText">Creekside properties</p>
+          <div class="propertyCardNav">
+            <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+            <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+            <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                  6x7.5m<sup>2</sup></span></span></span>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="rbsNav">
+      <div class="rbsNavSelector">
+        <button class="rbsOption rbsSelected">Rent</button>
+        <p class="faded">|</p>
+        <button class="rbsOption">Buy</button>
+        <p class="faded">|</p>
+        <button class="rbsOption">Sell</button>
+      </div>
+      <div class="rbsInfo1 ">
+        <div class="rbsInfoL">
+          <p class="greyText">Location</p>
+          <input type="text">
+        </div>
+        <p class="faded">|</p>
+        <div class="rbsInfoD">
+          <p class="greyText">Date</p>
+          <input type="date" name="rbsDate" id="" value="Enter a suitable date">
+        </div>
+        <button class="rbsButton">Search properties</button>
+      </div>
+      <div class="rbsInfo2 disNone">
+        <div class="rbsInfoL">
+          <p class="greyText">Location</p>
+          <input type="text">
+        </div>
+        <p class="faded">|</p>
+        <div class="rbsInfoD">
+          <p class="greyText">Date</p>
+          <input type="date" name="rbsDate" id="" value="Enter a suitable date">
+        </div>
+        <button class="rbsButton">Browse properties</button>
+      </div>
+      <div class="rbsInfo3 disNone">
+        <div class="rbsInfoL">
+          <p class="greyText">Location</p>
+          <input type="text">
+        </div>
+        <p class="faded">|</p>
+        <button class="rbsButton">List your property</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="segment2">
+    <img src="../assets/images/PW_S2_img.jpg" alt="property image">
+    <div class="segment2Info">
+      <div class="s2OptionMenu">
+        <button class="s2Options s2Selected"> For Tenants</button>
+        <button class="s2Options">For landlords</button>
+      </div>
+      <div class="s2Info">
+        <p class="s2Hero">The ultimate destination for tenants, buyers, and landlords!</p>
+        <p class="s2Desc">We make it simple and effective to buy a new home, rent a property, or sell your existing one.
+          The best part is that using our services will help you save a tonne of money and time.</p>
+        <button><a href="#">Learn more </a></button>
+      </div>
+      <div class="s2Info disNone">
+        <p class="s2Hero">The ultimate destination for tenants, buyers, and landlords!</p>
+        <p class="s2Desc">We make it simple and effective to buy a new home, rent a property, or sell your existing one.
+          The best part is that using our services will help you save a tonne of money and time.</p>
+        <button><a href="#">Learn more </a></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="segment3">
+    <div class="s3Info">
+      <p class="s2Hero">The modern means of locating a new residence</p>
+      <p class="faded">With over 10,000 properties available, find the home of your dreams.</p>
+      <div class="s3Icons">
+        <div>
+          <img src="../assets/images/PW_S3_icon1.png" alt="icon1">
+          <p class="iconText">6.9%</p>
+          <span class="faded iconDesc">Property Return Rate</span>
+        </div>
+        <div>
+          <img src="../assets/images/PW_S3_icon2.png" alt="icon2">
+          <p class="iconText">6,369</p>
+          <span class="faded iconDesc">Property in Sell and Rent</span>
+        </div>
+        <div>
+          <img src="../assets/images/PW_S3_icon3.png" alt="icon3">
+          <p class="iconText">7,420</p>
+          <span class="faded iconDesc">Successful Transactions</span>
+        </div>
+
+      </div>
+    </div>
+    <img src="../assets/images/PW_S3_img.webp" alt="s3Image">
+  </div>
+
+  <div class="recommendations">
+    <div class="recNav">
+      <p class="s2Hero">Based on your location</p>
+      <button>Browse more properties</button>
+    </div>
+
+    <span class="faded">Some of the chosen properties in your area.</span>
+    <br><br><br><br><br>
+    <div class="propertyCardsGrid">
+      <div class="pcRow1">
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="pcRow2">
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="propertyCard">
+          <img src="../assets/images/PW_hero_propertyCard_image.jpeg" alt="">
+          <div class="propertyCard_info">
+            <span class="colouredText">$2500</span><span class="greyText">/month</span>
+            <p class="pcBigText">Sri City</p>
+            <p class="greyText">Creekside properties</p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">4</span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">2</span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    6x7.5m<sup>2</sup></span></span></span>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="Testimonial">
+    <h1>Testimonials</h1>
+    <p class="greyText">See the opinions of our property managers, landlords, and tenants.</p><br><br>
+    <span>"I use PropertyWala practically every day to hunt for a second home, a vacation</span>
+    <span>condo, or just to browse fantasy homes in different regions. Thank you,</span>
+    <span>PropertyWala, for the enjoyable home searching and analysis! "</span><br><br>
+    <span>Ram, <span class="greyText">Renter</span></span>
+    <br><br>
+    <img src="../assets/images/PW_peopleIcons.png" alt="peopleIcons">
+    <br><br>
+  </div>
+
+  <div class="clientEmail">
+    <h1 style="color: white;">Are you a landllord?</h1>
+    <span class="greyText">Learn how you can raise the value of your house so that it will sell.</span><br><br>
+    <div class="emailInputFields"><input type="text" placeholder="Enter your email address"><button>Submit</button></div><br><br>
+    <span class="greyText">Join 6000+ other landlords in our propertyWala community.</span>
+  </div>
+
+  <div class="homeFooter">
+    <a href="../src/index.html">PropertyWala</a>
+    <div>
+      <div>
+        <h5>SELL A HOME</h5>
+        <p>Request an offer</p>
+        <p>Pricing</p>
+        <p>Reviews</p>
+        <p>Stories</p>
+      </div>
+      <div>
+        <h5>BUY A HOME</h5>
+        <p>Buy</p>
+        <p>Finance</p>
+      </div>
+    </div>
+
+
+    <div>
+      <div>
+        <h5>BUY, RENT AND SELL</h5>
+        <p>Buy and sell properties</p>
+        <p>Rent home</p>
+        <p>Builder trade-up</p>
+      </div>
+      <div>
+        <h5>TERMS & PRIVACY</h5>
+        <p>Trust & Safety</p>
+        <p>Terms of Service</p>
+        <p>Privacy Policy</p>
+      </div>
+    </div>
+    
+
+    <div>
+      <div>
+        <h5>ABOUT</h5>
+        <p>Company</p>
+        <p>How it works</p>
+        <p>Contact</p>
+        <p>Investors</p>
+      </div>
+      <div>
+        <h5>RESOURCES</h5>
+        <p>Blog</p>
+        <p>Guides</p>
+        <p>FAQ</p>
+        <p>Help Center</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="commonFooter">
+    <span>PropertyWala</span>
+    <div class="contactIcons">
+    <span><i class="fa-brands fa-facebook-f"></i></span>
+    <span><i class="fa-brands fa-instagram"></i></span>
+    <span><i class="fa-brands fa-twitter"></i></span>
+    <span><i class="fa-brands fa-linkedin"></i></span>
+    </div>
+    
+  </div>
+
+  <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+  <script src="../src/js/index.js"></script>
+</body>
+
 </html>
