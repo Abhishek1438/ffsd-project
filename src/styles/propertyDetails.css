@@ -9,12 +9,26 @@ body {
 }
 
 .header button {
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
-  background-color: #f7f7fd;
+  padding: 1rem 2rem;
+  background-color: white;
+  border: 1px solid #7469f0;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   color: #7469f0;
-  border: #d0cbff 2px solid;
-  font-weight: 600;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.image-container {
+  margin: 1rem 2rem;
+}
+
+.header button:hover {
+  background-color: #7469f0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
 .header p {
@@ -40,6 +54,7 @@ body {
 
 .detail_card {
   width: 30%;
+  height: 30rem;
   border: 2px solid #d0cbff;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -61,4 +76,165 @@ body {
 .property_data .data {
   font-weight: 600;
   color: #000;
+}
+
+.ownerParentContainer {
+  background-color: rgb(222, 222, 222);
+  padding: 1rem;
+}
+
+.ownerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ownerContainer button {
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  background-color: white;
+  border: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  color: #7469f0;
+  font-weight: bold;
+}
+
+.ownerContainer button:hover {
+  background-color: #7469f0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ownerContainer .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.ownerContainer img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.ownerContainer p,
+.ownerContainer h4 {
+  margin: 0.5rem;
+}
+
+.ownerContainer p {
+  color: rgb(86, 86, 86);
+}
+
+.rental-features {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rental-features .child-container {
+  width: 45%;
+}
+
+.rental-features .rental-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rent-history table {
+  width: 100%;
+}
+
+.rent-history th,
+.rent-history td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.terms {
+  color: gray;
+}
+
+@media only screen and (max-width: 1050px) {
+  .header {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+  .header .buttons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .ownerContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .ownerContainer .buttons {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .ownerContainer .buttons button {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .detail_parent_container {
+    flex-direction: column-reverse;
+  }
+
+  .detail_child_container {
+    width: 100%;
+  }
+
+  .detail_card {
+    width: 100%;
+  }
+
+  .rental-features {
+    flex-direction: column;
+  }
+
+  .rental-features .child-container {
+    width: 100%;
+  }
+
+  .rent-history th,
+  .rent-history td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #browse-button {
+    display: none;
+  }
+
+  .header .buttons {
+    width: 100%;
+  }
+
+  .header .buttons button {
+    width: 40%;
+  }
+
+  .property_data {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .ownerContainer .buttons {
+    flex-direction: column;
+  }
+
+  .ownerContainer .buttons button {
+    width: 100%;
+  }
 }

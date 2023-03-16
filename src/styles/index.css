@@ -10,11 +10,9 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:ital,wght@1,300&display=swap');
 
-
 * {
   font-family: 'Roboto', sans-serif;
 }
-
 
 .navBar {
   display: flex;
@@ -24,14 +22,12 @@ body {
   background-color: #fbfbfe;
 }
 
-
 button {
   padding: 1%;
   border-radius: 5px;
   background-color: #7164f0;
   height: 50px;
   width: 100px;
-
 }
 
 button a {
@@ -70,7 +66,6 @@ button a {
   gap: 30px;
   width: 30%;
   padding: 0 50px 0 50px;
-
 }
 
 .navItems a {
@@ -85,63 +80,60 @@ button a {
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
-
-.navBarOptions{
+.navBarOptions {
   border: 0;
-  padding:  3.5% 5% 5% 5%;
+  padding: 3.5% 5% 5% 5%;
   display: flex;
   flex-direction: row;
   gap: 5px;
-
 }
 
-.navBarOptions i{
+.navBarOptions i {
   margin-top: 2.5px;
 }
 
-.portfolioDropdownOption{
+.portfolioDropdownOption {
   display: none;
   position: absolute;
   margin-top: 2%;
   z-index: 1;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 0.5%;
 }
 
-.portfolioDropdownOption a{
+.portfolioDropdownOption a {
   padding-bottom: 5%;
 }
 
-.navBarOptions:hover .portfolioDropdownOption{
+.navBarOptions:hover .portfolioDropdownOption {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
-.resourceDropdownOption{
+.resourceDropdownOption {
   display: none;
   position: absolute;
   margin-top: 2%;
   z-index: 1;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 0.5%;
 }
 
-.resourceDropdownOption a{
+.resourceDropdownOption a {
   padding-bottom: 5%;
 }
 
-.navBarOptions:hover .resourceDropdownOption{
+.navBarOptions:hover .resourceDropdownOption {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-
 
 .HeroBackground {
-  background-image: url("../../assets/images/PW_map_background.png");
+  background-image: url('../../assets/images/PW_map_background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -155,8 +147,6 @@ button a {
   font-weight: bolder;
 }
 
-
-
 .heroText {
   font-size: 3rem;
   color: #000929;
@@ -167,7 +157,6 @@ button a {
   font-size: 1.1rem;
   color: #353b56;
   opacity: 1;
-
 }
 
 .propertyCard {
@@ -177,14 +166,14 @@ button a {
   gap: 2px;
   border-radius: 10px;
   width: 18%;
-  height: 354.100px;
+  height: 354.1px;
   border: 3px #f1effa;
   border-style: double;
   padding: 0;
   box-shadow: 0px 8px 16px 0px rgba(43, 0, 77, 0.2);
 }
 
-.propertyCardsGrid .propertyCard :hover{
+.propertyCardsGrid .propertyCard :hover {
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -225,7 +214,6 @@ button a {
   flex-direction: row;
   justify-content: space-evenly;
   color: #847bf3;
-  
 }
 
 .propertyNumbers {
@@ -251,14 +239,13 @@ button a {
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
-
 .rbsInfo1 {
   display: flex;
   flex-direction: row;
   padding: 2% 2% 2% 10%;
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
-  background-color: white;  
+  background-color: white;
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -268,7 +255,7 @@ button a {
   padding: 2% 2% 2% 10%;
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
-  background-color: white;  
+  background-color: white;
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -278,29 +265,26 @@ button a {
   padding: 2% 2% 2% 10%;
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
-  background-color: white;  
+  background-color: white;
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
-
-.disNone{
+.disNone {
   display: none;
 }
 
-.rbsOption{
-  background-color: white; 
+.rbsOption {
+  background-color: white;
   border-radius: 10px 10px 0 0;
   border: 0;
 }
 
-
-.rbsSelected{
+.rbsSelected {
   color: #847bf3;
   font-weight: bold;
   border-bottom: 2px;
   border-bottom: solid;
   border-color: #7164f0;
-  
 }
 
 .rbsNav {
@@ -316,33 +300,31 @@ button a {
   border: 0;
   margin-top: 15px;
   width: 150px;
-
 }
 
-.segment2{
+.segment2 {
   display: flex;
   flex-direction: row;
   padding: 5%;
   justify-content: space-evenly;
-  
 }
 
-.segment2 img{
+.segment2 img {
   border-radius: 10px;
   height: 400px;
   width: 30%;
-  margin: 100px 0px 0px 50px ;
+  margin: 100px 0px 0px 50px;
   box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
-.segment2Info{
+.segment2Info {
   display: flex;
   flex-direction: column;
   width: 30%;
   padding: 5% 5% 5% 10%;
 }
 
-.s2OptionMenu{
+.s2OptionMenu {
   display: flex;
   flex-direction: row;
   background-color: #fbfaff;
@@ -355,7 +337,7 @@ button a {
   border-color: #efeffb;
 }
 
-.s2Options{
+.s2Options {
   background-color: #dddee4;
   color: grey;
   padding: 2%;
@@ -363,30 +345,30 @@ button a {
   border: 0;
 }
 
-.s2Selected{
+.s2Selected {
   background-color: #fefeff;
   color: #847bf3;
   font-weight: bold;
   border: 1px solid;
 }
 
-.s2Hero{
+.s2Hero {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.s2Desc{
+.s2Desc {
   font-size: 1.2rem;
-  color: #abadb8;;
+  color: #abadb8;
 }
 
-.s2Info button{
+.s2Info button {
   color: white;
   background-color: #847bf3;
   border: 0;
 }
 
-.segment3{
+.segment3 {
   margin: 0% 15% 0% 15%;
   background-color: #f7f6fc;
   display: flex;
@@ -396,7 +378,6 @@ button a {
   border: 3px #e1def7;
   border-style: double;
   border-radius: 5px;
-  
 }
 
 .segment3 img {
@@ -405,7 +386,7 @@ button a {
   border-radius: 5px;
 }
 
-.s3Icons{
+.s3Icons {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -413,25 +394,25 @@ button a {
   gap: 20px;
 }
 
-.s3Icons img{
+.s3Icons img {
   width: 70px;
   height: 70px;
 }
 
-.iconText{
+.iconText {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.iconDesc{
+.iconDesc {
   font-size: 0.9rem;
 }
 
-.recommendations{
+.recommendations {
   width: 100%;
 }
 
-.recommendations button{
+.recommendations button {
   background-color: #7164f0;
   color: white;
   width: 200px;
@@ -439,52 +420,52 @@ button a {
   margin-top: 22.5px;
 }
 
-.recNav{
+.recNav {
   display: flex;
   flex-direction: row;
   gap: 500px;
   padding: 1% 1% 0% 15%;
 }
 
-.recDesc{
+.recDesc {
   padding-left: 15%;
 }
 
-.propertyCardsGrid{
+.propertyCardsGrid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 5%;
 }
 
-.pcRow1{
+.pcRow1 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 3%;
 }
 
-.pcRow2{
+.pcRow2 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 3%;
 }
 
-.Testimonial{
+.Testimonial {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 
-.Testimonial img{
+.Testimonial img {
   width: 150px;
   height: 50px;
   margin-left: 685px;
 }
 
-.clientEmail{
+.clientEmail {
   background-color: #17125b;
   padding: 5%;
   display: flex;
@@ -493,23 +474,23 @@ button a {
   text-align: center;
 }
 
-.clientEmail input{
+.clientEmail input {
   width: 70%;
   height: 60px;
-  border-radius:5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
   border: 0;
 }
 
-.clientEmail button{
+.clientEmail button {
   color: white;
   height: 50px;
   border-radius: 5px;
-  margin: 7px ;
+  margin: 7px;
   border: 0;
   width: 27%;
 }
 
-.emailInputFields{
+.emailInputFields {
   background-color: white;
   width: 40%;
   margin-left: 30%;
@@ -519,24 +500,24 @@ button a {
   justify-content: row;
 }
 
-.homeFooter{
+.homeFooter {
   padding: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.homeFooter a{
+.homeFooter a {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
-.homeFooter p{
+.homeFooter p {
   color: grey;
 }
 
-.commonFooter{
+.commonFooter {
   display: flex;
   flex-direction: row;
   gap: 60%;
@@ -544,17 +525,16 @@ button a {
   border-top: 1px solid grey;
 }
 
-.commonFooter span{
+.commonFooter span {
   color: grey;
-  }
+}
 
-.contactIcons{
+.contactIcons {
   width: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-@media (max-width : 500px){
-  
+@media (max-width: 500px) {
 }
