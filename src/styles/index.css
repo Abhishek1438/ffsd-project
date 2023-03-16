@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
-
 *.html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:ital,wght@1,300&display=swap');
@@ -177,7 +176,7 @@ button a {
   gap: 2px;
   border-radius: 10px;
   width: 18%;
-  height: 354.100px;
+  height:30%;
   border: 3px #f1effa;
   border-style: double;
   padding: 0;
@@ -555,6 +554,7 @@ button a {
   justify-content: space-evenly;
 }
 
-@media (max-width : 500px){
-  
+
+.mobileNav{
+  display: none;
 }
