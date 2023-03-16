@@ -65,7 +65,7 @@ button a {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  width: 25%;
+  width: 30%;
   padding: 0 50px 0 50px;
 
 }
@@ -79,17 +79,63 @@ button a {
   width: 15%;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 
 .navBarOptions{
   border: 0;
+  padding:  3.5% 5% 5% 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+}
+
+.navBarOptions i{
+  margin-top: 2.5px;
 }
 
 .portfolioDropdownOption{
-  border-radius: 0 0 10px 10px;
-  padding: 2%;
+  display: none;
+  position: absolute;
+  margin-top: 2%;
+  z-index: 1;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0.5%;
 }
+
+.portfolioDropdownOption a{
+  padding-bottom: 5%;
+}
+
+.navBarOptions:hover .portfolioDropdownOption{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.resourceDropdownOption{
+  display: none;
+  position: absolute;
+  margin-top: 2%;
+  z-index: 1;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0.5%;
+}
+
+.resourceDropdownOption a{
+  padding-bottom: 5%;
+}
+
+.navBarOptions:hover .resourceDropdownOption{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 
 .HeroBackground {
   background-image: url("../../assets/images/PW_map_background.png");
@@ -127,12 +173,16 @@ button a {
   flex-direction: column;
   gap: 2px;
   border-radius: 10px;
-  width: 273.450px;
+  width: 18%;
   height: 354.100px;
   border: 3px #f1effa;
   border-style: double;
   padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(43, 0, 77, 0.2);
+}
 
+.propertyCardsGrid .propertyCard :hover{
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 .propertyCard img {
@@ -172,6 +222,7 @@ button a {
   flex-direction: row;
   justify-content: space-evenly;
   color: #847bf3;
+  
 }
 
 .propertyNumbers {
@@ -194,6 +245,7 @@ button a {
   border-radius: 10px 10px 0 0;
   width: 30%;
   background-color: white;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -204,6 +256,7 @@ button a {
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
   background-color: white;  
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 .rbsInfo2 {
@@ -213,6 +266,7 @@ button a {
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
   background-color: white;  
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 .rbsInfo3 {
@@ -222,6 +276,7 @@ button a {
   justify-content: space-evenly;
   border-radius: 0 10px 10px 10px;
   background-color: white;  
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -266,6 +321,7 @@ button a {
   flex-direction: row;
   padding: 5%;
   justify-content: space-evenly;
+  
 }
 
 .segment2 img{
@@ -273,6 +329,7 @@ button a {
   height: 400px;
   width: 30%;
   margin: 100px 0px 0px 50px ;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
 }
 
 .segment2Info{
@@ -368,9 +425,7 @@ button a {
 }
 
 .recommendations{
-  margin: 10%;
-  padding: 5%;
-  width: 70%;
+  width: 100%;
 }
 
 .recommendations button{
@@ -385,24 +440,32 @@ button a {
   display: flex;
   flex-direction: row;
   gap: 500px;
+  padding: 1% 1% 0% 15%;
+}
+
+.recDesc{
+  padding-left: 15%;
 }
 
 .propertyCardsGrid{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  gap: 50px;
+  gap: 5%;
 }
 
 .pcRow1{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 3%;
 }
 
 .pcRow2{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 3%;
 }
 
 .Testimonial{
@@ -487,4 +550,8 @@ button a {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+@media (max-width : 500px){
+  
 }

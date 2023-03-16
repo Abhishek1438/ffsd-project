@@ -16,15 +16,20 @@
       <p><a href="">Rent</a></p>
       <p><a href="">Buy</a></p>
       <p><a href="">Sell</a></p>
-      <select name="portfolioDropdown" id="" class="navBarOptions">
-        <option value="" class="portfolioDropdownOption"><a href="#">My properties</a></option>
-        <option value="" class="portfolioDropdownOption"><a href="#">Property analysis</a></option>
-      </select>
-      <select name="resourcesDropdown" id="" class="navBarOptions">
-        <option value="" class="portfolioDropdownOption"><a href="#">Blog Post</a></option>
-        <option value="" class="portfolioDropdownOption"><a href="#">Help</a></option>
-
-      </select>
+      <div name="portfolioDropdown" id="" class="navBarOptions">
+        <span>Portfolio </span><i class="fa-solid fa-angle-down"></i>
+        <div class="portfolioDropdownOption">
+        <a href="#">My properties</a>
+        <a href="#">Property analysis</a>
+        </div>
+      </div>
+      <div name="resourcesDropdown" id="" class="navBarOptions">
+      <span>Resources </span><i class="fa-solid fa-angle-down"></i>
+      <div class="resourceDropdownOption">
+       <a href="#">Blog Post</a>
+       <a href="#">Help</a>
+        </div>
+      </div>
     </div>
 
     <div class="navButton">
@@ -162,7 +167,7 @@
       <button>Browse more properties</button>
     </div>
 
-    <span class="faded">Some of the chosen properties in your area.</span>
+    <span class="faded recDesc">Some of the chosen properties in your area.</span>
     <br><br><br><br><br>
     <div class="propertyCardsGrid">
       <div class="pcRow1">
@@ -355,7 +360,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="commonFooter">
     <span>PropertyWala</span>
     <div class="contactIcons">
