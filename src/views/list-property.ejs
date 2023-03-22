@@ -9,12 +9,14 @@
     <link href="/Styles/list-property.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <%- include('navbar',{user}); %>
     <header>
       <div>
         <h2>Rent/Sell your property</h2>
         <p>list now to increse the reach of your property</p>
       </div>
     </header>
+    
 
     <section>
       <form action="" method="post">
@@ -89,5 +91,6 @@
         </div>
       </form>
     </section>
+    <%- include('footer',); %> 
   </body>
 </html>

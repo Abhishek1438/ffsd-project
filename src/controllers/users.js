@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
       console.log(result);
       if (result.length <= 0) {
         return res.status(401).render('login', {
-          msg: 'Please Enter Your Email and Password',
+          msg: 'Email not registered, register first',
           msg_type: 'error',
         });
       } else {
@@ -60,7 +60,21 @@ exports.register = (req, res) => {
   // console.log(email);
   // res.send('Form Submitted');
 
+  var lowerCaseLetters = /[a-z]/g;
+  var upperCaseLetters = /[A-Z]/g;
+  var numbers = /[0-9]/g;
+
+  
   const { name, email, password } = req.body;
+
+  if(!password.match(lowerCaseLetters) || !password.match(upperCaseLetters) || !password.match(numbers) ||password.length < 8){
+    return res.render('register', {
+      msg: 'Password should contain lower case, upper case, number and minimum of length 8',
+      msg_type: 'error',
+    });
+  }
+  
+  
   db.query('select email from users where email=?', [email], async (error, result) => {
     if (error) {
       confirm.log(error);
