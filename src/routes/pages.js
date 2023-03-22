@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const userContoller = require('../controllers/users');
+
 router.get('/', userContoller.isLoggedIn, (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   res.render('index', { user: req.user });
 });
+
 router.get('/login', (req, res) => {
   res.render('login', { msg: null });
 });

@@ -15,36 +15,9 @@
     <title>myProperties</title>
   </head>
   <body>
-    <nav class="myProperties-nav">
-      <div>
-        <img src="./assets/images/PW_S3_icon1.png" alt="logo" />
-        <h2>My Properties</h2>
-      </div>
-      <div>
-        <i class="fa-regular fa-bell"></i>
-        <!-- <div class="user-profile">
-          <p class="icon">FR</p>
-          <p>Francis</p>
-          <i class="fa-solid fa-angle-down"></i>
-        </div>
-      </div> -->
-
-      <% if(user){ %>
-        <div class="user-profile">
-          <p class="icon"><%= user.name[0] %></p>
-          <p><%= user.name %></p>
-          <i class="fa-solid fa-angle-down"></i>
-          <a href="/auth/logout"><button class="navSignup">Logout</button></a>
-        </div>
-        <% } else{ %>
-        <div class="navButton">
-          <a href="/login"><button class="navLogin">Login</button></a>
-          <a href="/register"><button class="navSignup">register</button></a>
-        </div>
-        <% } %>
-    </nav>
+    <%- include("navbar",{user}); %>
     <div class="myProperties-parent-container">
-      <div class="side-navbar">
+      <!-- <div class="side-navbar">
         <nav>
           <div>
             <ul>
@@ -66,8 +39,9 @@
             </ul>
           </div>
         </nav>
-      </div>
+      </div> -->
       <div class="main-content">
+        <h1 style="margin-bottom: 1rem">My Properties</h1>
         <div class="back-button">
           <i class="fa-solid fa-chevron-left"></i>
           <h4>Back to rental portfolio</h4>
@@ -94,6 +68,8 @@
           <div class="item"><%- include('propertyCard',); %></div>
           <div class="item"><%- include('propertyCard',); %></div>
 
+          <div class="item"><%- include('propertyCard',); %></div>
+          <div class="item"><%- include('propertyCard',); %></div>
           <div class="item"><%- include('propertyCard',); %></div>
           <div class="item"><%- include('propertyCard',); %></div>
           <div class="item"><%- include('propertyCard',); %></div>

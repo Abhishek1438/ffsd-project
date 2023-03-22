@@ -1,7 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
 const doenv = require('dotenv');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const bodyParser = require('body-parser');

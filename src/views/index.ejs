@@ -28,21 +28,24 @@
 
   <body>
     <%- include('navbar',{user}); %>
-
-    <div class="HeroBackground">
-      <div class="Hero">
-        <div class="heroSlogan">
-          <h1 class="heroText">Searching for your dream property?</h1>
-          <p class="heroDesc">
-            Look no further than PropertyWala<br />
-            - your gateway to a world of real estate possibilities!
-          </p>
+    
+    <header>
+      <div class="HeroBackground">
+        <div class="header-part-1">
+          <div class="heroSlogan">
+            <h1 class="heroText">Searching for your dream property?</h1>
+            <p class="heroDesc">Look no further than PropertyWala</p>
+            <p class="heroDesc">- your gateway to a world of real estate possibilities!</p>
+          </div>
+  
+          <div class="hero-property-card">
+            <%- include('propertyCard',); %>
+          </div>
         </div>
 
-        <div class="hero-property-card"><%- include('propertyCard',); %></div>
-      </div>
-
-      <!-- Tabs navs -->
+        <div class="header-part-2">
+          <div class="p1">
+            <!-- Tabs navs -->
       <div class="hero-nav">
         <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
           <li class="nav-item" role="presentation">
@@ -116,18 +119,6 @@
                 </button>
               </div>
             </div>
-            <!-- <div class="rbsInfo1 rbsInfoSelected">
-                <div class="rbsInfoL">
-                  <p class="greyText">Location</p>
-                  <input type="text" />
-                </div>
-                <p class="faded">|</p>
-                <div class="rbsInfoD">
-                  <p class="greyText">Date</p>
-                  <input type="date" name="rbsDate" id="" value="Enter a suitable date" />
-                </div>
-                <button class="rbsButton">Search properties</button>
-              </div> -->
           </div>
           <div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
             <div class="rbsInfoL">
@@ -141,29 +132,26 @@
                 </button>
               </div>
             </div>
-            <!-- <div class="rbsInfo3">
-                <div class="rbsInfoL">
-                  <p class="greyText">Location</p>
-                  <input type="text" />
-                </div>
-                <p class="faded">|</p>
-                <button class="rbsButton">List your property</button>
-                </div>
-              </div> -->
           </div>
-        </div>
-      </div
-      <div class="propertyNumbers">
-        <div>
-          <p class="colorText"><span class="faded">|</span>50k+</p>
-          <p>renters</p>
-        </div>
-        <div>
-          <p class="colorText"><span class="faded">|</span>10k+</p>
-          <p>properties</p>
+          
+
+
+      </div>
+      <div class="p2">
+        <div class="propertyNumbers">
+          <div>
+            <p class="colorText"><span class="faded">|</span>50k+</p>
+            <p>renters</p>
+          </div>
+          <div>
+            <p class="colorText"><span class="faded">|</span>10k+</p>
+            <p>properties</p>
+          </div>
         </div>
       </div>
     </div>
+    </header>
+    
     
     <div class="segment2">
       <img src="/images/PW_S2_img.jpg" alt="property image" />

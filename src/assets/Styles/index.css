@@ -28,10 +28,15 @@
 .propertyNumbers {
   max-width: 20rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 2rem;
+  text-align: center;
+  background-color: transparent;
 }
 
-.propertyNumbers p {
+
+
+.propertyNumbers>p {
   margin: 0;
 }
 
@@ -233,12 +238,39 @@
   justify-content: row;
 }
 
+.colouredText{
+  color: #7164f0;
+  font-weight: bold;
+}
+
+.greyText{
+  color: grey;
+}
+
+.p2{
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
 @media screen and (min-width: 800px) {
   .HeroBackground {
     background-image: url('/images/PW_map_background.png');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .header-part-1{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-part-2{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
   }
 
   .heroDesc {
@@ -313,6 +345,18 @@
     display: block;
   }
 
+  .HeroBackground{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-part-1{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  
+ 
   .HeroBackground,
   .segment2,
   .segment3,
@@ -332,38 +376,7 @@
   }
 }
 
-/*
-.propertyCard {
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  border-radius: 10px;
-  width: 22%;
-  height: 30%;
-  border: 3px #f1effa;
-  border-style: double;
-  padding: 0;
-  box-shadow: 0px 8px 16px 0px rgba(43, 0, 77, 0.2);
-}
 
-.propertyCardsGrid .propertyCard :hover {
-  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
-}
-
-.propertyCard img {
-  object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.propertyCard_info {
-  background-color: white;
-  padding: 5%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-*/
 .pcBigText {
   font-size: 1.5rem;
   font-weight: bold;
@@ -373,150 +386,20 @@
   color: #abadb8;
 }
 
-.propertyCardNav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  color: #847bf3;
-}
+
 
 .faded {
   color: #abadb8;
   font-weight: lighter;
 }
 
-.rbsNavSelector {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2% 0 0 0;
-  border-color: grey;
-  border-radius: 10px 10px 0 0;
-  width: 30%;
-  background-color: white;
-  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
-}
 
-.rbsInfo1 {
-  display: flex;
-  flex-direction: row;
-  padding: 2% 2% 2% 10%;
-  justify-content: space-evenly;
-  border-radius: 0 10px 10px 10px;
-  background-color: white;
-  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
-}
 
-.rbsInfo2 {
-  display: flex;
-  flex-direction: row;
-  padding: 2% 2% 2% 10%;
-  justify-content: space-evenly;
-  border-radius: 0 10px 10px 10px;
-  background-color: white;
-  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
-}
 
-.rbsInfo3 {
-  display: flex;
-  flex-direction: row;
-  padding: 2% 2% 2% 10%;
-  justify-content: space-evenly;
-  border-radius: 0 10px 10px 10px;
-  background-color: white;
-  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
-}
+
+
 
 .disNone {
   display: none;
 }
 
-.rbsOption {
-  background-color: white;
-  border-radius: 10px 10px 0 0;
-  border: 0;
-}
-
-.rbsSelected {
-  color: #847bf3;
-  font-weight: bold;
-  border-bottom: 2px;
-  border-bottom: solid;
-  border-color: #7164f0;
-}
-
-.rbsNav {
-  display: flex;
-  flex-direction: column;
-  padding: 2% 2% 2% 16%;
-  width: 40%;
-}
-
-.rbsButton {
-  background-color: #847bf3;
-  color: white;
-  border: 0;
-  margin-top: 15px;
-  width: 150px;
-}
-
-.propertyCardsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 5%;
-}
-
-.pcRow1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 3%;
-}
-
-.pcRow2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 3%;
-}
-
-/* .homeFooter {
-  padding: 5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.homeFooter a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-.homeFooter p {
-  color: grey;
-}
-
-.commonFooter {
-  display: flex;
-  flex-direction: row;
-  gap: 60%;
-  padding: 2% 2% 2% 10%;
-  border-top: 1px solid grey;
-}
-
-.commonFooter span {
-  color: grey;
-}
-
-.contactIcons {
-  width: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.mobileNav {
-  display: none;
-} */
