@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: none;
+    height: 100%;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 5px;
+    border-radius: 3px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: none;
+}
+
+body{
+    background-color: #e8e7f8;
+}
+
+header>div {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 2rem;
+    gap: 1rem;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.personal-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    background-color: white;
+}
+
+.property-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    background-color: white;
+}
+
+.property-location {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    background-color: white;
+}
+
+.container input {
+    border: 0;
+    border-bottom: 2px solid #7164f0;
+    max-width: 20em;
+    padding: 0.5rem;
+    background-color: inherit;
+    
+    
+}
+
+.container select {
+    border: 0;
+    border-bottom: 2px solid white;
+    max-width: 21em;
+    min-width: 20em;
+    padding: 0.5rem;
+    background-color: inherit;
+    border-bottom: 2px solid #7164f0;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.form-footer button {
+    padding: 0.6rem;
+    color: white;
+    background-color: #7164f0;
+    border: 0;
+    border-radius: 5px;
+    max-width: 25em;
+}
+
+input[type=file]::file-selector-button{
+    background-color: #7164f0;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    padding: 0.3rem;
+}
+
+
+@media (min-width:600px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .form-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .container>div{
+        min-width: 17em;
+    }
+}
+

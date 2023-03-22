@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Your Property</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/list-property.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h2>Rent/Sell your property</h2>
+        <p>list now to increse the reach of your property</p>
+      </div>
+    </header>
+
+    <section>
+      <form action="" method="post">
+        <div class="container">
+          <div class="personal-details">
+            <h3>Personal Details</h3>
+            <label for="Ownership">I am the</label>
+            <select name="" id="">
+              <option value="owner">Owner</option>
+              <option value="agent">Agent</option>
+              <option value="builder">Builder</option>
+            </select>
+            <label for="name">Name</label>
+            <input type="text" placeholder="Enter your name" />
+
+            <label for="mobileNumber">Mobile number</label>
+            <input type="number" value="91" for="countryCode" />
+            <input type="number" for="mobileNumber" placeholder="Enter your mobile number" />
+
+            <label for="email">Email</label>
+            <input type="email" />
+          </div>
+
+          <div class="property-details">
+            <h3>Property Details</h3>
+            <label for="propertyType">For</label>
+            <div class="custom-select" style="max-width: 21em">
+              <select name="forwhat" id="">
+                <option value="owner">Sale</option>
+                <option value="agent">Rent</option>
+              </select>
+            </div>
+            <label for="image">Property Images</label>
+            <input type="file" name="" />
+
+            <label>Property Type</label>
+            <select name="propertyModel">
+              <option value="select_propertyType">Select Property Type</option>
+              <option value="Flat">Flat/Apartment</option>
+              <option value="home">Residential Home</option>
+              <option value="villa">Villa</option>
+              <option value="penthouse">Penthouse</option>
+              <option value="studioApartment">Studio Apartment</option>
+              <option value="serviceApartment">Service Apartment</option>
+              <option value="office">Comercial office Space</option>
+              <option value="shop">Comercial Shop</option>
+              <option value="showroom">Comercial Showroom</option>
+              <option value="land">Comercial Land</option>
+              <option value="warehouse">Warehouse/Godown</option>
+              <option value="industrialBuilding">Industrial Building</option>
+              <option value="agriculturalLand">Agricultural Land</option>
+              <option value="farmhouse">Farm House</option>
+            </select>
+          </div>
+
+          <div class="property-location">
+            <h3>Property Location</h3>
+            <label for="City">City</label>
+            <input type="text" name="city" id="" placeholder="Enter City" />
+
+            <label for="locality">Locality</label>
+            <input type="text" placeholder="Enter Locality" />
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <span style="text-align: left"
+            ><input type="checkbox" name="" id="" /> I agree to the Terms and Conditions of
+            PropertyWala</span
+          >
+          <button type="submit">List Property</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

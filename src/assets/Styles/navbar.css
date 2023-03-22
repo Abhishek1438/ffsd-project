@@ -2,7 +2,8 @@
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(237, 237, 237);
+  background-color: #fff;
+  border-bottom: 2px solid #e6e6ed;
   align-items: center;
 }
 
@@ -203,6 +204,7 @@
     font-size: x-large;
     color: #7064f1;
     font-weight: bold;
+    align-items: center;
   }
 
   .navbarOpen {
@@ -236,6 +238,7 @@
   .navButton a {
     font-weight: bold;
     font-size: x-large;
+    text-align: center;
   }
 
   .navbarOptions {

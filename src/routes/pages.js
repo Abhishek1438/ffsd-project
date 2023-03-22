@@ -35,8 +35,12 @@ router.get('/user-profile', userContoller.isLoggedIn, (req, res) => {
   res.render('userProfile', { user: req.user });
 });
 
-router.get('/list-your-property', userContoller.isLoggedIn, (req, res) => {
-  res.render('listYourProperty', { user: req.user });
+router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
+  res.render('list-property', { user: req.user });
+});
+
+router.get('/pricing-plans', userContoller.isLoggedIn, (req, res) => {
+  res.render('pricingPlan', { user: req.user });
 });
 
 router.get('/FAQ', userContoller.isLoggedIn, (req, res) => {
