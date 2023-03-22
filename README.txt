@@ -1,6 +1,8 @@
-# FFSD project
+FFSD project
 
-## How to run the project
+How to run the project
+
+!!IMPORTANT!! Internet connection is mandatory.
 
 1.create database named ffsd in your mysql server.
 2.create table users using following syntax
