@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/register.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="loginParentContainer">
+        <div class="loginChildContainer">
+            <div class="icon">
+                <DiscordIcon />
+            </div>
+            <h2 class="welcomeMessage">Create an account</h2>
+            <form action="/auth/register" method="post">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required></input>
+                <label for="name">Username</label>
+                <input type="text" name="name" id="name" required></input>
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" required></input>
+                <button type="submit" id="register">Register</button>
+                <% if (msg) { %>
+                    <p class="msg"> <%= msg %></p>
+                    <%}%>
+                <a href="/login">
+                    <p class="alreadyAccount">
+                        Already have an account?
+                    </p>
+                </a>
+                <p>
+                    By registering you agree to Property Wala's
+                    <span>Terms of Service</span> and
+                    <span>Privacy Policy</span>.
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

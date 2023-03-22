@@ -1,0 +1,120 @@
+.loginParentContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, white, #0000ff47);
+}
+
+.loginChildContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(234 234 255);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.loginChildContainer .icon {
+  padding-right: 1rem;
+}
+
+.loginChildContainer .welcomeMessage {
+  margin: 2rem 0 0 0;
+}
+
+.loginChildContainer p {
+  margin-top: 0.5rem;
+}
+
+.loginChildContainer form {
+  margin-top: 1rem;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.loginChildContainer label {
+  font-size: 0.75rem;
+  font-stretch: expanded;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.loginChildContainer form input {
+  border-radius: 0.2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-bottom: 1.5rem;
+  height: 2.2rem;
+}
+
+.loginChildContainer input[type='password'] {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loginChildContainer form p {
+  text-align: start;
+  line-height: 1rem;
+  font-size: 0.8rem;
+}
+
+.loginChildContainer .alreadyAccount {
+  color: #00aff4;
+  margin: 0.5rem 0;
+}
+
+.loginChildContainer span {
+  color: #00aff4;
+}
+
+.loginChildContainer form button {
+  color: #fff;
+  margin-top: 0.5rem;
+  padding: 0.9rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  background-color: #5865f2;
+  cursor: pointer;
+}
+
+.msg {
+  color: rgb(239, 57, 57);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 485px) {
+  .loginParentContainer {
+    align-items: center;
+  }
+
+  .loginParentContainer > div {
+    width: fit-content;
+    min-height: 0;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .loginChildContainer {
+    border-radius: 0.5rem;
+    width: 30em;
+  }
+
+  .loginChildContainer .icon {
+    display: none;
+  }
+}

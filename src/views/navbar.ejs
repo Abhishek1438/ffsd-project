@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/navbar.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="mobileNav">
+      <p class="logoName"><a href="">PropertyWala</a></p>
+      <button><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="navbar">
+      <div class="closeBtnContainer display-none">
+        <button class="closeButton"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="logoName"><a href="/">PropertyWala</a></p>
+      <div class="navItems">
+        <p><a href="/properties/rent">Rent</a></p>
+        <p><a href="/properties/buy">Buy</a></p>
+        <p><a href="/properties/sell">Sell</a></p>
+        <div name="portfolioDropdown" id="" class="navbarOptions">
+          <span>Portfolio </span><i class="fa-solid fa-angle-down"></i>
+          <div class="portfolioDropdownOption">
+            <a href="/my-properties">My properties</a>
+            <a href="#">Property analysis</a>
+          </div>
+        </div>
+        <div name="resourcesDropdown" id="" class="navbarOptions">
+          <span>Resources </span><i class="fa-solid fa-angle-down"></i>
+          <div class="resourceDropdownOption">
+            <a href="/blogs">Blog Post</a>
+            <a href="/help">Help</a>
+          </div>
+        </div>
+      </div>
+
+      <% if(user){ %>
+      <div class="user-profile">
+        <p class="icon"><%= user.name[0] %></p>
+        <p><%= user.name %></p>
+        <i class="fa-solid fa-angle-down"></i>
+        <a href="/auth/logout"><button class="navSignup">Logout</button></a>
+      </div>
+      <% } else{ %>
+      <div class="navButton">
+        <a href="/login"><button class="navLogin">Login</button></a>
+        <a href="/register"><button class="navSignup">register</button></a>
+      </div>
+      <% } %>
+    </div>
+
+    <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,522 @@
+.HeroBackground {
+  padding: 0 1rem;
+}
+
+.hero-property-card {
+  display: none;
+}
+
+.Hero {
+  display: flex;
+  flex-direction: row;
+}
+
+.heroText {
+  margin: 1rem 0;
+  font-size: 3rem;
+  color: #000929;
+  text-align: center;
+}
+
+.heroDesc {
+  font-size: 1.1rem;
+  color: #353b56;
+  font-weight: bold;
+  text-align: center;
+}
+
+.propertyNumbers {
+  max-width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.propertyNumbers p {
+  margin: 0;
+}
+
+.colorText {
+  font-size: 3rem;
+  color: #6a5dfd;
+}
+
+.segment2 {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.segment2 img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.segment2Info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30em;
+  text-align: center;
+}
+
+.s2OptionMenu {
+  display: flex;
+  background-color: #fbfaff;
+  padding: 0.5rem;
+  width: 20rem;
+  text-align: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: #efeffb;
+}
+
+.s2OptionMenu button {
+  width: 9rem;
+}
+
+.s2Options {
+  background-color: #dddee4;
+  color: grey;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 0;
+}
+
+.s2Selected {
+  padding: 0.5rem 1rem;
+  background-color: #fefeff;
+  color: #847bf3;
+  font-weight: bold;
+  border: 1px solid;
+}
+
+.s2Hero {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.s2Desc {
+  font-size: 1rem;
+  color: #abadb8;
+}
+
+.s2Info button {
+  color: white;
+  background-color: #847bf3;
+  border: 0;
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+}
+
+.segment3 {
+  background-color: #f7f6fc;
+  border: 3px #e1def7;
+  border-style: double;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.segment3 img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.s3Icons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 80px;
+  gap: 20px;
+}
+
+.s3Icons img {
+  width: 70px;
+  height: 70px;
+}
+
+.iconText {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.iconDesc {
+  font-size: 0.9rem;
+}
+
+.recommendations {
+  margin: 0 1rem;
+}
+
+.recNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommendations button {
+  background-color: #7164f0;
+  color: white;
+  width: 200px;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+.recDesc {
+  margin-bottom: 2rem;
+}
+
+.Testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.Testimonial h1 {
+  color: #000929;
+}
+
+.Testimonial p {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.Testimonial span {
+  color: #000929;
+  font: bolder;
+}
+
+.Testimonial img {
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.clientEmail {
+  background-color: #17125b;
+  padding: 1rem;
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.clientEmail input {
+  padding: 0.7rem 1rem;
+  border-radius: 5px 0px 0px 5px;
+  border: 0;
+  outline: 0;
+}
+
+.clientEmail button {
+  background-color: #6a5dfd;
+  padding: 0.7rem 1rem;
+
+  border-radius: 5px;
+  border: 0;
+  margin-top: 1rem;
+}
+
+.emailInputFields {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  display: flex;
+  justify-content: row;
+}
+
+@media screen and (min-width: 800px) {
+  .HeroBackground {
+    background-image: url('/images/PW_map_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 1rem;
+  }
+
+  .heroDesc {
+    text-align: left;
+  }
+
+  .heroText {
+    text-align: left;
+  }
+
+  .segment2 {
+    flex-direction: row;
+    max-height: 30em;
+    justify-content: space-between;
+  }
+
+  .segment2 img {
+    width: 40%;
+    max-height: 30em;
+  }
+
+  .segment2Info {
+    align-items: flex-start;
+  }
+
+  .s2Info {
+    text-align: left;
+  }
+
+  .segment3 {
+    max-height: 30em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .segment3 img {
+    width: 40%;
+  }
+
+  .recNav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .clientEmail {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .emailInputFields {
+    margin: 0 auto;
+    width: 30rem;
+    background-color: #f7f6fc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .emailInputFields button {
+    margin: 0;
+  }
+
+  .emailInputFields input {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .hero-property-card {
+    display: block;
+  }
+
+  .HeroBackground,
+  .segment2,
+  .segment3,
+  .recommendations,
+  .Testimonial {
+    margin: 2rem 5rem;
+  }
+
+  .Hero {
+    justify-content: space-between;
+  }
+
+  .hero-nav {
+    width: 50rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+  }
+}
+
+/*
+.propertyCard {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 10px;
+  width: 22%;
+  height: 30%;
+  border: 3px #f1effa;
+  border-style: double;
+  padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(43, 0, 77, 0.2);
+}
+
+.propertyCardsGrid .propertyCard :hover {
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.propertyCard img {
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.propertyCard_info {
+  background-color: white;
+  padding: 5%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+*/
+.pcBigText {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.greyText {
+  color: #abadb8;
+}
+
+.propertyCardNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: #847bf3;
+}
+
+.faded {
+  color: #abadb8;
+  font-weight: lighter;
+}
+
+.rbsNavSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2% 0 0 0;
+  border-color: grey;
+  border-radius: 10px 10px 0 0;
+  width: 30%;
+  background-color: white;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rbsInfo1 {
+  display: flex;
+  flex-direction: row;
+  padding: 2% 2% 2% 10%;
+  justify-content: space-evenly;
+  border-radius: 0 10px 10px 10px;
+  background-color: white;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rbsInfo2 {
+  display: flex;
+  flex-direction: row;
+  padding: 2% 2% 2% 10%;
+  justify-content: space-evenly;
+  border-radius: 0 10px 10px 10px;
+  background-color: white;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rbsInfo3 {
+  display: flex;
+  flex-direction: row;
+  padding: 2% 2% 2% 10%;
+  justify-content: space-evenly;
+  border-radius: 0 10px 10px 10px;
+  background-color: white;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.disNone {
+  display: none;
+}
+
+.rbsOption {
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  border: 0;
+}
+
+.rbsSelected {
+  color: #847bf3;
+  font-weight: bold;
+  border-bottom: 2px;
+  border-bottom: solid;
+  border-color: #7164f0;
+}
+
+.rbsNav {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 2% 2% 16%;
+  width: 40%;
+}
+
+.rbsButton {
+  background-color: #847bf3;
+  color: white;
+  border: 0;
+  margin-top: 15px;
+  width: 150px;
+}
+
+.propertyCardsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.pcRow1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 3%;
+}
+
+.pcRow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 3%;
+}
+
+/* .homeFooter {
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.homeFooter a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.homeFooter p {
+  color: grey;
+}
+
+.commonFooter {
+  display: flex;
+  flex-direction: row;
+  gap: 60%;
+  padding: 2% 2% 2% 10%;
+  border-top: 1px solid grey;
+}
+
+.commonFooter span {
+  color: grey;
+}
+
+.contactIcons {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.mobileNav {
+  display: none;
+} */

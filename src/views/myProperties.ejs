@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/myProperties.css" rel="stylesheet" type="text/css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>myProperties</title>
+  </head>
+  <body>
+    <nav class="myProperties-nav">
+      <div>
+        <img src="./assets/images/PW_S3_icon1.png" alt="logo" />
+        <h2>My Properties</h2>
+      </div>
+      <div>
+        <i class="fa-regular fa-bell"></i>
+        <!-- <div class="user-profile">
+          <p class="icon">FR</p>
+          <p>Francis</p>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+      </div> -->
+
+      <% if(user){ %>
+        <div class="user-profile">
+          <p class="icon"><%= user.name[0] %></p>
+          <p><%= user.name %></p>
+          <i class="fa-solid fa-angle-down"></i>
+          <a href="/auth/logout"><button class="navSignup">Logout</button></a>
+        </div>
+        <% } else{ %>
+        <div class="navButton">
+          <a href="/login"><button class="navLogin">Login</button></a>
+          <a href="/register"><button class="navSignup">register</button></a>
+        </div>
+        <% } %>
+    </nav>
+    <div class="myProperties-parent-container">
+      <div class="side-navbar">
+        <nav>
+          <div>
+            <ul>
+              <li><i class="fa-solid fa-house"></i></li>
+              <li><i class="fa-regular fa-lightbulb"></i></li>
+              <li><i class="fa-regular fa-bell"></i></li>
+              <li><i class="fa-solid fa-user-group"></i></li>
+              <li><i class="fa-regular fa-envelope"></i></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <i class="fa-regular fa-circle-question"></i>
+              </li>
+              <li>
+                <i class="fa-solid fa-gear"></i>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="main-content">
+        <div class="back-button">
+          <i class="fa-solid fa-chevron-left"></i>
+          <h4>Back to rental portfolio</h4>
+        </div>
+
+        <nav>
+          <div class="showing">
+            <h5>Showing all</h5>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div>
+            <div class="sort">
+              <p>By date added</p>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <i class="fa-solid fa-arrow-down-z-a"></i>
+            <i class="fa-solid fa-arrow-up-a-z"></i>
+            <i class="fa-solid fa-arrow-down-short-wide"></i>
+          </div>
+        </nav>
+
+        <div class="myProperties-grid">
+          <div class="item"><%- include('propertyCard',); %></div>
+          <div class="item"><%- include('propertyCard',); %></div>
+          <div class="item"><%- include('propertyCard',); %></div>
+
+          <div class="item"><%- include('propertyCard',); %></div>
+          <div class="item"><%- include('propertyCard',); %></div>
+          <div class="item"><%- include('propertyCard',); %></div>
+        </div>
+
+        <footer class="myProperties-footer">
+          <i class="fa-solid fa-chevron-left"></i>
+          <p class="selected">1</p>
+          <p>2</p>
+          <i class="fa-solid fa-chevron-right"></i>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+  </body>
+</html>

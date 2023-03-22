@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/propertyDetails.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <title>Property Detail</title>
+  </head>
+  <body>
+    <%- include('navbar',{user}); %>
+    <div class="header">
+      <div>
+        <h1>Beverly Springfield</h1>
+        <p>2821 Lake Sevilla, Palm Harbor, TX</p>
+      </div>
+      <div class="buttons">
+        <button>Share</button>
+        <button>Favourite</button>
+        <button id="browse-button">Browse nearby listings</button>
+      </div>
+    </div>
+    <div class="image-container">
+      <!-- Carousel wrapper -->
+      <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-mdb-target="#carouselBasicExample"
+            data-mdb-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselBasicExample"
+            data-mdb-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselBasicExample"
+            data-mdb-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+          <!-- Single item -->
+          <div class="carousel-item active">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp"
+              class="d-block w-100"
+              alt="Sunset Over the City"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </div>
+
+          <!-- Single item -->
+          <div class="carousel-item">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
+              class="d-block w-100"
+              alt="Canyon at Nigh"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+
+          <!-- Single item -->
+          <div class="carousel-item">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
+              class="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Inner -->
+
+        <!-- Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-mdb-target="#carouselBasicExample"
+          data-mdb-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-mdb-target="#carouselBasicExample"
+          data-mdb-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- Carousel wrapper -->
+    </div>
+    <div class="detail_parent_container">
+      <div class="detail_child_container">
+        <div class="property_data">
+          <div>
+            <p>Bedrooms</p>
+            <p class="data">4</p>
+          </div>
+          <div>
+            <p>Bathrooms</p>
+            <p class="data">2</p>
+          </div>
+          <div>
+            <p>Sqare Area</p>
+            <p class="data">6x7.5 m<sup>2</sup></p>
+          </div>
+          <div>
+            <p>Repair Quality</p>
+            <p class="data">Modern Loft</p>
+          </div>
+          <div>
+            <p>Status</p>
+            <p class="data">Active</p>
+          </div>
+        </div>
+        <div style="margin-top: 1rem">
+          <h2>About this home</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur voluptatum magni
+            blanditiis praesentium, ullam nobis, ratione sapiente porro enim vitae corporis beatae
+            architecto. Ipsam quae, cum fuga quasi voluptate facere. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Dolore, asperiores deleniti, placeat perspiciatis corrupti
+            dolorem sequi id saepe ipsam reprehenderit voluptates ad accusamus! Minus voluptas
+            voluptatem ipsam pariatur, exercitationem magni?
+          </p>
+          <div class="ownerParentContainer">
+            <p>Listed by property owner</p>
+            <div class="ownerContainer">
+              <div style="display: flex; align-items: center">
+                <img
+                  src="https://www.bajajallianzlife.com/content/dam/balic/index/bannerimage/Group-Employee-Benefit-Plan.png"
+                />
+                <div>
+                  <h4>Diana Richards</h4>
+                  <p>Rich Capital Properties LLC</p>
+                </div>
+              </div>
+              <div class="buttons">
+                <button>Ask a question</button>
+                <button>Get more info</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="rental-features">
+            <div class="child-container">
+              <div class="rental-data">
+                <p>Listed on PropertyWala</p>
+                <b>1week</b>
+              </div>
+              <div class="rental-data">
+                <p>Date available</p>
+                <b>Available now</b>
+              </div>
+              <div class="rental-data">
+                <p>Type</p>
+                <b>Home</b>
+              </div>
+              <div class="rental-data">
+                <p>Laundry</p>
+                <b>In unit</b>
+              </div>
+              <div class="rental-data">
+                <p>Cooling</p>
+                <b>Air Conditioner</b>
+              </div>
+              <div class="rental-data">
+                <p>Heating</p>
+                <b>Forced Air</b>
+              </div>
+            </div>
+            <div class="child-container">
+              <div class="rental-data">
+                <p>City</p>
+                <b>Houston</b>
+              </div>
+              <div class="rental-data">
+                <p>Year Built</p>
+                <b>2018</b>
+              </div>
+              <div class="rental-data">
+                <p>Size</p>
+                <b>2.173sqft</b>
+              </div>
+              <div class="rental-data">
+                <p>Lot Size</p>
+                <b>9,060sqft</b>
+              </div>
+              <div class="rental-data">
+                <p>Parking Area</p>
+                <b>Yes</b>
+              </div>
+              <div class="rental-data">
+                <p>Deposit & Fees</p>
+                <b>$2,700</b>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- <div class="rent-history">
+            <h2>Rent Price History for Beverly Springfield</h2>
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Event</th>
+                <th>Source</th>
+              </tr>
+              <tr>
+                <td>28/12/2021</td>
+                <td>$2,700/mo</td>
+                <td>Listed for Sale</td>
+                <td>PropertyWala</td>
+              </tr>
+              <tr>
+                <td>10/10/2021</td>
+                <td>$2,700/mo</td>
+                <td>Listed for Sale</td>
+                <td>PropertyWala</td>
+              </tr>
+              <tr>
+                <td>03/04/2020</td>
+                <td>$2,700/mo</td>
+                <td>Listed for Sale</td>
+                <td>PropertyWala</td>
+              </tr>
+              <tr>
+                <td>25/11/2019</td>
+                <td>$2,700/mo</td>
+                <td>Listed for Sale</td>
+                <td>PropertyWala</td>
+              </tr>
+              <tr>
+                <td>09/02/2019</td>
+                <td>$2,700/mo</td>
+                <td>Listed for Sale</td>
+                <td>PropertyWala</td>
+              </tr>
+            </table>
+          </div> -->
+          <p class="terms">
+            You agree to PropertyWala's Terms of Use & Privacy Policy. By choosing to contact a
+            property, you also agree that PropertyWalaGroup, landlords, and property managers may
+            call or text you about any inquiries you submit through our services,which may involve
+            use of automated means and prerecorded/artifhcial voices. You don't need to consent as
+            acondition of renting any property, or buying any other goods or services. Message/data
+            rates may apply.
+          </p>
+          <h2>Similar listings</h2>
+          <div class="similar-container"></div>
+        </div>
+      </div>
+      <div class="detail_card">card</div>
+    </div>
+    <%- include('footer',); %>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+    ></script>
+  </body>
+</html>
