@@ -12,6 +12,7 @@
         font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
+        
       }
       h1 {
         font-size: 28px;
@@ -41,12 +42,18 @@
         margin-top: 5px;
         margin-bottom: 5px;
       }
+
+      .parent-container{
+        padding: 2rem;
+      }
+
     </style>
   </head>
   <body>
     <%- include('navbar',{user}); %>
 
-    <h1>Terms and Conditions</h1>
+    <div class="parent-container">
+      <h1>Terms and Conditions</h1>
 
     <h2>Introduction</h2>
     <p>
@@ -116,5 +123,10 @@
 
     <h2>Contact Us</h2>
     <p>If you have any questions about these terms and conditions, please contact us.</p>
+    </div>
+
+    <footer>
+      <%- include('footer',{user}); %>
+    </footer>
   </body>
 </html>

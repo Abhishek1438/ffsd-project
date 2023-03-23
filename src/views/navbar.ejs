@@ -40,9 +40,8 @@
 
       <% if(user){ %>
       <div class="user-profile">
-        <p class="icon"><%= user.name[0] %></p>
+      <a href="/profile" style="text-decoration: none;"><p class="icon"><%= user.name[0] %></p></a>
         <p><%= user.name %></p>
-        <i class="fa-solid fa-angle-down"></i>
         <a href="/auth/logout"><button class="navSignup">Logout</button></a>
       </div>
       <% } else{ %>

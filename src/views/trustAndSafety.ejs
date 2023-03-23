@@ -45,7 +45,7 @@
       footer {
         background-color: #eee;
         padding: 20px;
-        text-align: center;
+       
       }
 
       footer p {
@@ -78,8 +78,9 @@
         </p>
       </section>
     </main>
+    
     <footer>
-      <p>&copy; 2023 Real Estate. All rights reserved.</p>
+      <%- include('footer',{user}); %>
     </footer>
   </body>
 </html>
