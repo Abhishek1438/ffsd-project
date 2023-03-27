@@ -33,6 +33,10 @@ router.get('/my-properties', userContoller.isLoggedIn, (req, res) => {
   res.render('myProperties', { user: req.user });
 });
 
+router.get('/property-details/:id', userContoller.isLoggedIn, (req, res) => {
+  res.render('propertyDetails', { user: req.user });
+});
+
 router.get('/user-profile', userContoller.isLoggedIn, (req, res) => {
   res.render('userProfile', { user: req.user });
 });
