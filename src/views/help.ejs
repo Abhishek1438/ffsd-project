@@ -54,12 +54,7 @@
         margin-bottom: 20px;
       }
 
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
+      
     </style>
   </head>
   <body>
@@ -97,7 +92,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2023 Real Estate Website. All rights reserved.</p>
+      <%- include('footer',{user}); %>
     </footer>
   </body>
 </html>
