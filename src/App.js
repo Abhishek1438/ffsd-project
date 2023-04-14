@@ -13,20 +13,20 @@ doenv.config({
   path: './.env',
 });
 
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASS,
-  database: process.env.DATABASE,
-});
+// const db = mysql.createConnection({
+//   host: process.env.DATABASE_HOST,
+//   user: process.env.DATABASE_USER,
+//   password: process.env.DATABASE_PASS,
+//   database: process.env.DATABASE,
+// });
 
-db.connect((err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('MySQL Connection Success');
-  }
-});
+// db.connect((err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('MySQL Connection Success');
+//   }
+// });
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
@@ -36,6 +36,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use('/properties', require('./routes/propertiesRoute'));
+// app.use('/property', require('./routes/property'));
 
 app.listen(3000, () => {
   console.log('Listening at port no 3000 ...');

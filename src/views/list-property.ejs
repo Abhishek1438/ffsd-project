@@ -16,10 +16,9 @@
         <p>list now to increse the reach of your property</p>
       </div>
     </header>
-    
 
     <section>
-      <form action="" method="post">
+      <form action="/list-property"" method="post">
         <div class="container">
           <div class="personal-details">
             <h3>Personal Details</h3>
@@ -30,14 +29,14 @@
               <option value="builder">Builder</option>
             </select>
             <label for="name">Name</label>
-            <input type="text" placeholder="Enter your name" />
+            <input type="text" placeholder="Enter your name"  required/>
 
             <label for="mobileNumber">Mobile number</label>
             <input type="number" value="91" for="countryCode" />
-            <input type="number" for="mobileNumber" placeholder="Enter your mobile number" />
+            <input type="number" for="mobileNumber" placeholder="Enter your mobile number" required/>
 
             <label for="email">Email</label>
-            <input type="email" />
+            <input type="email" required/>
           </div>
 
           <div class="property-details">
@@ -75,10 +74,10 @@
           <div class="property-location">
             <h3>Property Location</h3>
             <label for="City">City</label>
-            <input type="text" name="city" id="" placeholder="Enter City" />
+            <input type="text" name="city" id="" placeholder="Enter City" required/>
 
             <label for="locality">Locality</label>
-            <input type="text" placeholder="Enter Locality" />
+            <input type="text" placeholder="Enter Locality" required/>
           </div>
         </div>
 
@@ -91,6 +90,6 @@
         </div>
       </form>
     </section>
-    <%- include('footer',); %> 
+    <%- include('footer',); %>
   </body>
 </html>
