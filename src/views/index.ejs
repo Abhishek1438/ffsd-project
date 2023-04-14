@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Property Wala</title>
-    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Styles/index.css" rel="stylesheet" type="text/css" />
-    
 
-    <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Wala</title>
+  <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="/Styles/index.css" rel="stylesheet" type="text/css" />
 
-  <body>
-    <%- include('navbar',{user}); %>
-    
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('navbar',{user}); %>
+
     <header>
       <div class="HeroBackground">
         <div class="header-part-1">
@@ -37,58 +29,34 @@
             <p class="heroDesc">Look no further than PropertyWala</p>
             <p class="heroDesc">- your gateway to a world of real estate possibilities!</p>
           </div>
-  
+
           <div class="hero-property-card">
             <%- include('propertyCard',); %>
           </div>
         </div>
 
         <div class="header-part-2">
-          <div class="p1">
+          <!-- <div class="p1"> -->
             <!-- Tabs navs -->
-      <div class="hero-nav">
-        <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link active"
-              id="ex3-tab-1"
-              data-mdb-toggle="tab"
-              href="#ex3-tabs-1"
-              role="tab"
-              aria-controls="ex3-tabs-1"
-              aria-selected="true"
-              >Rent</a
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="ex3-tab-2"
-              data-mdb-toggle="tab"
-              href="#ex3-tabs-2"
-              role="tab"
-              aria-controls="ex3-tabs-2"
-              aria-selected="false"
-              >Buy</a
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="ex3-tab-3"
-              data-mdb-toggle="tab"
-              href="#ex3-tabs-3"
-              role="tab"
-              aria-controls="ex3-tabs-3"
-              aria-selected="false"
-              >Sell</a
-            >
-          </li>
-        </ul>
-        <!-- Tabs navs -->
+            <!-- <div class="hero-nav">
+              <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab"
+                    aria-controls="ex3-tabs-1" aria-selected="true">Rent</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab"
+                    aria-controls="ex3-tabs-2" aria-selected="false">Buy</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab"
+                    aria-controls="ex3-tabs-3" aria-selected="false">Sell</a>
+                </li>
+              </ul> -->
+              <!-- Tabs navs -->
 
-        <!-- Tabs content -->
-        <div class="tab-content" id="ex2-content">
+              <!-- Tabs content -->
+              <!-- <div class="tab-content" id="ex2-content">
           <div
             class="tab-pane fade show active"
             id="ex3-tabs-1"
@@ -132,27 +100,87 @@
                 </button>
               </div>
             </div>
-          </div>
-          
+          </div> -->
+
+              <div class="rbsTabs">
+                <div class="rbsNav">
+                  <div class="rbsOption rbsSelected">Rent</div>
+                  <div class="rbsOption">Buy</div>
+                  <div class="rbsOption">Sell</div>
+                </div>
+                <div class="rbsInfoMobile">
+                  <div class="rbsRS">
+                    <input type="text" placeholder="Search properties..">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                  <div class="rbsSell">
+                    <a href="#" target="_blank"><button>List your property <i
+                          class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
+                  </div>
+                </div>
+                <div class="rbsInfoExtended">
+                  <div class="rbsInfo1">
+                    <div>
+                      <p class="greyText1">
+                        Location
+                      </p>
+                      <input type="text" name="location" value="Mumbai">
+                    </div>
+                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                    <div>
+                      <p class="greyText1">
+                        When
+                      </p>
+                      <input type="date" name="dateTime" id="">
+                    </div>
+                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                    <button>Search Properties</button>
+                  </div>
+                  <div class="rbsInfo2">
+                    <div>
+                      <p class="greyText1">
+                        Location
+                      </p>
+                      <input type="text" name="location" value="Mumbai">
+                    </div>
+                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                    <div>
+                      <p class="greyText1">
+                        When
+                      </p>
+                      <input type="date" name="dateTime" id="">
+                    </div>
+                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                    <button>Search Properties</button>
+                  </div>
+                  <div class="rbsInfo3">
+                    <p>Increase the reach of your property and get higher bids!</p>
+                    <a href="#" target="_blank"><button>List your property <i
+                          class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
+                  </div>
+
+                </div>
+              </div>
 
 
-      </div>
-      <div class="p2">
-        <div class="propertyNumbers">
-          <div>
-            <p class="colorText"><span class="faded">|</span>50k+</p>
-            <p>renters</p>
+
+            </div>
+            <div class="p2">
+              <div class="propertyNumbers">
+                <div>
+                  <p class="colorText"><span class="faded">|</span>50k+</p>
+                  <p>renters</p>
+                </div>
+                <div>
+                  <p class="colorText"><span class="faded">|</span>10k+</p>
+                  <p>properties</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <p class="colorText"><span class="faded">|</span>10k+</p>
-            <p>properties</p>
-          </div>
-        </div>
-      </div>
-    </div>
     </header>
-    
-    
+
+
     <div class="segment2">
       <img src="/images/PW_S2_img.jpg" alt="property image" />
       <div class="segment2Info">
@@ -180,7 +208,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="segment3">
       <div class="s3Info">
         <p class="s2Hero">The modern means of locating a new residence</p>
@@ -205,33 +233,33 @@
       </div>
       <img src="/images/PW_S3_img.webp" alt="s3Image" />
     </div>
-    
-     <div class="recommendations">
+
+    <div class="recommendations">
       <div class="recNav">
         <p class="s2Hero">Based on your location</p>
         <button>Browse more properties</button>
       </div>
-      
+
       <p class="faded recDesc">Some of the chosen properties in your area.</p>
-      
+
       <div class="container">
         <div class="row">
           <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-              
-              <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-              
-              <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-              <div class="col"><%- include('propertyCard',); %></div>
-            </div>
-          </div>
+          <div class="col"><%- include('propertyCard',); %></div>
+          <div class="col"><%- include('propertyCard',); %></div>
+
+          <div class="col"><%- include('propertyCard',); %></div>
+          <div class="col"><%- include('propertyCard',); %></div>
+          <div class="col"><%- include('propertyCard',); %></div>
+
+          <div class="col"><%- include('propertyCard',); %></div>
+          <div class="col"><%- include('propertyCard',); %></div>
+          <div class="col"><%- include('propertyCard',); %></div>
         </div>
-      </div> 
-      
+      </div>
+    </div>
+    </div>
+
 
     <div class="Testimonial">
       <h1>Testimonials</h1>
@@ -247,9 +275,7 @@
     <div class="clientEmail">
       <div>
         <h1 style="color: white">Are you a landllord?</h1>
-        <span class="greyText"
-          >Learn how you can raise the value of your house so that it will sell.</span
-        >
+        <span class="greyText">Learn how you can raise the value of your house so that it will sell.</span>
 
       </div>
       <div class="emailInputFields">
@@ -260,14 +286,12 @@
 
 
 
-    <%- include('footer',); %> 
+    <%- include('footer',); %>
 
-    <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
-    <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
-    ></script>
-    <script src="/js/index.js"></script>
-  </body>
+      <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+      <!-- MDB -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+      <script src="/js/index.js"></script>
+</body>
+
 </html>

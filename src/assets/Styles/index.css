@@ -386,20 +386,166 @@
   color: #abadb8;
 }
 
-
-
 .faded {
   color: #abadb8;
   font-weight: lighter;
 }
 
-
-
-
-
-
-
 .disNone {
   display: none;
 }
 
+
+.rbsTabs{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+ 
+}
+
+.rbsNav{
+  display: flex;
+  padding: 0.5rem 0 0 0;
+  justify-content: space-evenly;
+  border-radius: 15px 15px 0 0;
+  background-color: white;
+  border-bottom: 1px solid #E0DEF7;
+}
+
+.rbsInfoExtended{
+  display: none;
+
+}
+
+.rbsSelected{
+  color: #847bf3;
+  font-weight: bolder;
+  border-bottom: 2px;
+  border-bottom: solid;
+  border-color: #7164f0;
+
+  
+}
+
+.rbsOption{
+  padding: 1rem;
+  font-size: large;
+}
+
+
+
+.rbsRS{
+  padding: 1rem;
+  border-radius: 0 0 15px 15px;
+  display:flex;
+
+  justify-content: space-between;
+}
+
+.rbsInfoMobile{
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+}
+
+.rbsInfoMobile input{
+  padding: 0.5rem;
+  border: 0;
+}
+
+.rbsRS button{
+  padding: 0.7rem 1rem;
+  background-color: #7164f0;
+  color: white;
+  border-radius: 10px;
+  border: 0;
+  font-size: larger;
+}
+
+.rbsSell{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.rbsSell button{
+  padding: 1rem;
+  background-color: #7164f0;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+}
+
+.greyText1{
+  color: #4d5d5e;
+ 
+}
+
+
+.rbsInfo1{
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+  background-color: white;
+  gap: 2rem;
+  border-radius: 0 5px 5px 5px;
+
+}
+
+
+.rbsInfo1 input{
+  /* padding: 0.5rem; */
+  border: 0;
+}
+
+.rbsInfo2 input{
+
+  border: 0;
+}
+
+.rbsInfoExtended button{
+  margin-top: 0.5rem;
+  padding:0.5rem;
+  max-height: 50px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #7164f0;
+  color: white;
+}
+
+.rbsInfo2{
+  display: none;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+  background-color: white;
+  gap: 2rem;
+  border-radius: 0 5px 5px 5px;
+  
+}
+
+.rbsInfo3{
+  display: none;
+  padding: 1.5rem;
+  justify-content: space-evenly;
+  background-color: white;
+  gap: 2rem;
+  border-radius: 0 5px 5px 5px;
+}
+
+
+
+@media screen and (min-width:700px) {
+  
+  .rbsInfoMobile{
+    display: none;
+  }
+
+  .rbsInfoExtended{
+    display: flex;
+
+  }
+
+  .rbsNav{
+    max-width: 15em;
+  }
+}
