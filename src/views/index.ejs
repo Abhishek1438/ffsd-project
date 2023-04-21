@@ -14,13 +14,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
+  <!-- MDB -->  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <%- include('navbar',{user}); %>
-
     <header>
       <div class="HeroBackground">
         <div class="header-part-1">
@@ -29,79 +28,13 @@
             <p class="heroDesc">Look no further than PropertyWala</p>
             <p class="heroDesc">- your gateway to a world of real estate possibilities!</p>
           </div>
-
           <div class="hero-property-card">
-            <%- include('propertyCard',); %>
+            <%- include('propertyCard', {property:propertyArray[0]}); %>
           </div>
+
         </div>
 
         <div class="header-part-2">
-          <!-- <div class="p1"> -->
-            <!-- Tabs navs -->
-            <!-- <div class="hero-nav">
-              <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab"
-                    aria-controls="ex3-tabs-1" aria-selected="true">Rent</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab"
-                    aria-controls="ex3-tabs-2" aria-selected="false">Buy</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab"
-                    aria-controls="ex3-tabs-3" aria-selected="false">Sell</a>
-                </li>
-              </ul> -->
-              <!-- Tabs navs -->
-
-              <!-- Tabs content -->
-              <!-- <div class="tab-content" id="ex2-content">
-          <div
-            class="tab-pane fade show active"
-            id="ex3-tabs-1"
-            role="tabpanel"
-            aria-labelledby="ex3-tab-1"
-          >
-            <div class="rbsInfoL">
-              <div class="input-group">
-                <div class="form-outline">
-                  <input type="search" id="form1" class="form-control" />
-                  <label class="form-label" for="form1">Search</label>
-                </div>
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-            <div class="rbsInfoL">
-              <div class="input-group">
-                <div class="form-outline">
-                  <input type="search" id="form1" class="form-control" />
-                  <label class="form-label" for="form1">Search</label>
-                </div>
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-            <div class="rbsInfoL">
-              <div class="input-group">
-                <div class="form-outline">
-                  <input type="search" id="form1" class="form-control" />
-                  <label class="form-label" for="form1">Search</label>
-                </div>
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div> -->
-
               <div class="rbsTabs">
                 <div class="rbsNav">
                   <div class="rbsOption rbsSelected">Rent</div>
@@ -236,7 +169,6 @@
 
     <div class="recommendations">
       <div class="recNav">
-        <p class="s2Hero">Based on your location</p>
         <button>Browse more properties</button>
       </div>
 
@@ -244,17 +176,13 @@
 
       <div class="container">
         <div class="row">
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
+          <p class="s2Hero">Based on your location</p>
+        <% for(let j = 1; j<10;j++){  %>
+          <div class="col">
+            <%- include('propertyCard',{property:propertyArray[j]}); %>
+          </div>
 
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
-
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
-          <div class="col"><%- include('propertyCard',); %></div>
+        <% } %>
         </div>
       </div>
     </div>

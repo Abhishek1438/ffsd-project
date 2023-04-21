@@ -1,25 +1,25 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
+const path = require('path');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/ffsd');
+const propertyModel = require('../models/property_model');
+
+
+mongoose.connect('mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority');
 const { Schema } = mongoose;
 
-const property = new Schema({
-  name: String,
-  userName: String,
-  type: String,
-  location: String,
-});
 
-const Property = mongoose.model('Property', property);
 
 exports.getAllProperties = async (req, res) => {
   try {
-    const properties = await Property.find({});
-    console.log(properties);
-    res.send(properties);
+    let propertyArray = [];
+    await propertyModel.Property.find({}).then((result) => {
+      propertyArray = result;
+    });
+    // res.send(propertyArray);
+    return (propertyArray);
     //   if (!user) {
     //     return res.render('register', {
     //       msg: 'Email not registered, register first',
@@ -49,24 +49,32 @@ exports.getAllProperties = async (req, res) => {
     res.status(400).json({ error });
   }
 };
-exports.createProperty = async (req, res) => {
-  //check if property already exists or not
+// exports.createProperty = async (req, res) => {
+//   //check if property already exists or not
 
-  const { name, userName, type, location } = req.body;
-  const property = await new Property({
-    name,
-    userName,
-    type,
-    location,
-  }).save();
-  console.log(property);
-  console.log('property added successfully');
-  res.send('Property added successfully');
-  //   return res.render('register', {
-  //     msg: 'User Registration Success, Login now',
-  //     msg_type: 'good',
-  //   });
+//   const { name, userName, type, location } = req.body;
+//   const property = await new Property({
+//     name,
+//     userName,
+//     type,
+//     location,
+//   }).save();
+//   console.log(property);
+//   console.log('property added successfully');
+//   res.send('Property added successfully');
+//   //   return res.render('register', {
+//   //     msg: 'User Registration Success, Login now',
+//   //     msg_type: 'good',
+//   //   });
+// };
+
+
+exports.getPropertyBy_id = async (property_id)=>{
+  let t = await propertyModel.Property.findById(property_id);
+  return t;
+
 };
+
 
 exports.getPropertiesByLocation = async (req, res) => {
   const location = req.params.location;
@@ -81,3 +89,32 @@ exports.getPropertiesByUser = async (req, res) => {
   console.log(properties);
   res.send(properties);
 };
+
+
+exports.insertProperty = async(req,res,property,newImages,user) => {
+  await propertyModel.Property.create({
+    name:property.propertyName,
+    price:property.propertyPrice,
+    location:property.propertyCity,
+    locality:property.propertyLocality,
+    bedsNum:property.bedsNum,
+    bathsNum:property.bathsNum,
+    area:property.propertyArea,
+    purpose:property.propertyPurpose,
+    description:property.propertyDescription,
+    parkingArea:property.propertyParking,
+    propertyType:property.propertyType,
+    propertyImage:newImages,
+    yearBuilt:property.yearBuilt,
+    lotSize:property.lotSize,
+    lister:{
+      name:property.listerName,
+      description:property.listerDescription,
+      relation:property.listerRelation,
+      mobileNumber:property.listerMobileNumber,
+      email:property.listerEmail
+    },
+    user_id:user
+  },);
+};
+

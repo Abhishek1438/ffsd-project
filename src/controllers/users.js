@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/ffsd');
+mongoose.connect('mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority');
 const { Schema } = mongoose;
 
 const users = new Schema({
@@ -102,8 +102,6 @@ exports.register = async (req, res) => {
 };
 
 exports.isLoggedIn = async (req, res, next) => {
-  //req.name = "Check Login....";
-  // console.log(req.cookies);
   if (req.cookies.joes) {
     try {
       const decode = await promisify(jwt.verify)(req.cookies.joes, process.env.JWT_SECRET);

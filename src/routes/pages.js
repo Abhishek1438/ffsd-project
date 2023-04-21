@@ -1,10 +1,54 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
 const userContoller = require('../controllers/users');
+const propertyController = require('../controllers/properties');
+const multer = require('multer');
+const { join } = require('path');
 
-router.get('/', userContoller.isLoggedIn, (req, res) => {
-  // console.log(req.user);
-  res.render('index', { user: req.user });
+router.use(bodyParser.urlencoded({ extended: true }));
+
+const storage = multer.memoryStorage();
+
+const fileFilter = (req, file, cb) => {
+  const allowedFileTypes = ['image/jpeg', 'image/png', 'image/gif'];
+  if (allowedFileTypes.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+});
+
+// const storage_property = multer.diskStorage({
+//   destination: function(req, file, cb) {
+//     cb(null, join(__dirname, "..", "assets", "Uploads", "property-images"));
+//   },
+//   filename: function(req, file, cb) {
+//     cb(null, Date.now() + '-' + file.originalname);
+//   }
+// });
+
+// const storage_blogs = multer.diskStorage({
+//   destination: function(req, file, cb) {
+//     cb(null, __dirname+'/src/assets/Uploads/property-images');
+//   },
+//   filename: function(req, file, cb) {
+//     cb(null, Date.now() + '-' + file.originalname+'propertyImage');
+//   }
+// });
+
+
+// const upload_property = multer({ storage: storage_property }).array('propertyImages');
+
+
+router.get('/', userContoller.isLoggedIn, async (req, res) => {
+  let a = await propertyController.getAllProperties();
+  res.render('index', { user: req.user, propertyArray: a });
 });
 
 router.get('/login', (req, res) => {
@@ -15,9 +59,10 @@ router.get('/register', (req, res) => {
   res.render('register', { msg: null });
 });
 
-router.get('/properties/:type', userContoller.isLoggedIn, (req, res) => {
+router.get('/properties/:type', userContoller.isLoggedIn, async (req, res) => {
   const type = req.params.type;
-  res.render('properties', { property: { type }, user: req.user });
+  let a = await propertyController.getAllProperties();
+  res.render('properties', { property: { type }, user: req.user, propertyArray: a });
 });
 
 router.get('/blogs', userContoller.isLoggedIn, (req, res) => {
@@ -33,8 +78,10 @@ router.get('/my-properties', userContoller.isLoggedIn, (req, res) => {
   res.render('myProperties', { user: req.user });
 });
 
-router.get('/property-details/:id', userContoller.isLoggedIn, (req, res) => {
-  res.render('propertyDetails', { user: req.user });
+router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) => {
+  let property_id = req.params._id;
+  property = await propertyController.getPropertyBy_id(property_id);
+  res.render('propertyDetails', { user: req.user, property });
 });
 
 router.get('/user-profile', userContoller.isLoggedIn, (req, res) => {
@@ -44,6 +91,50 @@ router.get('/user-profile', userContoller.isLoggedIn, (req, res) => {
 router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
   res.render('list-property', { user: req.user });
 });
+
+
+// router.post('/list-property', async (req, res) => {
+
+//   let propertyDetails = req.body;
+//   // await propertyController.insertProperty(req,res,propertyDetails);
+//   console.log(propertyDetails);
+//   console.log(req.files);
+
+//   upload_property(req, res, (err) => {
+//     if (err) {
+//       console.log(err);
+//       // return res.status(500).json({ message: 'Failed to upload images' });
+//     }
+//     console.log(req.files);
+//     // res.status(200).json({ message: 'Images uploaded successfully' });
+//   });
+//   res.send("The property has been successsfully listed!");
+// });
+
+
+router.post('/list-property', upload.array('propertyImages', 5),userContoller.isLoggedIn, async function (req, res){
+  
+    
+
+    // const property = await propertyController.getPropertyBy_id(property_id);
+    // if (!property) {
+    //   return res.status(404).json({ error: 'Property not found' });
+    // }
+    const newImages = req.files.map(file => {
+      return {
+        data: file.buffer,
+        contentType: file.mimetype,
+      };
+    });
+    let propertyDetails = req.body;
+    console.log(propertyDetails);
+    await propertyController.insertProperty(req, res, propertyDetails,newImages,req.user);
+
+
+  res.send("The property has been successsfully listed!");
+
+});
+
 
 router.get('/pricing-plans', userContoller.isLoggedIn, (req, res) => {
   res.render('pricingPlan', { user: req.user });
@@ -80,10 +171,12 @@ router.get('/profile', userContoller.isLoggedIn, (req, res) => {
     res.redirect('/login');
   }
 });
+
+
 router.get('/home', userContoller.isLoggedIn, (req, res) => {
   //console.log(req.name);
   if (req.user) {
-    res.render('index', { user: req.user });
+    res.render('index', { user: req.user, propertyName });
   } else {
     res.redirect('/login');
   }

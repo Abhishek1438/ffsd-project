@@ -104,14 +104,11 @@
 
       <section>
         <div class="property-listings">
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
-          <%- include('propertyCard',); %>
+          <% for(let i = 0 ; i < propertyArray.length; i++ ){ %>
+            <% if(propertyArray[i].purpose == property.type){%>
+          <%- include('propertyCard',{property : propertyArray[i]}); %>
+          <%}%>
+          <% } %>
         </div>
 
       </section>
