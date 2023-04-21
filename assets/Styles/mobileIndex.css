@@ -1,0 +1,253 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  body{
+    overflow-x: hidden;
+  }
+  
+  .mobileNav {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+    gap: 70%;
+  }
+  
+  .mobileNav a {
+    text-decoration: none;
+    color: #2d266a;
+    font-weight: bold;
+  }
+  
+  .closeButton {
+    position: absolute;
+    color: white;
+    background-color: #7064f1;
+    margin-left: 70%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .closeButton i {
+    font-size: x-large;
+  }
+  
+  .navBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 0%;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    font-size: x-large;
+    color: #7064f1;
+    font-weight: bold;
+  }
+  
+  .navBarOpen {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .navItems {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+  }
+  
+  
+  .navBar a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navButton {
+    padding: 2%;
+    padding-left: 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 80%;
+  }
+  
+  .navButton button {
+    padding: 5%;
+    background-color: #7064f1;
+    border-radius: 5px;
+  }
+  
+  .navButton a {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  .navBarOptions {
+    border: 0;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  
+  
+  }
+  
+  .portfolioDropdownOption {
+    display: none;
+    position: absolute;
+    margin-top: 7%;
+    z-index: 1;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 0.5%;
+  }
+  
+  .portfolioDropdownOption a {
+    padding-bottom: 5%;
+  }
+  
+  .navBarOptions:hover .portfolioDropdownOption {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .resourceDropdownOption {
+    display: none;
+    position: absolute;
+    margin-top: 7%;
+    z-index: 1;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 0.5%;
+  }
+  
+  .resourceDropdownOption a {
+    padding-bottom: 5%;
+  }
+  
+  .navBarOptions:hover .resourceDropdownOption {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .navBar .logoName a {
+    color: #7064f1;
+    font-size: xx-large;
+  }
+  
+  
+  .Hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+    
+  }
+  
+  .HeroBackground{
+    background-color: white
+  }
+  
+  .heroText {
+    font-size: 250%;
+    font-family: aktiv-grotesk, sans-serif;
+    font-style: normal;
+    font-weight:  bold;
+  
+  }
+  
+  .heroDesc{
+    padding: 1%;
+    font-family: aktiv-grotesk, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+  .Hero .propertyCard{
+    display: none;
+  }
+  
+  .propertyNumbers{
+    padding: 5%;
+    font-size: 250%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    gap: 10%;
+    color: #7064f1;
+  }
+  
+  .faded{
+    color: #e1def6;
+  }
+  
+  .disNone{
+    display: none;
+  }
+  
+  .rbsNav{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    font-size: larger;
+    width: 90%;
+  }
+  
+  .rbsNavSelector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 3%;
+    width: 90%;
+    box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .rbsInfo1{
+    width: 100%;
+  }
+  
+  .rbsInfoSelected{
+    display: flex ;
+    flex-direction: row;
+    padding-left: 5%;
+    box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+   
+  }
+  
+  .rbsInfoL p{
+    display: none;
+  }
+  
+  .rbsInfoL input{
+    padding: 3%;
+  }
+  
+  .rbsInfoD{
+    display: none;
+  }
+  
+  .rbsSelected{
+    color: #847bf3;
+    font-weight: bold;
+    border-bottom: 2%;
+    border-bottom: solid;
+    border-color: #7164f0;
+    padding: 3%;
+    
+  }
+  

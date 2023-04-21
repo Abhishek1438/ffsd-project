@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="/Styles/propertyCard.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="propertyCard" onclick="()=>{location.href = '/propertyDetail/id';}">
+    <img src="/images/PW_hero_propertyCard_image.jpeg" alt="property image" />
+    <div class="propertyCard_info">
+      <span class="colouredText">₹<%=property.price%></span>
+      <% if(property.purpose=='rent'){ %>
+        <span class="greyText">/month</span>
+        <% }else{%>
+          <span class="greyText">for Sale</span></span>
+          <%}%>
+            <a href="/property-details/<%=property._id%>" style="color: #6a5dfd;">
+              <p class="pcBigText">
+                <%=property.name%>
+              </p>
+            </a>
+            <p class="greyText">
+              <%=property.location%>
+            </p>
+            <div class="propertyCardNav">
+              <span><i class="fa-solid fa-bed"></i> <span class="greyText">
+                  <%=property.bedsNum%>
+                </span></span>
+              <span><span><i class="fa-solid fa-bath"></i><span class="greyText">
+                    <%=property.bathsNum%>
+                  </span></span></span>
+              <span><span><i class="fa-solid fa-chart-area"></i><span class="greyText">
+                    <%=property.area%>m<sup>2</sup></span></span></span>
+            </div>
+    </div>
+  </div>
+</body>
+
+</html>

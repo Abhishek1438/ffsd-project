@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/about-us.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <%- include('navbar',{user}); %>
+
+    <header>
+      <div class="split">
+        <div class="content-container">
+          <h2>
+            Discover Our Passion for Helping You Find Your
+            <span class="coloured-text">Dream Home</span> - Get to Know Us
+          </h2>
+          <br />
+          <p>
+            At PropertyWala, we are committed to finding you the perfect home. Our experienced team
+            provides personalized service and expert guidance to help you make the best investment
+            in your future.
+          </p>
+          <br /><br />
+          <button>View Properties</button>
+          <div class="parent-container">
+            <div class="child-container">
+              <h3>600+</h3>
+              <p>happy property owners</p>
+            </div>
+            <div class="child-container">
+              <h3>5 years+</h3>
+              <p>field experience</p>
+            </div>
+            <div class="child-container">
+              <h3>90 Cr+</h3>
+              <p>property transactions</p>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="/images/PW_aboutUs_meeting_img.png" alt="meeting" />
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="split">
+        <div>
+          <img src="/images/PW_team_img.png" alt="founders image" />
+        </div>
+        <div class="content-container">
+          <h1><span class="coloured-text"> PropertyWala</span> founders</h1>
+          <p>
+            We started this company with a simple goal in mind: to help people find their dream
+            homes. As real estate professionals, we understand how daunting the home buying process
+            can be, which is why we built this platform to make it easier and more enjoyable for
+            you.
+          </p>
+          <p>
+            Our team is dedicated to providing you with personalized service, expert guidance, and
+            the latest technology to help you find the perfect property. We believe that everyone
+            deserves a place they can call home, and we are committed to helping you find yours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <h3>
+        "Let us help you find your <span class="coloured-text">dream home.</span> Our personalized
+        service, expert guidance, and latest technology make home buying easier and enjoyable."
+      </h3>
+    </section>
+
+    <section>
+      <div class="Testimonial">
+        <h1>Testimonials</h1>
+        <p class="greyText">See the opinions of our property managers, landlords, and tenants.</p>
+        <p>
+          "I use PropertyWala practically every day to hunt for a second home, a vacation condo, or
+          just to browse fantasy homes in different regions. Thank you, PropertyWala, for the
+          enjoyable home searching and analysis! "
+        </p>
+        <span>Ram, <span class="greyText">Renter</span></span>
+        <img src="/images/PW_peopleIcons.png" alt="peopleIcons" />
+      </div>
+    </section>
+
+    <div class="flexGrid">
+      <div>
+        <img src="/images/PW_aboutUs_person1.png" alt="person1" />
+        <h4>person1</h4>
+        <p>job1</p>
+      </div>
+      <div>
+        <img src="/images/PW_aboutUs_person2.png" alt="person2" />
+        <h4>person2</h4>
+        <p>job2</p>
+      </div>
+      <div>
+        <img src="/images/PW_aboutUs_person3.png" alt="person3" />
+        <h4>person3</h4>
+        <p>job3</p>
+      </div>
+      <div>
+        <img src="/images/PW_aboutUs_person4.png" alt="person4" />
+        <h4>person4</h4>
+        <p>job4</p>
+      </div>
+      <div>
+        <img src="/images/PW_aboutUs_person5.png" alt="person5" />
+        <h4>person5</h4>
+        <p>job5</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="newsletter">
+        <img src="/images/PW_aboutUS_office.webp" alt="office" />
+        <div class="content-container">
+          <h2>Sign up for our email news letter</h2>
+          <p class="greyText">
+            keep up with the most recent information about the real estate market!
+          </p>
+          <span>
+            <input type="email" name="" id="" />
+            <button>Sign Up</button>
+          </span>
+
+          <div class="contact">
+            <h3>Contact Us:</h3>
+            <div>
+              <span><i class="fa-brands fa-facebook"></i></span>
+              <span><i class="fa-brands fa-twitter"></i></span>
+              <span><i class="fa-brands fa-instagram"></i></span>
+              <span><i class="fa-brands fa-linkedin"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('footer',{user}); %>
+
+    <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+  </body>
+</html>

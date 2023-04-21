@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    height: 100%;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 5px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: none;
+}
+
+body{
+    background-color: #e8e7f8;
+}
+
+.Title{
+    padding: 2rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.parent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.child-container{
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 21.8px 13.4px rgba(0, 0, 0, 0.086), 0 20px 40px rgba(0, 0, 0, 0.12);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 220px;
+    min-height: 25em;
+}
+
+.child-container button{
+    background-color: #1567f0;
+    border: 0;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    max-width: 30em;  
+
+}
+
+.child-container hr{
+    min-height: 1px;
+    background-color: #7164f0;
+    color: #7164f0;
+    
+}
+
+.child-1{
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    color: #656464;
+    
+}
+
+.child-2{
+    padding-top: 1rem;
+    min-height: 8em;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap:1rem;
+}
+
+@media (min-width:800px){
+    .parent-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .child-container button{
+        min-width: 25em;  
+    }
+
+    .Title{
+        padding: 2rem;
+        margin: 2rem;
+        text-align: left;
+    }
+}

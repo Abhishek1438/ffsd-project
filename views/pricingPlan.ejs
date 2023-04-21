@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans and Pricing</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/pricingPlan.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <%- include('navbar',{user}); %>
+
+    <header>
+        <div class="Title">
+            <h1>Our Plans</h1>
+        </div>
+    </header>
+
+    <section>
+         <h2 style="text-align: center;">Buyer's Plans:</h2>
+        <div class="parent-container">
+           
+            <div class="child-container">
+                <div class="child-1">
+                    <h3>Basic</h3>
+                    <h2>₹100</h2>
+                    <button>BUY</button>
+                </div>
+                <hr>
+                <div class="child-2">
+                    <p><i class="fa-solid fa-check"></i></i> Contact access : 5 properties</p>
+                    <p><i class="fa-solid fa-check"></i></i> validity : 1 month</p>
+                </div>
+            </div>
+            <div class="child-container">
+                <div class="child-1">
+                    <h3>Standard</h3>
+                    <h2>₹200</h2>
+                    <button>BUY</button>
+                </div>
+                <hr>
+                <div class="child-2">
+                    <p><i class="fa-solid fa-check"></i></i> Contact access : 10 properties</p>
+                    <p><i class="fa-solid fa-check"></i></i> validity : 2 months</p>
+                </div>
+            </div>
+            <div class="child-container">
+                <div class="child-1">
+                    <h3>Advanced</h3>
+                    <h2>₹1000</h2>
+                    <button>BUY</button>
+                </div>
+                <hr>
+                <div class="child-2">
+                    <p><i class="fa-solid fa-check"></i></i> Contact access : unlimited</p>
+                    <p><i class="fa-solid fa-check"></i></i> validity : 1 year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center;">Owner's Plans:</h2>
+       <div class="parent-container">
+          
+           <div class="child-container">
+               <div class="child-1">
+                   <h3>Basic</h3>
+                   <h2>₹100</h2>
+                   <button>BUY</button>
+               </div>
+               <hr>
+               <div class="child-2">
+                   <p><i class="fa-solid fa-check"></i></i> Listable properties : 5 </p>
+                   <p><i class="fa-solid fa-check"></i></i> validity : 1 month</p>
+               </div>
+           </div>
+           <div class="child-container">
+               <div class="child-1">
+                   <h3>Standard</h3>
+                   <h2>₹200</h2>
+                   <button>BUY</button>
+               </div>
+               <hr>
+               <div class="child-2">
+                   <p><i class="fa-solid fa-check"></i></i> Listable properties : 10 </p>
+                   <p><i class="fa-solid fa-check"></i></i> validity : 2 months</p>
+               </div>
+           </div>
+           <div class="child-container">
+               <div class="child-1">
+                   <h3>Advanced</h3>
+                   <h2>₹1000</h2>
+                   <button>BUY</button>
+               </div>
+               <hr>
+               <div class="child-2">
+                   <p><i class="fa-solid fa-check"></i></i> Listable properties : 100</p>
+                   <p><i class="fa-solid fa-check"></i></i> validity : 1 year</p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <div class="commonFooter">
+    <span>PropertyWala</span>
+    <div class="contactIcons">
+      <span><i class="fa-brands fa-facebook-f"></i></span>
+      <span><i class="fa-brands fa-instagram"></i></span>
+      <span><i class="fa-brands fa-twitter"></i></span>
+      <span><i class="fa-brands fa-linkedin"></i></span>
+    </div>
+  </div>
+</footer>
+   <%- include('footer',{user}); %>
+
+
+    <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
+</body>
+</html>

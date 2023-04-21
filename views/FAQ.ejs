@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs - Property Buying, Selling, and Renting</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/FAQ.css" />
+  </head>
+  <body>
+    <%- include('navbar',{user}); %>
+
+    <div class="container">
+      <h3 class="text-xl mvsm:text-2xl my-4">Frequently asked questions</h3>
+      <div class="w-full">
+        <div id="What is PropertyWala?" class="question">
+          <button
+            onclick="showAnswer(event)"
+            class="question_button"
+            id="headlessui-disclosure-button-:r0:"
+            type="button"
+            aria-expanded="true"
+            aria-controls="headlessui-disclosure-panel-:r1:"
+          >
+            <span>What is PropertyWala?</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="svg rotate"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer hidden" id="headlessui-disclosure-panel-:r1:">
+            PropertyWala is a real estate website where you can buy/sell/rent a residential or
+            commercial property without the hindrance of a broker.
+          </div>
+        </div>
+        <div id="Why PropertyWala?" class="question">
+          <button
+            onclick="showAnswer(event)"
+            class="question_button"
+            id="headlessui-disclosure-button-:r2:"
+            type="button"
+            aria-expanded="true"
+            aria-controls="headlessui-disclosure-panel-:r3:"
+          >
+            <span>Why PropertyWala?</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="svg rotate"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer hidden" id="headlessui-disclosure-panel-:r3:">
+            We realize that finding a property without paying brokerage is not an easy task.
+            PropertyWala came into existence to bridge the gap between the buyers and sellers.
+          </div>
+        </div>
+        <div id="How to post my property?" class="question">
+          <button
+            onclick="showAnswer(event)"
+            class="question_button"
+            id="headlessui-disclosure-button-:r4:"
+            type="button"
+            aria-expanded="true"
+            aria-controls="headlessui-disclosure-panel-:r5:"
+          >
+            <span>How to post my property?</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="svg rotate"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer hidden" id="headlessui-disclosure-panel-:r5:">
+            Posting property with us is really simple Step one: Log in to your account. Step two:
+            Fill in your details. Step three: Add photographs of your property. Step four: Upload
+            your property and it's done.
+          </div>
+        </div>
+        <div id="What are the other ways to post your property?" class="question">
+          <button
+            onclick="showAnswer(event)"
+            class="question_button"
+            id="headlessui-disclosure-button-:r6:"
+            type="button"
+            aria-expanded="true"
+            aria-controls="headlessui-disclosure-panel-:r7:"
+          >
+            <span>What are the other ways to post your property?</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="svg rotate"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer hidden" id="headlessui-disclosure-panel-:r7:">
+            You can even post your property through WhatsApp. Send us the details of your property
+            along with the photos at 8276035390 through Whatsapp. We will post it for you.
+          </div>
+        </div>
+        <div id="In which states do you offer your service?" class="question">
+          <button
+            onclick="showAnswer(event)"
+            class="question_button"
+            id="headlessui-disclosure-button-:r8:"
+            type="button"
+            aria-expanded="true"
+            aria-controls="headlessui-disclosure-panel-:r9:"
+          >
+            <span>In which states do you offer your service?</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="svg rotate"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer hidden" id="headlessui-disclosure-panel-:r9:">
+            We are offering our services within West Bengal at the moment.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('footer',); %>
+
+    <script>
+      function showAnswer(event) {
+        const ans = event.target.parentElement.children[1];
+        const svg = event.target.children[1];
+
+        if (ans.classList.length === 2) {
+          ans.classList.remove('hidden');
+          svg.classList.remove('rotate');
+        } else {
+          ans.classList.add('hidden');
+          svg.classList.add('rotate');
+        }
+      }
+    </script>
+  </body>
+</html>

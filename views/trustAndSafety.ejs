@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trust & Safety</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin: 0 0 20px 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+      }
+
+      ul {
+        margin: 0 0 20px 0;
+        padding: 0 0 0 20px;
+      }
+
+      li {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      footer {
+        background-color: #eee;
+        padding: 20px;
+       
+      }
+
+      footer p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('navbar',{user}); %>
+
+    <main>
+      <section>
+        <h1>Trust & Safety</h1>
+        <p>
+          We understand that buying, selling, or renting a property can be a stressful experience.
+          That's why we prioritize your safety and security when using our website. Here are some of
+          the ways we ensure your trust:
+        </p>
+        <ul>
+          <li>Verification of all user accounts to prevent fraud and scams</li>
+          <li>Secure payment system for all transactions</li>
+          <li>Protection of personal information with strict privacy policies</li>
+          <li>24/7 customer support to assist with any concerns</li>
+        </ul>
+        <p>
+          If you have any questions or concerns about our Trust & Safety policies, please don't
+          hesitate to <a href="contact.html">contact us</a>.
+        </p>
+      </section>
+    </main>
+    
+    <footer>
+      <%- include('footer',{user}); %>
+    </footer>
+  </body>
+</html>

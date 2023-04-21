@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/login.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="loginParentContainer">
+        <div>
+            <div class="loginChildContainer">
+                <div class="icon">
+                 <!-- <DiscordIcon /> -->
+                </div>
+                <div class="welcomeMessage">
+                    <h2>Welcome back!</h2>
+                    <p>We're so excited to see you again!</p>
+                </div>
+                <form action="/auth/login" method='post'>
+                    <label for="email">Email or phone number</label>
+                    <input type="email" name='email' id="email" required ></input>
+                    <label for="password">password</label>
+                    <input type="password" name="password" id="password" required></input>
+                    <p class="forgotPass">
+                        Forgot your password?
+                    </p>
+                    <button type="submit" id="login">Log In</button>
+                    <% if (msg) { %>
+                        <p class="msg"> <%= msg %></p>
+                        <%}%>
+                    <a href="/register">
+                        <p>
+                            Need an account? <span>Register</span>
+                        </p>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+  </body>
+</html>
