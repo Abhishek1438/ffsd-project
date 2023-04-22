@@ -34,9 +34,7 @@
   background-color: transparent;
 }
 
-
-
-.propertyNumbers>p {
+.propertyNumbers > p {
   margin: 0;
 }
 
@@ -238,16 +236,16 @@
   justify-content: row;
 }
 
-.colouredText{
+.colouredText {
   color: #7164f0;
   font-weight: bold;
 }
 
-.greyText{
+.greyText {
   color: grey;
 }
 
-.p2{
+.p2 {
   margin-top: 1rem;
   background-color: transparent;
 }
@@ -261,16 +259,15 @@
     gap: 2rem;
   }
 
-  .header-part-1{
+  .header-part-1 {
     display: flex;
     justify-content: space-between;
   }
 
-  .header-part-2{
+  .header-part-2 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    
   }
 
   .heroDesc {
@@ -345,18 +342,16 @@
     display: block;
   }
 
-  .HeroBackground{
+  .HeroBackground {
     display: flex;
     flex-direction: column;
   }
 
-  .header-part-1{
+  .header-part-1 {
     display: flex;
     justify-content: space-evenly;
   }
 
-  
- 
   .HeroBackground,
   .segment2,
   .segment3,
@@ -376,12 +371,6 @@
   }
 }
 
-
-.pcBigText {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 .greyText {
   color: #abadb8;
 }
@@ -395,64 +384,57 @@
   display: none;
 }
 
-
-.rbsTabs{
+.rbsTabs {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
- 
 }
 
-.rbsNav{
+.rbsNav {
   display: flex;
   padding: 0.5rem 0 0 0;
   justify-content: space-evenly;
   border-radius: 15px 15px 0 0;
   background-color: white;
-  border-bottom: 1px solid #E0DEF7;
+  border-bottom: 1px solid #e0def7;
 }
 
-.rbsInfoExtended{
+.rbsInfoExtended {
   display: none;
-
 }
 
-.rbsSelected{
+.rbsSelected {
   color: #847bf3;
   font-weight: bolder;
   border-bottom: 2px;
   border-bottom: solid;
   border-color: #7164f0;
-
-  
 }
 
-.rbsOption{
+.rbsOption {
   padding: 1rem;
   font-size: large;
 }
 
-
-
-.rbsRS{
+.rbsRS {
   padding: 1rem;
   border-radius: 0 0 15px 15px;
-  display:flex;
+  display: flex;
 
   justify-content: space-between;
 }
 
-.rbsInfoMobile{
+.rbsInfoMobile {
   background-color: white;
   border-radius: 0 0 15px 15px;
 }
 
-.rbsInfoMobile input{
+.rbsInfoMobile input {
   padding: 0.5rem;
   border: 0;
 }
 
-.rbsRS button{
+.rbsRS button {
   padding: 0.7rem 1rem;
   background-color: #7164f0;
   color: white;
@@ -461,14 +443,14 @@
   font-size: larger;
 }
 
-.rbsSell{
+.rbsSell {
   display: none;
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
 }
 
-.rbsSell button{
+.rbsSell button {
   padding: 1rem;
   background-color: #7164f0;
   color: white;
@@ -476,36 +458,31 @@
   border: 0;
 }
 
-.greyText1{
+.greyText1 {
   color: #4d5d5e;
- 
 }
 
-
-.rbsInfo1{
+.rbsInfo1 {
   display: flex;
   padding: 0.5rem;
   justify-content: space-evenly;
   background-color: white;
   gap: 2rem;
   border-radius: 0 5px 5px 5px;
-
 }
 
-
-.rbsInfo1 input{
+.rbsInfo1 input {
   /* padding: 0.5rem; */
   border: 0;
 }
 
-.rbsInfo2 input{
-
+.rbsInfo2 input {
   border: 0;
 }
 
-.rbsInfoExtended button{
+.rbsInfoExtended button {
   margin-top: 0.5rem;
-  padding:0.5rem;
+  padding: 0.5rem;
   max-height: 50px;
   border-radius: 5px;
   border: 0;
@@ -513,17 +490,16 @@
   color: white;
 }
 
-.rbsInfo2{
+.rbsInfo2 {
   display: none;
   padding: 0.5rem;
   justify-content: space-evenly;
   background-color: white;
   gap: 2rem;
   border-radius: 0 5px 5px 5px;
-  
 }
 
-.rbsInfo3{
+.rbsInfo3 {
   display: none;
   padding: 1.5rem;
   justify-content: space-evenly;
@@ -532,20 +508,16 @@
   border-radius: 0 5px 5px 5px;
 }
 
-
-
-@media screen and (min-width:700px) {
-  
-  .rbsInfoMobile{
+@media screen and (min-width: 700px) {
+  .rbsInfoMobile {
     display: none;
   }
 
-  .rbsInfoExtended{
+  .rbsInfoExtended {
     display: flex;
-
   }
 
-  .rbsNav{
+  .rbsNav {
     max-width: 15em;
   }
 }

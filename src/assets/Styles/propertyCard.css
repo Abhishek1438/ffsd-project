@@ -29,15 +29,20 @@
   border-bottom-right-radius: 10px;
 }
 
-.propertyCard_info i{
+.propertyCard_info i {
   color: #7164f0;
 }
 
-.propertyCardNav{
+.propertyCardNav {
   display: flex;
   justify-content: space-evenly;
 }
 
 .container .row {
   gap: 2rem;
+}
+
+.pcBigText {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

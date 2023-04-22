@@ -1,25 +1,22 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
-const path = require('path');
-
 const mongoose = require('mongoose');
 const propertyModel = require('../models/property_model');
 
+// mongoose.connect(
+//   'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
+// );
 
-mongoose.connect('mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority');
+mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
 const { Schema } = mongoose;
 
-
-
-exports.getAllProperties = async (req, res) => {
+exports.getAllProperties = async (req, res, next) => {
   try {
     let propertyArray = [];
     await propertyModel.Property.find({}).then((result) => {
       propertyArray = result;
     });
     // res.send(propertyArray);
-    return (propertyArray);
+    req.properties = propertyArray;
+    return next();
     //   if (!user) {
     //     return res.render('register', {
     //       msg: 'Email not registered, register first',
@@ -49,6 +46,23 @@ exports.getAllProperties = async (req, res) => {
     res.status(400).json({ error });
   }
 };
+
+exports.getAllPropertiesByType = async (type, location) => {
+  let propertyArray = [];
+  if (!location) {
+    await propertyModel.Property.find({ purpose: type }).then((result) => {
+      propertyArray = result;
+    });
+  } else {
+    await propertyModel.Property.find({ purpose: type, $text: { $search: location } }).then(
+      (result) => {
+        propertyArray = result;
+      }
+    );
+  }
+  return propertyArray;
+};
+
 // exports.createProperty = async (req, res) => {
 //   //check if property already exists or not
 
@@ -68,13 +82,10 @@ exports.getAllProperties = async (req, res) => {
 //   //   });
 // };
 
-
-exports.getPropertyBy_id = async (property_id)=>{
+exports.getPropertyBy_id = async (property_id) => {
   let t = await propertyModel.Property.findById(property_id);
   return t;
-
 };
-
 
 exports.getPropertiesByLocation = async (req, res) => {
   const location = req.params.location;
@@ -90,31 +101,29 @@ exports.getPropertiesByUser = async (req, res) => {
   res.send(properties);
 };
 
-
-exports.insertProperty = async(req,res,property,newImages,user) => {
+exports.insertProperty = async (req, res, property, newImages, user) => {
   await propertyModel.Property.create({
-    name:property.propertyName,
-    price:property.propertyPrice,
-    location:property.propertyCity,
-    locality:property.propertyLocality,
-    bedsNum:property.bedsNum,
-    bathsNum:property.bathsNum,
-    area:property.propertyArea,
-    purpose:property.propertyPurpose,
-    description:property.propertyDescription,
-    parkingArea:property.propertyParking,
-    propertyType:property.propertyType,
-    propertyImage:newImages,
-    yearBuilt:property.yearBuilt,
-    lotSize:property.lotSize,
-    lister:{
-      name:property.listerName,
-      description:property.listerDescription,
-      relation:property.listerRelation,
-      mobileNumber:property.listerMobileNumber,
-      email:property.listerEmail
+    name: property.propertyName,
+    price: property.propertyPrice,
+    location: property.propertyCity,
+    locality: property.propertyLocality,
+    bedsNum: property.bedsNum,
+    bathsNum: property.bathsNum,
+    area: property.propertyArea,
+    purpose: property.propertyPurpose,
+    description: property.propertyDescription,
+    parkingArea: property.propertyParking,
+    propertyType: property.propertyType,
+    propertyImage: newImages,
+    yearBuilt: property.yearBuilt,
+    lotSize: property.lotSize,
+    lister: {
+      name: property.listerName,
+      description: property.listerDescription,
+      relation: property.listerRelation,
+      mobileNumber: property.listerMobileNumber,
+      email: property.listerEmail,
     },
-    user_id:user
-  },);
+    user_id: user,
+  });
 };
-
