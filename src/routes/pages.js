@@ -59,7 +59,8 @@ router.get('/register', (req, res) => {
   res.render('register', { msg: null });
 });
 
-router.get('/properties/:type', userContoller.isLoggedIn, async (req, res) => {
+router.get('/properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
+  console.log(req.params.location);
   const type = req.params.type;
   let a = await propertyController.getAllProperties();
   res.render('properties', { property: { type }, user: req.user, propertyArray: a });
