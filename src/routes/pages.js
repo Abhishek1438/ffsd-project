@@ -42,13 +42,10 @@ const upload = multer({
 //   }
 // });
 
-
 // const upload_property = multer({ storage: storage_property }).array('propertyImages');
 
-
-router.get('/', userContoller.isLoggedIn, async (req, res) => {
-  let a = await propertyController.getAllProperties();
-  res.render('index', { user: req.user, propertyArray: a });
+router.get('/', userContoller.isLoggedIn, propertyController.getAllProperties, async (req, res) => {
+  res.render('index', { user: req.user, propertyArray: req.properties });
 });
 
 router.get('/login', (req, res) => {
@@ -59,10 +56,11 @@ router.get('/register', (req, res) => {
   res.render('register', { msg: null });
 });
 
-router.get('/properties/:type', userContoller.isLoggedIn, async (req, res) => {
+router.get('/properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
   const type = req.params.type;
-  let a = await propertyController.getAllProperties();
-  res.render('properties', { property: { type }, user: req.user, propertyArray: a });
+  const location = req.params.location;
+  let properties = await propertyController.getAllPropertiesByType(type, location);
+  res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
 });
 
 router.get('/blogs', userContoller.isLoggedIn, (req, res) => {
@@ -92,7 +90,6 @@ router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
   res.render('list-property', { user: req.user });
 });
 
-
 // router.post('/list-property', async (req, res) => {
 
 //   let propertyDetails = req.body;
@@ -111,30 +108,34 @@ router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
 //   res.send("The property has been successsfully listed!");
 // });
 
-
-router.post('/list-property', upload.array('propertyImages', 5),userContoller.isLoggedIn, async function (req, res){
-  
-    
-
+router.post(
+  '/list-property',
+  userContoller.isLoggedIn,
+  upload.array('propertyImages', 5),
+  userContoller.isLoggedIn,
+  async function (req, res) {
     // const property = await propertyController.getPropertyBy_id(property_id);
     // if (!property) {
     //   return res.status(404).json({ error: 'Property not found' });
     // }
-    const newImages = req.files.map(file => {
-      return {
-        data: file.buffer,
-        contentType: file.mimetype,
-      };
-    });
-    let propertyDetails = req.body;
-    console.log(propertyDetails);
-    await propertyController.insertProperty(req, res, propertyDetails,newImages,req.user);
 
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      const newImages = req.files.map((file) => {
+        return {
+          data: file.buffer,
+          contentType: file.mimetype,
+        };
+      });
+      let propertyDetails = req.body;
+      console.log(propertyDetails);
+      await propertyController.insertProperty(req, res, propertyDetails, newImages, req.user);
 
-  res.send("The property has been successsfully listed!");
-
-});
-
+      res.send('The property has been successsfully listed!');
+    }
+  }
+);
 
 router.get('/pricing-plans', userContoller.isLoggedIn, (req, res) => {
   res.render('pricingPlan', { user: req.user });
@@ -171,7 +172,6 @@ router.get('/profile', userContoller.isLoggedIn, (req, res) => {
     res.redirect('/login');
   }
 });
-
 
 router.get('/home', userContoller.isLoggedIn, (req, res) => {
   //console.log(req.name);

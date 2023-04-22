@@ -52,43 +52,43 @@
                   </div>
                 </div>
                 <div class="rbsInfoExtended">
-                  <div class="rbsInfo1">
-                    <div>
-                      <p class="greyText1">
-                        Location
-                      </p>
-                      <input type="text" name="location" value="Mumbai">
-                    </div>
-                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                    <div>
-                      <p class="greyText1">
-                        When
-                      </p>
-                      <input type="date" name="dateTime" id="">
-                    </div>
-                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                    <button>Search Properties</button>
-                  </div>
-                  <div class="rbsInfo2">
-                    <div>
-                      <p class="greyText1">
-                        Location
-                      </p>
-                      <input type="text" name="location" value="Mumbai">
-                    </div>
-                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                    <div>
-                      <p class="greyText1">
-                        When
-                      </p>
-                      <input type="date" name="dateTime" id="">
-                    </div>
-                    <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                    <button>Search Properties</button>
-                  </div>
+                    <form class="rbsInfo1">
+                      <div>
+                        <p class="greyText1">
+                          Location
+                        </p>
+                        <input id="locationRent" type="text" name="location" value="Mumbai">
+                      </div>
+                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                      <div>
+                        <p class="greyText1">
+                          When
+                        </p>
+                        <input type="date" name="dateTime" id="">
+                      </div>
+                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                      <button type="button" onclick="searchRent()">Search Properties</button>
+                    </form>
+                    <form class="rbsInfo2">
+                      <div>
+                        <p class="greyText1">
+                          Location
+                        </p>
+                        <input id="locationBuy" type="text" name="location" value="Mumbai">
+                      </div>
+                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                      <div>
+                        <p class="greyText1">
+                          When
+                        </p>
+                        <input type="date" name="dateTime">
+                      </div>
+                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                      <button onclick="searchBuy()" type="button">Search Properties</button>
+                    </form>
                   <div class="rbsInfo3">
                     <p>Increase the reach of your property and get higher bids!</p>
-                    <a href="#" target="_blank"><button>List your property <i
+                    <a href="/list-property" "><button>List your property <i
                           class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
                   </div>
 

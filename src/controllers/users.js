@@ -3,13 +3,19 @@ const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority');
+// mongoose.connect(
+//   'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
+// );
+
+mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
 const { Schema } = mongoose;
 
 const users = new Schema({
   name: String,
   email: String,
   password: String,
+  isAdmin: Boolean,
+  isCertified: Boolean,
 });
 
 const User = mongoose.model('User', users);
@@ -92,6 +98,8 @@ exports.register = async (req, res) => {
     name,
     email,
     password: hashedPassword,
+    isAdmin: false,
+    isCertified: false,
   }).save();
   console.log(user);
   console.log('registered');
