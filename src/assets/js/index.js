@@ -50,9 +50,9 @@ document.querySelectorAll('.rbsOption')[0].addEventListener('click', function ()
 
 const searchRent = () => {
   const location = document.getElementById('locationRent').value;
-  window.location.replace(`/properties/rent/${location}`);
+  window.location.replace(`/show-properties/rent/${location}`);
 };
 const searchBuy = () => {
   const location = document.getElementById('locationBuy').value;
-  window.location.replace(`/properties/sale/${location}`);
+  window.location.replace(`/show-properties/sale/${location}`);
 };

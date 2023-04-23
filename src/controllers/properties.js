@@ -48,6 +48,8 @@ exports.getAllProperties = async (req, res, next) => {
 };
 
 exports.getAllPropertiesByType = async (type, location) => {
+  console.log('heelo');
+
   let propertyArray = [];
   if (!location) {
     await propertyModel.Property.find({ purpose: type }).then((result) => {
@@ -96,7 +98,7 @@ exports.getPropertiesByLocation = async (req, res) => {
 
 exports.getPropertiesByUser = async (req, res) => {
   const userId = req.params.id;
-  const properties = await Property.find({ userId });
+  const properties = await propertyModel.Property.find({ user_id: userId });
   console.log(properties);
   res.send(properties);
 };
@@ -124,6 +126,6 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
       mobileNumber: property.listerMobileNumber,
       email: property.listerEmail,
     },
-    user_id: user,
+    user_id: user._id,
   });
 };

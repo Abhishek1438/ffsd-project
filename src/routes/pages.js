@@ -5,6 +5,8 @@ const userContoller = require('../controllers/users');
 const propertyController = require('../controllers/properties');
 const multer = require('multer');
 const { join } = require('path');
+const propertyModel = require('../models/property_model');
+const userModel = require('../models/user_model');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -56,7 +58,7 @@ router.get('/register', (req, res) => {
   res.render('register', { msg: null });
 });
 
-router.get('/properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
+router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
   const type = req.params.type;
   const location = req.params.location;
   let properties = await propertyController.getAllPropertiesByType(type, location);
@@ -79,11 +81,15 @@ router.get('/my-properties', userContoller.isLoggedIn, (req, res) => {
 router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) => {
   let property_id = req.params._id;
   property = await propertyController.getPropertyBy_id(property_id);
-  res.render('propertyDetails', { user: req.user, property });
-});
+  let favButton = 'Favourite';
+  const wishlistPropertiesId = await userModel.User.findById(req.user.id).then(
+    (user) => user.wishlist
+  );
+  if (wishlistPropertiesId.includes(property_id)) {
+    favButton = 'Remove from Favourite';
+  }
 
-router.get('/user-profile', userContoller.isLoggedIn, (req, res) => {
-  res.render('userProfile', { user: req.user });
+  res.render('propertyDetails', { user: req.user, property, favButton });
 });
 
 router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
@@ -165,18 +171,14 @@ router.get('/help', userContoller.isLoggedIn, (req, res) => {
   res.render('help', { user: req.user });
 });
 
-router.get('/profile', userContoller.isLoggedIn, (req, res) => {
-  if (req.user) {
-    res.render('profile', { user: req.user });
-  } else {
-    res.redirect('/login');
-  }
-});
+router.get('/profile', userContoller.isLoggedIn, async (req, res) => {
+  const userId = req.user._id;
+  const properties = await propertyModel.Property.find({ user_id: userId });
+  const wishlistPropertiesId = await userModel.User.findById(userId).then((user) => user.wishlist);
+  const wishlistProperties = await propertyModel.Property.find({ _id: { $in: req.user.wishlist } });
 
-router.get('/home', userContoller.isLoggedIn, (req, res) => {
-  //console.log(req.name);
   if (req.user) {
-    res.render('index', { user: req.user, propertyName });
+    res.render('profile', { user: req.user, myProperties: properties, wishlistProperties });
   } else {
     res.redirect('/login');
   }

@@ -147,7 +147,7 @@ span.circle {
   cursor: pointer;
 }
 
-.navlinks li:first-child {
+.navlinks .selected {
   opacity: 1;
   font-weight: bold;
 }
@@ -262,6 +262,10 @@ span.circle {
 .number .info svg {
   height: 15px;
   width: 15px;
+}
+
+.display_none {
+  display: none;
 }
 
 @media (max-width: 1381px) {

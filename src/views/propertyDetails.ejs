@@ -32,7 +32,7 @@
       </div>
       <div class="buttons">
         <button>Share</button>
-        <button>Favourite</button>
+        <button onclick="favourite()" id="favouriteButton"><%=favButton%></button>
         <button id="browse-button">Browse nearby listings</button>
       </div>
     </div>
@@ -281,5 +281,22 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
     ></script>
+    <script type="text/javascript">
+      var propertyId = '<%=property._id%>';
+      const favourite = () => {
+        fetch(`/wishlist/${propertyId}`, {
+          method: 'POST',
+        }).then((res) => {
+          console.log(res);
+        });
+        const favButton = document.getElementById('favouriteButton');;
+        if(favButton.innerText === "Favourite"){
+          favButton.innerText = "Remove from Favourite";
+        } else {
+          favButton.innerText = "Favourite";
+        }
+      };
+    </script>
+
   </body>
 </html>

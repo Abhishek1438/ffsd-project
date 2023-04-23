@@ -15,8 +15,8 @@
       </div>
       <p class="logoName"><a href="/">PropertyWala</a></p>
       <div class="navItems">
-        <p><a href="/properties/rent">Rent</a></p>
-        <p><a href="/properties/sale">Buy</a></p>
+        <p><a href="/show-properties/rent">Rent</a></p>
+        <p><a href="/show-properties/sale">Buy</a></p>
         <p><a href="/list-property">Sell</a></p>
 
         <div name="portfolioDropdown" id="" class="navbarOptions">
@@ -40,7 +40,7 @@
 
       <% if(user){ %>
       <div class="user-profile">
-      <a href="/profile" style="text-decoration: none;"><p class="icon"><%= user.name[0] %></p></a>
+        <a href="/profile" style="text-decoration: none"><p class="icon"><%= user.name[0] %></p></a>
         <p><%= user.name %></p>
         <a href="/auth/logout"><button class="navSignup">Logout</button></a>
       </div>

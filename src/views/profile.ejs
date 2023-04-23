@@ -46,14 +46,14 @@
         <hr class="border" />
         <nav>
           <ul class="navlinks">
-            <li class="link__item">Home</li>
-            <li class="link__item"><a href="/my-properties">Properties</a></li>
-            <li class="link__item">About</li>
-            <li class="link__item">Wishlist</li>
-            <li class="link__item">Contact</li>
+            <li class="link__item selected" onclick="changeData(0)">Home</li>
+            <li class="link__item" onclick="changeData(1)">Properties</li>
+            <li class="link__item" onclick="changeData(2)">Wishlist</li>
+            <li class="link__item" onclick="changeData(3)">Contact</li>
           </ul>
         </nav>
-        <div class="card__insights">
+
+        <div id="option1Data" class="card__insights">
           <div class="card__heading">
             <div class="heading">Insights</div>
             <div class="date">
@@ -194,7 +194,33 @@
             </div>
           </div>
         </div>
+
+        <div id="option2Data" class="display_none">
+          <section>
+            <div class="property-listings">
+              <% for(let i = 0 ; i < myProperties.length; i++ ){ %> <%-
+              include('propertyCard',{property : myProperties[i]}); %> <% } %>
+            </div>
+          </section>
+        </div>
+        <div id="option3Data" class="display_none">
+          <section>
+            <div class="property-listings">
+              <% for(let i = 0 ; i < wishlistProperties.length; i++ ){ %> <%-
+              include('propertyCard',{property : wishlistProperties[i]}); %> <% } %>
+            </div>
+          </section>
+        </div>
+        <div id="option4Data" class="display_none">
+          <section>
+            <h2><%= user.name %></h2>
+            <div class="card__handle">
+              <span class="handle"><%= user.email %></span>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
+    <script src="/js/profile.js"></script>
   </body>
 </html>

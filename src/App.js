@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const doenv = require('dotenv');
 const cookieParser = require('cookie-parser');
+const userController = require('./controllers/users');
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
@@ -37,6 +38,7 @@ app.set('view engine', 'ejs');
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/properties', require('./routes/propertiesRoute'));
+app.post('/wishlist/:propertyId', userController.isLoggedIn, userController.wishlist);
 // app.use('/property', require('./routes/property'));
 
 app.listen(3000, () => {

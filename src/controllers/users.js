@@ -3,22 +3,13 @@ const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
 const mongoose = require('mongoose');
+const userModel = require('../models/user_model');
+
 // mongoose.connect(
 //   'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
 // );
 
 mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
-const { Schema } = mongoose;
-
-const users = new Schema({
-  name: String,
-  email: String,
-  password: String,
-  isAdmin: Boolean,
-  isCertified: Boolean,
-});
-
-const User = mongoose.model('User', users);
 
 exports.login = async (req, res) => {
   try {
@@ -31,7 +22,7 @@ exports.login = async (req, res) => {
     }
 
     // check if the user exists
-    const user = await User.findOne({ email: email });
+    const user = await userModel.User.findOne({ email: email });
     if (!user) {
       return res.render('register', {
         msg: 'Email not registered, register first',
@@ -81,7 +72,7 @@ exports.register = async (req, res) => {
   }
   try {
     // check if the user exists
-    const user = await User.findOne({ email: email });
+    const user = await userModel.User.findOne({ email: email });
     if (user) {
       return res.render('register', {
         msg: 'Email id already Taken',
@@ -94,17 +85,18 @@ exports.register = async (req, res) => {
 
   let hashedPassword = await bcrypt.hash(password, 8);
 
-  const user = await new User({
+  const user = await new userModel.User({
     name,
     email,
     password: hashedPassword,
     isAdmin: false,
     isCertified: false,
+    wishlist: [],
   }).save();
   console.log(user);
   console.log('registered');
   return res.render('register', {
-    msg: 'User Registration Success, Login now',
+    msg: 'userModel.User Registration Success, Login now',
     msg_type: 'good',
   });
 };
@@ -113,8 +105,7 @@ exports.isLoggedIn = async (req, res, next) => {
   if (req.cookies.joes) {
     try {
       const decode = await promisify(jwt.verify)(req.cookies.joes, process.env.JWT_SECRET);
-      console.log(decode);
-      const user = await User.findOne({ _id: decode.id });
+      const user = await userModel.User.findOne({ _id: decode.id });
       if (!user) {
         return next();
       }
@@ -135,4 +126,23 @@ exports.logout = async (req, res) => {
     httpOnly: true,
   });
   res.status(200).redirect('/');
+};
+
+exports.wishlist = async (req, res) => {
+  const userId = req.user.id;
+  const propertyId = req.params.propertyId;
+  const wishlist = req.user.wishlist;
+  if (wishlist.includes(propertyId)) {
+    userModel.User.findById(userId).then((user) => {
+      const index = user.wishlist.indexOf(propertyId);
+      user.wishlist.splice(index, 1);
+      user.save();
+    });
+  } else {
+    userModel.User.findById(userId).then((user) => {
+      user.wishlist.push(propertyId);
+      user.save();
+    });
+  }
+  res.end();
 };

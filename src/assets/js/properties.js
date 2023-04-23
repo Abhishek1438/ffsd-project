@@ -13,6 +13,5 @@
 const searchProperties = () => {
   const type = window.location.pathname.split('/')[2];
   const location = document.getElementById('searchLocation').value;
-  window.location.replace(`/properties/${type}/${location}`);
+  window.location.replace(`/show-properties/${type}/${location}`);
 };
-console.log('helelo');
