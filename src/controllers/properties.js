@@ -48,8 +48,6 @@ exports.getAllProperties = async (req, res, next) => {
 };
 
 exports.getAllPropertiesByType = async (type, location) => {
-  console.log('heelo');
-
   let propertyArray = [];
   if (!location) {
     await propertyModel.Property.find({ purpose: type }).then((result) => {
@@ -128,4 +126,9 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
     },
     user_id: user.user_id,
   });
+};
+
+exports.removeProperty = async (req, res) => {
+  const propertyId = req.params.id;
+  propertyModel.Property.deleteOne({ _id: propertyId }).then(() => console.log('deleted'));
 };

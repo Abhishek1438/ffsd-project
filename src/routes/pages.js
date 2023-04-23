@@ -8,6 +8,7 @@ const multer = require('multer');
 const { join } = require('path');
 const propertyModel = require('../models/property_model');
 const userModel = require('../models/user_model');
+const blogModel = require('../models/blog_model');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -217,10 +218,12 @@ router.get('/profile', userContoller.isLoggedIn, async (req, res) => {
 
 router.get('/admin-control', userContoller.isLoggedIn, async (req, res) => {
   const users = await userModel.User.find({ _id: { $ne: req.user._id } });
+
   const properties = await propertyModel.Property.find({});
-  console.log(users);
-  // console.log(properties);
-  res.render('adminControl', { user: req.user, users, properties });
+
+  const blogs = await blogModel.Blog.find({});
+  console.log(blogs);
+  res.render('adminControl', { user: req.user, users, properties, blogs });
 });
 
 module.exports = router;

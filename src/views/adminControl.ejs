@@ -28,7 +28,7 @@
             <li class="link__item selected" onclick="changeData(0)">Home</li>
             <li class="link__item" onclick="changeData(1)">Properties</li>
             <li class="link__item" onclick="changeData(2)">Users</li>
-            <li class="link__item" onclick="changeData(3)">Edit</li>
+            <li class="link__item" onclick="changeData(3)">Blogs</li>
           </ul>
         </nav>
     
@@ -44,7 +44,7 @@
         <div id="option1Data" class="display_none">
           <section>
             <% for(let j = 0; j<properties.length;j++){ %>
-            <div class="col"><%- include('propertyCard',{property:properties[j]}); %></div>
+            <div style="margin:1rem 0;"><%- include('adminControlPropertyCard',{property:properties[j]}); %></div>
             <% } %>
           </section>
         </div>
@@ -52,17 +52,16 @@
         <div id="option2Data" class="display_none">
             <section>
                 <% for(let j = 0; j<users.length;j++){ %>
-                <div class="col"><%- include('userCard',{user:users[j]}); %></div>
+                <div style="margin:1rem 0;"><%- include('userCard',{user:users[j]}); %></div>
                 <% } %>
             </section>
         </div>
     
         <div id="option3Data" class="display_none">
           <section>
-            <h2><%= user.name %></h2>
-            <div class="card__handle">
-              <span class="handle"><%= user.email %></span>
-            </div>
+            <% for(let j = 0; j<blogs.length;j++){ %>
+              <div style="margin:1rem 0;"><%- include('blogCard',{blog:blogs[j]}); %></div>
+              <% } %>
           </section>
         </div>
     </main>

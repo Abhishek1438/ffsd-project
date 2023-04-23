@@ -16,6 +16,7 @@
         align-items: center;
         border-radius: 0.5rem;
         justify-content: space-between;
+        gap: 1rem;
       }
 
       .userCardChild {
@@ -72,22 +73,25 @@
       </div>
       <div class="userCardButtons">
         <% if(user.isCertified){ %>
-        <button onclick="certified()" id="certified">Remove Certified</button>
+        <button onclick="certified('<%=user._id%>')" id="certified<%=user._id%>">
+          Remove Certified
+        </button>
         <% } else{ %>
-        <button onclick="certified()" id="certified">Make Certified</button>
+        <button onclick="certified('<%=user._id%>')" id="certified<%=user._id%>">
+          Make Certified
+        </button>
         <% } %> <% if(user.isAdmin){ %>
-        <button onclick="admin()" id="admin">Remove Admin</button>
+        <button onclick="admin('<%=user._id%>')" id="admin<%=user._id%>">Remove Admin</button>
         <% } else{ %>
-        <button onclick="admin()" id="admin">Make Admin</button>
+        <button onclick="admin('<%=user._id%>')" id="admin<%=user._id%>">Make Admin</button>
         <% } %>
       </div>
     </div>
   </body>
 
   <script>
-    var userId = '<%=user._id%>';
-    function certified() {
-      const certifiedButton = document.querySelector('#certified');
+    function certified(userId) {
+      const certifiedButton = document.querySelector(`#certified${userId}`);
       if (certifiedButton.innerText === 'Make Certified') {
         fetch(`/certified/${userId}/true`, {
           method: 'POST',
@@ -104,8 +108,8 @@
         certifiedButton.innerText = 'Make Certified';
       }
     }
-    function admin() {
-      const adminButton = document.querySelector('#admin');
+    function admin(userId) {
+      const adminButton = document.querySelector(`#admin${userId}`);
       if (adminButton.innerText === 'Make Admin') {
         fetch(`/admin/${userId}/true`, {
           method: 'POST',
