@@ -126,6 +126,6 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
       mobileNumber: property.listerMobileNumber,
       email: property.listerEmail,
     },
-    user_id: user._id,
+    user_id: user.user_id,
   });
 };

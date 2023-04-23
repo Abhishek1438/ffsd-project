@@ -36,6 +36,9 @@
         </div>
         <a href="/about-us">About Us</a>
         <a href="/pricing-plans">Premium</a>
+        <% if(user && user.isCertified){ %>
+        <a href="/compose-blog">Compose</a>
+        <% } %>
       </div>
 
       <% if(user){ %>

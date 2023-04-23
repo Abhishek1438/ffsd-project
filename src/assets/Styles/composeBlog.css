@@ -1,0 +1,51 @@
+.blog-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.blogContent{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+h1{
+    padding: 1.5rem;
+    margin-left: 2rem;
+    padding-bottom: 0;
+}
+
+.blogCTitle{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    gap:1.5rem;
+}
+
+.blog-form input{
+    border: 0;
+    border-bottom: 2px solid #7164f0;
+    max-width: 20em;
+    padding: 0.5rem;
+    outline-color: transparent;
+}
+
+.blog-form button{
+    padding: 0.6rem;
+    color: white;
+    background-color: #7164f0;
+    border: 0;
+    border-radius: 5px;
+    max-width: 20em;
+    margin-left: 2rem;
+}
+
+.blog-form input[type=file]::file-selector-button{
+    background-color: #7164f0;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    padding: 0.3rem;
+}

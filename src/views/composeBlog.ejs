@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/composeBlog.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.2.6/css/froala_editor.pkgd.min.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/froala-editor@3.2.6/js/froala_editor.pkgd.min.js"></script>
+</head>
+
+<body>
+    <%- include('navbar',user) %>
+        <h1>Compose your Blog</h1>
+        <form action="/post-blog" method="post" enctype="multipart/form-data">
+            <div class="blog-form">
+                <div class="blogCTitle">
+                    <input type="text" name="blogTitle" id="" placeholder="Enter your blog title" required>
+                    <label for="image">Blog Cover Image</label>
+                    <input type="file" name="blogImage" required/>
+                </div>
+                <div class="blogContent">
+                    <textarea name="blogContent" id="froala" cols="300" rows="100" required >
+                    </textarea>
+                </div>
+                <button id="BfButton" type="submit">Post</button>
+            </div>
+            
+        </form>
+
+        <%- include('footer') %>
+            
+</body>
+<script>
+    var editor = new FroalaEditor('#froala', {
+        toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'color', 'emoticons', 'insertLink', 'insertTable', 'undo', 'redo', 'fullscreen', 'fontSize'],
+        pluginsEnabled: ['image', 'link', 'table', 'colors', 'emoticons', 'fontSize'],
+        heightMin: 200,
+        heightMax: 300,
+        placeholderText:'Compose your Blog',
+        fontSize: {
+          selection: true,
+          defaultSelection: '20',
+          options: ['8', '10', '12', '14', '16', '18', '20', '24', '30']
+        }
+      });
+</script>
+
+</html>

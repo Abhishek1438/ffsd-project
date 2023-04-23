@@ -12,9 +12,10 @@
     <%- include('navbar',{user}); %>
 
     <header>
-      <h1>The Importance of Power of Attorney</h1>
+      <h1><%=blog.title%></h1>
       <div>
-        <p>By <span>Person1</span> . <span class="greyText">Last Updated</span> 5th March,2023</p>
+
+        <p>By <span><%=blog.blogAuthor%></span> . <span class="greyText">Last Updated </span><%=blog.date%></p>
       </div>
       <div>
         <i class="fa-brands fa-linkedin"></i>
@@ -24,7 +25,7 @@
     </header>
 
     <div class="image1">
-      <img src="/images/PW_blogs_image2.jpg" alt="img2" />
+      <img src="data:<%= blog.blogImage.contentType %>;base64,<%= blog.blogImage.data.toString('base64') %>" alt="img2" />
     </div>
 
     <section>
@@ -41,149 +42,13 @@
 
     <section>
       <div class="Info">
-        <p>
-          When it comes to important legal documents, a power of attorney often comes up. A power of
-          attorney is a legal document that allows one person (the principal) to authorize another
-          person (the agent or attorney-in-fact) to act on their behalf in legal or financial
-          matters. This can be useful in several situations, such as if the principal is unavailable
-          or unable to make decisions themselves. This blog will take a closer look at the power of
-          attorney and its various types.
-        </p>
-        <h1>The Basics of Power of Attorney</h1>
-        <p>
-          A power of attorney is a legal document that gives someone else the power to act on your
-          behalf in certain situations. This can include making decisions about your finances,
-          property, and medical care. The person who creates the power of attorney is known as the
-          "principal," while the person who is given the power to act on their behalf is known as
-          the "agent" or "attorney-in-fact."
-        </p>
-        <p>
-          A power of attorney can be created for a specific purpose, such as selling a house or
-          managing a bank account. Alternatively, it can be created to give the agent broad
-          authority to act on the principal's behalf in a variety of situations. A power of attorney
-          can be set up to take effect immediately, or it can be set up to take effect only if the
-          principal becomes incapacitated or otherwise unable to make decisions for themselves.
-        </p>
-
-        <h2>The Different Types of Power of Attorney</h2>
-        <p>
-          There are several different types of power of attorney, each with its own specific
-          purposes and limitations. Here are some of the most common types of power of attorney:
-        </p>
-
-        <ul>
-          <li>General Power of Attorney</li>
-          <p>
-            A general power of attorney is a document that gives the agent broad authority to act on
-            the principal's behalf in a variety of situations. This can include things like managing
-            bank accounts, signing contracts, and making financial decisions. A general power of
-            attorney can be useful in situations where the principal is unavailable or unable to
-            make decisions for themselves, such as if they are traveling or if they become
-            incapacitated.
-          </p>
-
-          <li>Limited Power of Attorney</li>
-          <p>
-            A limited power of attorney is a document that gives the agent specific authority to act
-            on the principal's behalf in certain situations. For example, a limited power of
-            attorney might give the agent the authority to sell a piece of property or to make
-            medical decisions for the principal. This type of power of attorney can be useful in
-            situations where the principal wants to give someone else the authority to handle a
-            specific task or set of tasks, but doesn't want to give them broad authority to act on
-            their behalf.
-          </p>
-
-          <li>Durable Power of Attorney</li>
-          <li>
-            It is a type of power of attorney that remains in effect even if the principal becomes
-            incapacitated or unable to make decisions on their own. This can be important in
-            situations where the principal wants to ensure that someone else can make decisions on
-            their behalf in the event that they become incapacitated. A durable power of attorney
-            can be either general or limited in scope.
-          </li>
-
-          <li>Springing Power of Attorney</li>
-          <p>
-            Power of attorney that takes effect only if certain conditions are met is called
-            springing power of attorney. For example, a springing power of attorney might only take
-            effect if the principal becomes incapacitated or if they are out of the country. This
-            type of power of attorney can be helpful in situations where the principal wants to
-            ensure that someone else can make decisions on their behalf, but only if certain
-            conditions are met.
-          </p>
-
-          <li>Healthcare Power of Attorney</li>
-          <p>
-            A healthcare power of attorney gives the agent the authority to make healthcare
-            decisions on the principal's behalf. This can include decisions about medical treatment,
-            end-of-life care, and other healthcare-related issues. A healthcare power of attorney
-            can be useful in situations where the principal is unable to make healthcare decisions
-            for themselves, such as when they are unconscious or otherwise unable to communicate. It
-            is important to note that a healthcare power of attorney is not the same as a living
-            will, which is a document that outlines the principal's wishes for medical treatment in
-            the event that they are unable to communicate.
-          </p>
-
-          <li>Financial Power of Attorney</li>
-          <p>
-            In a financial power of attorney, the agent is authorized to make financial decisions on
-            behalf of the principal. This can include managing bank accounts, paying bills, and
-            making investments. A financial power of attorney can be useful in situations where the
-            principal is unable to make financial decisions for themselves, such as if they are
-            incapacitated or out of the country.
-          </p>
-        </ul>
-
-        <h2>The Importance of a Power of Attorney</h2>
-        <p>
-          Having a power of attorney can be incredibly important in a number of situations. For
-          example, if the principal becomes incapacitated or is otherwise unable to make decisions
-          for themselves, a power of attorney can ensure that someone else is able to make decisions
-          on their behalf. This can be particularly important in situations where the principal's
-          health is at risk or where time is of the essence.
-        </p>
-        <p>
-          A power of attorney can also be useful in situations where the principal is unavailable,
-          such as if they are traveling or living abroad. In these situations, a power of attorney
-          can ensure that someone else is able to handle their financial affairs or make decisions
-          on their behalf.
-        </p>
-        <p>
-          In addition to its practical uses, a power of attorney can also provide peace of mind.
-          Knowing that someone else is able to make decisions on your behalf can be comforting,
-          particularly if you are facing a challenging situation such as a serious illness or
-          injury.
-        </p>
-
-        <h2>Choosing an Agent</h2>
-        <p>
-          When creating a power of attorney, it is important to choose the right person to act as
-          your agent. Your agent should be someone you trust, as they will have the authority to
-          make important decisions on your behalf. They should also be someone who is responsible
-          and capable of handling the tasks that they will be given.
-        </p>
-        <p>
-          It is also essential to discuss a power of attorney with your agent ahead of time. This
-          can ensure that they understand their responsibilities and that they are prepared to act
-          on your behalf if necessary. You may also want to discuss your wishes and preferences with
-          your agent, particularly if you are creating a healthcare power of attorney.
-        </p>
-        <p>
-          A power of attorney is a powerful legal document that can provide peace of mind and ensure
-          that your affairs are managed properly in a variety of situations. There are several
-          different types of power of attorney, each with its own specific purposes and limitations.
-          When creating a power of attorney, it is important to choose the right person to act as
-          your agent and to discuss the document with them ahead of time. Whether you are creating a
-          power of attorney for yourself or for a loved one, it is a valuable tool that can help
-          ensure that your wishes are respected and your affairs are managed properly.
-        </p>
+        <%-blog.content%>
       </div>
 
       <div class="authorDetails">
         <img src="/images/PW_aboutUs_person2.png" alt="p2" />
         <div>
-          <span>Person 2</span>
-          <span>Job2</span>
+          <span><%=blog.blogAuthor%></span>
         </div>
       </div>
     </section>

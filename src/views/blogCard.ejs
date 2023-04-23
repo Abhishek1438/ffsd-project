@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogCard</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/blogCard.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="blogCard">
+        <a href="/blog/<%=blog._id%>">
+      <img src="data:<%= blog.blogImage.contentType %>;base64,<%= blog.blogImage.data.toString('base64') %>" alt="img2" />
+      </a>
+        <div class="blogCardTitle">
+          <h3><%=blog.title%></h3>
+          <span><%=blog.date%></span>
+        </div>
+      </div>
+</body>
+</html>

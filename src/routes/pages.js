@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const userContoller = require('../controllers/users');
 const propertyController = require('../controllers/properties');
+const blogController = require('../controllers/blogs');
 const multer = require('multer');
 const { join } = require('path');
 const propertyModel = require('../models/property_model');
@@ -25,6 +26,9 @@ const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
 });
+
+const blog_upload = multer({ storage });
+
 
 // const storage_property = multer.diskStorage({
 //   destination: function(req, file, cb) {
@@ -65,13 +69,15 @@ router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async 
   res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
 });
 
-router.get('/blogs', userContoller.isLoggedIn, (req, res) => {
-  res.render('blogs', { user: req.user });
+router.get('/blogs', userContoller.isLoggedIn,blogController.getAllBlogs, (req, res) => {
+  let blogArray = req.blogs;
+  res.render('blogs', { user: req.user , blogArray});
 });
 
-router.get('/blog/:id', userContoller.isLoggedIn, (req, res) => {
+router.get('/blog/:id', userContoller.isLoggedIn, async (req, res) => {
   const id = req.params.id;
-  res.render('blogDetails', { blog: { id }, user: req.user });
+  let blog = await blogController.getBlogBy_id(id);
+  res.render('blogDetails', { blog: blog, user: req.user });
 });
 
 router.get('/my-properties', userContoller.isLoggedIn, (req, res) => {
@@ -95,6 +101,8 @@ router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) 
 router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
   res.render('list-property', { user: req.user });
 });
+
+
 
 // router.post('/list-property', async (req, res) => {
 
@@ -142,6 +150,33 @@ router.post(
     }
   }
 );
+
+router.get('/compose-blog',userContoller.isLoggedIn,(req,res)=>{
+  res.render('composeBlog',{user:req.user});
+});
+
+router.post(
+  '/post-blog',
+  userContoller.isLoggedIn,
+  blog_upload.single('blogImage'),
+  async function (req, res) {
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      const newBlogImage = {
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
+      };
+      let blogDetails = req.body;
+      console.log(blogDetails);
+      console.log(req.file);
+      await blogController.insertBlog(req, res, blogDetails, newBlogImage, req.user);
+
+      res.send("Your blog has been successfully posted!");
+    }
+  }
+);
+
 
 router.get('/pricing-plans', userContoller.isLoggedIn, (req, res) => {
   res.render('pricingPlan', { user: req.user });

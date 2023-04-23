@@ -41,93 +41,9 @@
     <section>
       <h2 class="underline">Our current developments.</h2>
       <div class="flexGrid">
-        <div>
-          <img src="/images/PW_blogs_image1.jpg" alt="blogImage1" />
-          <div>
-            <h3>How to pay BMC property tax?</h3>
-            <span>February 22nd, 2023</span>
-          </div>
-        </div>
-        <div>
-          <a href="/blog/2"><img src="/images/PW_blogs_image2.jpg" alt="blogImage2" /></a>
-          <div>
-            <h3>The Importance of Power of Attorney</h3>
-            <span>February 21st, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image3.jpg" alt="blogImage3" />
-          <div>
-            <h3>How the Delhi-Mumbai Expressway will upgrade India's Real Estate sector?</h3>
-            <span>February 21st, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image4.jpg" alt="blogImage4" />
-          <div>
-            <h3>Embassy REIT raises Rs. 1000 crores debt from Bajaj Housing Finance</h3>
-            <span>May 25th, 2022</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image5.jpg" alt="blogImage5" />
-          <div>
-            <h3>
-              Godrej Properties Ltd. acquires Raj Kapoor's bungalow in Mumbai, to develop premium
-              residential project
-            </h3>
-            <span>February 18th, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image6.jpg" alt="blogImage6" />
-          <div>
-            <h3>How WeWork India built its success story?</h3>
-            <span>February 8th, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image7.jpg" alt="blogImage7" />
-          <div>
-            <h3>Best Residential areas in Mumbai</h3>
-            <span>February 7th, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image8.jpg" alt="blogImage8" />
-          <div>
-            <h3>Circle rate in Delhi in 2022</h3>
-            <span>February 7th, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image9.jpg" alt="blogImage9" />
-          <div>
-            <h3>The Importance of Land Survey Number</h3>
-            <span>February 3rd, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image10.jpg" alt="blogImage10" />
-          <div>
-            <h3>Everything you need to know about the Mumbai Coastal Road Project</h3>
-            <span>February 3rd, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image11.jpg" alt="blogImage11" />
-          <div>
-            <h3>Budget 2023- What's in it for Real Estate sector?</h3>
-            <span>February 2nd, 2023</span>
-          </div>
-        </div>
-        <div>
-          <img src="/images/PW_blogs_image12.jpg" alt="blogImage12" />
-          <div>
-            <h3>Why is paying for a view in Mumbai not worth it?</h3>
-            <span>January 28th, 2023</span>
-          </div>
-        </div>
+        <% for(let i=0; i<blogArray.length;i++){ %></h1>
+        <%- include('blogCard', { blog : blogArray[i] })%>
+        <%}%>
       </div>
     </section>
 
