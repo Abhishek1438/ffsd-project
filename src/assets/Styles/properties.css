@@ -85,6 +85,8 @@ main {
 
   .search-bar-extended input {
     border: 0;
+    outline-color: transparent;
+    min-width: 36.5em;
   }
 
   .search-bar-extended button {

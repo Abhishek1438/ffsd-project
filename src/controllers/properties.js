@@ -48,7 +48,6 @@ exports.getAllProperties = async (req, res, next) => {
 };
 
 exports.getAllPropertiesByType = async (type, location) => {
-  console.log('heelo');
 
   let propertyArray = [];
   if (!location) {
@@ -126,6 +125,6 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
       mobileNumber: property.listerMobileNumber,
       email: property.listerEmail,
     },
-    user_id: user.user_id,
+    user_id: user,
   });
 };
