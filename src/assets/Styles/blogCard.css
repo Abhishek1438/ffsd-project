@@ -1,0 +1,24 @@
+.blogCard{
+    display: flex;
+    min-width: 100%;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.blogCardTitle{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+.img{
+    max-width: 6em;
+    max-height: 6em;
+    border-radius: 10px;
+}
+
+.underline{
+    border-bottom: 3px solid #7164f0;
+    display: inline;
+    margin-left: 3rem;
+}
