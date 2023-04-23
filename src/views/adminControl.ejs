@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Controls</title>
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/profile.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/adminControl.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/froala-editor@3.2.6/css/froala_editor.pkgd.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/froala-editor@3.2.6/js/froala_editor.pkgd.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <%- include('navbar',user) %>
+    <main>
+
+        <nav>
+          <ul class="navlinks">
+            <li class="link__item selected" onclick="changeData(0)">Home</li>
+            <li class="link__item" onclick="changeData(1)">Properties</li>
+            <li class="link__item" onclick="changeData(2)">Users</li>
+            <li class="link__item" onclick="changeData(3)">Edit</li>
+          </ul>
+        </nav>
+    
+        <div id="option0Data">
+          <section>
+            <h2><%= user.name %></h2>
+            <div class="card__handle">
+              <span class="handle"><%= user.email %></span>
+            </div>
+          </section>
+        </div>
+    
+        <div id="option1Data" class="display_none">
+          <section>
+            <% for(let j = 0; j<properties.length;j++){ %>
+            <div class="col"><%- include('propertyCard',{property:properties[j]}); %></div>
+            <% } %>
+          </section>
+        </div>
+    
+        <div id="option2Data" class="display_none">
+            <section>
+                <% for(let j = 0; j<users.length;j++){ %>
+                <div class="col"><%- include('userCard',{user:users[j]}); %></div>
+                <% } %>
+            </section>
+        </div>
+    
+        <div id="option3Data" class="display_none">
+          <section>
+            <h2><%= user.name %></h2>
+            <div class="card__handle">
+              <span class="handle"><%= user.email %></span>
+            </div>
+          </section>
+        </div>
+    </main>
+
+    <%- include('footer') %>
+  </body>
+  <script>
+    function changeData(selectedOption) {
+      if (selectedOption === 0) {
+        addClass(0);
+      } else if (selectedOption === 1) {
+        addClass(1);
+      } else if (selectedOption === 2) {
+        addClass(2);
+      } else if (selectedOption === 3) {
+        addClass(3);
+      }
+    }
+    const options = document.querySelectorAll('.link__item');
+
+    function addClass(option) {
+      for (let i = 0; i < 4; i++) {
+        if (option == i) {
+          document.getElementById(`option${i}Data`).classList.remove('display_none');
+          options[i].classList.add('selected');
+        } else {
+          document.getElementById(`option${i}Data`).classList.add('display_none');
+          options[i].classList.remove('selected');
+        }
+      }
+    }
+  </script>
+</html>

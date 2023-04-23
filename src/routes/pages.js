@@ -29,7 +29,6 @@ const upload = multer({
 
 const blog_upload = multer({ storage });
 
-
 // const storage_property = multer.diskStorage({
 //   destination: function(req, file, cb) {
 //     cb(null, join(__dirname, "..", "assets", "Uploads", "property-images"));
@@ -69,9 +68,9 @@ router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async 
   res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
 });
 
-router.get('/blogs', userContoller.isLoggedIn,blogController.getAllBlogs, (req, res) => {
+router.get('/blogs', userContoller.isLoggedIn, blogController.getAllBlogs, (req, res) => {
   let blogArray = req.blogs;
-  res.render('blogs', { user: req.user , blogArray});
+  res.render('blogs', { user: req.user, blogArray });
 });
 
 router.get('/blog/:id', userContoller.isLoggedIn, async (req, res) => {
@@ -101,8 +100,6 @@ router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) 
 router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
   res.render('list-property', { user: req.user });
 });
-
-
 
 // router.post('/list-property', async (req, res) => {
 
@@ -151,8 +148,8 @@ router.post(
   }
 );
 
-router.get('/compose-blog',userContoller.isLoggedIn,(req,res)=>{
-  res.render('composeBlog',{user:req.user});
+router.get('/compose-blog', userContoller.isLoggedIn, (req, res) => {
+  res.render('composeBlog', { user: req.user });
 });
 
 router.post(
@@ -172,11 +169,10 @@ router.post(
       console.log(req.file);
       await blogController.insertBlog(req, res, blogDetails, newBlogImage, req.user);
 
-      res.send("Your blog has been successfully posted!");
+      res.send('Your blog has been successfully posted!');
     }
   }
 );
-
 
 router.get('/pricing-plans', userContoller.isLoggedIn, (req, res) => {
   res.render('pricingPlan', { user: req.user });
@@ -217,6 +213,14 @@ router.get('/profile', userContoller.isLoggedIn, async (req, res) => {
   } else {
     res.redirect('/login');
   }
+});
+
+router.get('/admin-control', userContoller.isLoggedIn, async (req, res) => {
+  const users = await userModel.User.find({ _id: { $ne: req.user._id } });
+  const properties = await propertyModel.Property.find({});
+  console.log(users);
+  // console.log(properties);
+  res.render('adminControl', { user: req.user, users, properties });
 });
 
 module.exports = router;

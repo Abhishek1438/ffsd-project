@@ -146,3 +146,26 @@ exports.wishlist = async (req, res) => {
   }
   res.end();
 };
+
+exports.certified = async (req, res) => {
+  const change = req.params.change;
+  const userId = req.params.userId;
+
+  userModel.User.findById(userId).then((user) => {
+    user.isCertified = change === 'true';
+    user.save();
+  });
+
+  res.end();
+};
+exports.admin = async (req, res) => {
+  const change = req.params.change;
+  const userId = req.params.userId;
+
+  userModel.User.findById(userId).then((user) => {
+    user.isAdmin = change === 'true';
+    user.save();
+  });
+
+  res.end();
+};

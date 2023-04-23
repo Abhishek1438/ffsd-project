@@ -295,9 +295,6 @@ span.circle {
   .card {
     width: 90%;
   }
-  .navlinks {
-    display: none;
-  }
 }
 
 @media (max-width: 545px) {

@@ -39,6 +39,10 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/properties', require('./routes/propertiesRoute'));
 app.post('/wishlist/:propertyId', userController.isLoggedIn, userController.wishlist);
+
+app.post('/certified/:userId/:change', userController.certified);
+app.post('/admin/:userId/:change', userController.admin);
+
 // app.use('/property', require('./routes/property'));
 
 app.listen(3000, () => {

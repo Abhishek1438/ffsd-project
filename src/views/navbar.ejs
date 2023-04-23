@@ -38,6 +38,8 @@
         <a href="/pricing-plans">Premium</a>
         <% if(user && user.isCertified){ %>
         <a href="/compose-blog">Compose</a>
+        <% } %> <% if(user && user.isAdmin){ %>
+        <a href="/admin-control">Admin Controls</a>
         <% } %>
       </div>
 
