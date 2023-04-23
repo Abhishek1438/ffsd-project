@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const propertyModel = require('../models/property_model');
 
-// mongoose.connect(
-//   'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
-// );
+mongoose.connect(
+  'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
+);
 
-mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
+// mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
 const { Schema } = mongoose;
 
 exports.getAllProperties = async (req, res, next) => {
@@ -48,6 +48,10 @@ exports.getAllProperties = async (req, res, next) => {
 };
 
 exports.getAllPropertiesByType = async (type, location) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1364585b038d998425e6d40c9395478e97f573ff
   let propertyArray = [];
   if (!location) {
     await propertyModel.Property.find({ purpose: type }).then((result) => {
@@ -124,7 +128,7 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
       mobileNumber: property.listerMobileNumber,
       email: property.listerEmail,
     },
-    user_id: user.user_id,
+    user_id: user,
   });
 };
 

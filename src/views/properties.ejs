@@ -89,7 +89,7 @@
             <option value="1bed">1 Bedroom</option>
             <option value="2bed">2 Bedrooms</option>
             <option value="3bed">3 Bedrooms</option>
-            <option value="4bed">4 Bedroom</option>
+            <option value="4bed">4 Bedrooms</option>
           </select>
           <select name="property-type" id="">
             <option value="flat">Flat</option>
@@ -110,7 +110,7 @@
           </select>
         </div>
 
-        <a href=""><button>+Add Filters</button></a>
+        <button id="addFilters">+Add Filters</button>
       </div>
 
       <section>
@@ -146,4 +146,15 @@
       crossorigin="anonymous"
     ></script>
   </body>
+  <script>
+    document.getElementById("addFilters").addEventListener("click", (event) => {
+      event.preventDefault()
+      console.log(properties)
+    })
+    const properties = propertyArray;
+    console.log(properties);
+    <!-- const applyFilter = () => {
+      const 
+    } -->
+  </script>
 </html>

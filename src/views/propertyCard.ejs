@@ -9,7 +9,7 @@
 
 <body>
   <div class="propertyCard" onclick="()=>{location.href = '/propertyDetail/id';}">
-    <img src="/images/PW_hero_propertyCard_image.jpeg" alt="property image" />
+    <img src="data:<%= property.propertyImage[0].contentType %>;base64,<%= property.propertyImage[0].data.toString('base64') %>" alt="property image" />
     <div class="propertyCard_info">
       <span class="colouredText">₹<%=property.price%></span>
       <% if(property.purpose=='rent'){ %>
