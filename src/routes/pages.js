@@ -142,6 +142,7 @@ router.post(
       let propertyDetails = req.body;
       console.log(propertyDetails);
       await propertyController.insertProperty(req, res, propertyDetails, newImages, req.user._id);
+    
 
       res.send('The property has been successsfully listed!');
     }
