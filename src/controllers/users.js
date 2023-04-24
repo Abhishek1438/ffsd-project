@@ -96,7 +96,7 @@ exports.register = async (req, res) => {
   console.log(user);
   console.log('registered');
   return res.render('register', {
-    msg: 'userModel.User Registration Success, Login now',
+    msg: 'User Registration Success, Login now',
     msg_type: 'good',
   });
 };

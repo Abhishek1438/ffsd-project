@@ -51,6 +51,7 @@ header input{
     border-radius: 5px;
     padding: 1rem;
     background:#58368d;
+    outline-color: transparent;
 }
 
 header>div{
@@ -169,6 +170,7 @@ section{
     padding: 0.5rem;
     border: 0;
     z-index: 1;
+    outline-color: transparent;
     
 }
 
@@ -291,12 +293,18 @@ section{
   .featured-blogs{
     padding: 1rem;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .featured-blogs p{
     display: none;
+  }
+
+  .featured-blogs a{
+    min-height: 10rem;
+    max-width: 25rem;
+    color: black;
   }
 
   .featured-blogs span{

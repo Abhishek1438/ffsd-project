@@ -122,14 +122,14 @@
     <section>
       <div class="fbText"><h2 class="underline">Featured Blogs</h2></div>
       <div class="featured-blogs">
-        <% for(let k = 0 ; k<blogArray.length;k++ ){ %>
-          <a href="/blog/<%=blogArray[k]._id%>" style="text-decoration: none;">
+        <% for(let k = 0 ; k<8;k++ ){ %>
+          <a href="/blog/<%=blogArray[k]._id%>" style="text-decoration: none;" class="featuredItem">
             <div class="featuredItem">
               <img
-          src="data:<%= blogArray[k].blogImage.contentType %>;base64,<%= blogArray[k].blogImage.data.toString('base64') %>"
-          alt="img2"
-          style="width:100%"
-        />
+                src="data:<%= blogArray[k].blogImage.contentType %>;base64,<%= blogArray[k].blogImage.data.toString('base64') %>"
+                alt="img2"
+                style="width:100%"
+              />
               <div>
                 <h3><%=blogArray[k].title%></h3>
                 <span><%=blogArray[k].date%></span>
