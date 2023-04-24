@@ -27,14 +27,17 @@
     <section>
       <div class="split">
         <div>
-          <p>March 18th,2023</p>
-          <h3>
-            PropertyWala acquires huge investments from billnotes, elon husk, jeff yezos and many
-            more!
-          </h3>
-          <button>Know more</button>
+          <p><%=blogArray[blogArray.length-1].date%></p>
+          <h3><%=blogArray[blogArray.length-1].title%></h3>
+          <a href="/blog/<%=blogArray[blogArray.length-1]._id%>" style="text-decoration: none;">
+            <button>Know more</button>
+          </a>
         </div>
-        <img src="/images/PW_blogs_investors_img.png" alt="investors" />
+        <img
+          src="data:<%= blogArray[blogArray.length-1].blogImage.contentType %>;base64,<%= blogArray[blogArray.length-1].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%; border-radius:15px;" 
+        />
       </div>
     </section>
 
@@ -52,33 +55,54 @@
         <div class="slideshow-container">
           <div class="mySlides fade">
             <div class="numbertext">1 / 4</div>
-            <img src="/images/PW_carousel_image01.webp" style="width: 100%" />
-            <h3>The new generation of investors</h3>
-            <p><i class="fa-regular fa-user"></i> Person1</p>
+            <a href="/blog/<%=blogArray[0]._id%>" style="text-decoration: none; color:white;">
+            <img
+          src="data:<%= blogArray[0].blogImage.contentType %>;base64,<%= blogArray[0].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%"
+        />
+            <h3><%=blogArray[0].title%></h3>
+            <p><i class="fa-regular fa-user"></i> <%=blogArray[0].blogAuthor%></p>
+            </a>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">2 / 4</div>
-            <img src="/images/PW_carousel_image02.webp" style="width: 100%" />
-            <h3>Foreign investment</h3>
-            <p><i class="fa-regular fa-user"></i> Person2</p>
+            <a href="/blog/<%=blogArray[1]._id%>" style="text-decoration: none; color:white;">
+            <img
+          src="data:<%= blogArray[1].blogImage.contentType %>;base64,<%= blogArray[1].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%"
+        />
+            <h3><%=blogArray[1].title%></h3>
+            <p><i class="fa-regular fa-user"></i> <%=blogArray[1].blogAuthor%></p>
+            </a>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">3 / 4</div>
-            <img src="/images/PW_carousel_image03.webp" style="width: 100%" />
-            <h3>
-              Price of properties with good view in mumbai are predicted to double in the near
-              future
-            </h3>
-            <p><i class="fa-regular fa-user"></i> Person3</p>
+            <a href="/blog/<%=blogArray[2]._id%>" style="text-decoration: none; color:white;">
+              <img
+          src="data:<%= blogArray[2].blogImage.contentType %>;base64,<%= blogArray[2].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%"
+        />
+            <h3><%=blogArray[2].title%></h3>
+            <p><i class="fa-regular fa-user"></i> <%=blogArray[2].blogAuthor%></p>
+            </a>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">4 / 4</div>
-            <img src="/images/PW_carousel_image04.webp" style="width: 100%" />
-            <h3>Mindspace REIT- all bout it!</h3>
-            <p><i class="fa-regular fa-user"></i> Person4</p>
+            <a href="/blog/<%=blogArray[3]._id%>" style="text-decoration: none; color:white;">
+              <img
+          src="data:<%= blogArray[3].blogImage.contentType %>;base64,<%= blogArray[3].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%"
+        />
+            <h3><%=blogArray[3].title%></h3>
+            <p><i class="fa-regular fa-user"></i> <%=blogArray[3].blogAuthor%></p>
+            </a>
           </div>
 
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -98,70 +122,21 @@
     <section>
       <div class="fbText"><h2 class="underline">Featured Blogs</h2></div>
       <div class="featured-blogs">
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img1.webp" alt="featuredImage1" />
-          <div>
-            <h3>RBI revised repo rates by 50 bps -how will it affect the real estate sector?</h3>
-            <p>From 40 Bps in the month of May, the repo rates increased to... read more</p>
-            <span>September 30, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img2.webp" alt="featuredImage2" />
-          <div>
-            <h3>How to invest in REITs in India and the benefits of investing in REITs</h3>
-            <p>While 10 years ago, real estate investments were just limite... read more</p>
-            <span>September 15, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img3.webp" alt="featuredImage3" />
-          <div>
-            <h3>Factors to consider before investing in a pre-leased property</h3>
-            <p>With many investment classes that exist, like fixed-income read more</p>
-            <span>September 16, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img4.webp" alt="featuredImage4" />
-          <div>
-            <h3>How Indians invest in REITs</h3>
-            <p>Technology has evolved in almost every sector including real... read more</p>
-            <span>September 17, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img5.webp" alt="featuredImage5" />
-          <div>
-            <h3>Retire early by investing in commercial real estate!</h3>
-            <p>With many investment classes that exist, like fixed-income a... read more</p>
-            <span>September 18, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img6.webp" alt="featuredImage6" />
-          <div>
-            <h3>Is Decentralised finance (DeFi) a good investment?</h3>
-            <p>A major challenge in the Indian real estate market is the la... read more</p>
-            <span>September 19, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img7.webp" alt="featuredImage7" />
-          <div>
-            <h3>RBI repo rate hikes by 40 bps- boon or bane?</h3>
-            <p>The RBI repo rate hike in India has left many real estate an... read more</p>
-            <span>September 20, 2022</span>
-          </div>
-        </div>
-        <div class="featuredItem">
-          <img src="/images/PW_blog_featured_img8.webp" alt="featuredImage8" />
-          <div>
-            <h3>Benefits of investing in commercial real estate</h3>
-            <p>When it comes to property buying, people in India often get read more</p>
-            <span>September 21, 2022</span>
-          </div>
-        </div>
+        <% for(let k = 0 ; k<blogArray.length;k++ ){ %>
+          <a href="/blog/<%=blogArray[k]._id%>" style="text-decoration: none;">
+            <div class="featuredItem">
+              <img
+          src="data:<%= blogArray[k].blogImage.contentType %>;base64,<%= blogArray[k].blogImage.data.toString('base64') %>"
+          alt="img2"
+          style="width:100%"
+        />
+              <div>
+                <h3><%=blogArray[k].title%></h3>
+                <span><%=blogArray[k].date%></span>
+              </div>
+            </div>
+          </a>
+          <%}%>
       </div>
     </section>
 

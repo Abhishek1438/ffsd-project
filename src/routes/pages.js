@@ -102,12 +102,7 @@ router.get('/blog/:id', userContoller.isLoggedIn, async (req, res) => {
 router.get('/my-properties', userContoller.isLoggedIn, async (req, res) => {
   const userId = req.user._id;
   const properties = await propertyModel.Property.find({ user_id: userId });
-  if(properties.length == 0){
-    res.send("Please list properties to list property");
-  }
-  else{
-    res.render('myProperties', { user: req.user , propertyArray: properties });
-  }
+  res.render('myProperties', { user: req.user , propertyArray: properties });
 });
 
 router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) => {
@@ -169,8 +164,7 @@ router.post(
       let propertyDetails = req.body;
       console.log(propertyDetails);
       await propertyController.insertProperty(req, res, propertyDetails, newImages, req.user._id);
-
-      res.send('The property has been successsfully listed!');
+      res.redirect('/');
     }
   }
 );
@@ -196,7 +190,7 @@ router.post(
       console.log(req.file);
       await blogController.insertBlog(req, res, blogDetails, newBlogImage, req.user);
 
-      res.send('Your blog has been successfully posted!');
+      res.redirect('/blogs');
     }
   }
 );

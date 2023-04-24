@@ -17,8 +17,18 @@
   <body>
     <%- include("navbar",{user}); %>
     <header>
-      <h1>My Properties</h1>
+      <h1 class="e-h1">My Properties</h1>
     </header>
+
+    <% if(propertyArray.length == 0){ %>
+    <div class="e-container">
+      <p class="e-p">Please list a property to view your properties</p>
+      <a href="/list-property">
+        <button class="e-btn">List a Property</button>
+      </a>
+    </div><br><br><br>
+      <%}else{%>
+    
     <section>
       <div class="myProperties-grid">
         <% for(let i =0; i<propertyArray.length;i++){ %>
@@ -26,6 +36,7 @@
         <%}%>
       </div>
     </section>
+    <%}%>
     <%- include("footer"); %>
 
     <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
