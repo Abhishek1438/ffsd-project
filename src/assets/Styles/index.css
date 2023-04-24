@@ -34,6 +34,10 @@
   background-color: transparent;
 }
 
+.display_none {
+  display: none;
+}
+
 .propertyNumbers > p {
   margin: 0;
 }
@@ -249,9 +253,6 @@
   margin-top: 1rem;
   background-color: transparent;
 }
-
-
-
 
 @media screen and (min-width: 800px) {
   .HeroBackground {

@@ -42,6 +42,7 @@ app.use('/properties', require('./routes/propertiesRoute'));
 app.use('/blogs', require('./routes/blogsRoute'));
 app.post('/wishlist/:propertyId', userController.isLoggedIn, userController.wishlist);
 app.post('/mail/:mailId', mailController.addMail);
+app.post('/allMail', mailController.sendMailAll);
 
 app.post('/certified/:userId/:change', userController.certified);
 app.post('/admin/:userId/:change', userController.admin);

@@ -38,9 +38,9 @@
             <div class="card__handle">
               <span class="handle"><%= user.email %></span>
             </div>
-            <form action="/allMail" method="post" enctype="multipart/form-data" class="aform">
+            <form action="/allMail" method="post" class="aform">
               <label for="subject"></label>
-              <input type="text" placeholder="Enter subject">
+              <input type="text" placeholder="Enter subject" name="subject">
               <div class="content">
                 <textarea name="content" id="froala1" cols="300" rows="100" required >
                 </textarea>

@@ -60,9 +60,13 @@ const searchBuy = () => {
 function addMail() {
   const mailId = document.getElementById('addMail').value;
 
+  const thanksMessage = document.getElementById('thanksMessage');
+
   fetch(`/mail/${mailId}`, {
     method: 'POST',
   }).then((res) => {
     console.log(res);
   });
+
+  thanksMessage.classList.remove('display_none');
 }
