@@ -59,9 +59,9 @@
     
         <div id="option3Data" class="display_none">
           <section>
-            <% for(let j = 0; j<blogs.length;j++){ %>
-              <div style="margin:1rem 0;"><%- include('blogCard',{blog:blogs[j]}); %></div>
-              <% } %>
+            <% for(let i = 0 ; i < blogs.length; i++){ %>
+              <%- include('adminContol_blogCard',{blog : blogs[i]})%>
+            <%}%>
           </section>
         </div>
     </main>

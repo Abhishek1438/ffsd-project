@@ -250,6 +250,9 @@
   background-color: transparent;
 }
 
+
+
+
 @media screen and (min-width: 800px) {
   .HeroBackground {
     background-image: url('/images/PW_map_background.png');

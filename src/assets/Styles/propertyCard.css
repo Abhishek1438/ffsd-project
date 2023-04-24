@@ -6,6 +6,7 @@
   gap: 2px;
   border-radius: 10px;
   max-width: 25em;
+  min-width: 25em;
   border: 3px #f1effa;
   border-style: double;
   padding: 0;
@@ -20,6 +21,7 @@
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 15em;
 }
 
 .propertyCard_info {
@@ -27,6 +29,7 @@
   padding: 5%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 15em;
 }
 
 .propertyCard_info i {

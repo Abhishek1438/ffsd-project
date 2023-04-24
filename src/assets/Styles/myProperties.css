@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -153,4 +153,22 @@
 .myProperties-footer .selected {
   background-color: #100a55;
   color: #fff;
+} */
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+  padding: 2rem;
+}
+
+.myProperties-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
 }

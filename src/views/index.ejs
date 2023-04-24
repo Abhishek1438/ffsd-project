@@ -19,6 +19,7 @@
 </head>
 
 <body>
+ 
   <%- include('navbar',{user}); %>
     <header>
       <div class="HeroBackground">
@@ -177,7 +178,7 @@
       <div class="container">
         <div class="row">
           <p class="s2Hero">Based on your location</p>
-        <% for(let j = 1; j<propertyArray.length;j++){  %>
+        <% for(let j = 1; j<10;j++){  %>
           <div class="col">
             <%- include('propertyCard',{property:propertyArray[j]}); %>
           </div>

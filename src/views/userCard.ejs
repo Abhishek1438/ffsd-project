@@ -9,14 +9,15 @@
 
     <style>
       .userCard {
-        background-color: gray;
-        color: white;
+        background-color: white;
+        color: black;
         padding: 1rem;
         display: flex;
         align-items: center;
         border-radius: 0.5rem;
         justify-content: space-between;
         gap: 1rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       }
 
       .userCardChild {
@@ -28,7 +29,8 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: rgb(232, 184, 192);
+        background-color: #7164f0;
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -38,11 +40,17 @@
         justify-self: left;
       }
 
+      .handle{
+        color: #bababa;
+      }
+
       .userCardButtons button {
         padding: 1rem 2rem;
-        border-radius: 0.5rem;
+        border-radius: 5px;
         outline: none;
-        border: 1px solid rgb(90, 90, 90);
+        background-color: #7164f0;
+        color: white;
+        border: 1px solid white;
         cursor: pointer;
       }
 

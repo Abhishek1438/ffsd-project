@@ -64,10 +64,29 @@ router.get('/register', (req, res) => {
 
 router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
   const type = req.params.type;
-  const location = req.params.location;
-  let properties = await propertyController.getAllPropertiesByType(type, location);
+  let location = ""+req.params.location;
+  const query = req.query;
+  let properties;
+  if(location == 'undefined' && Object.keys(query).length == 0){
+    properties = await propertyController.getAllPropertiesByType(type, location);
+  }
+  else if(location != 'undefined' && Object.keys(query).length == 0){
+    properties = await propertyController.getAllPropertiesByType(type, location);
+  }
+  else if (location == 'undefined' && Object.keys(query).length != 0){
+    properties =await propertyController.getPropertiesByFilters(type,location,query);
+  }
+  else if(location != 'undefined' && Object.keys(query).length != 0 ){
+    properties =await propertyController.getPropertiesByFilters(type,location,query);
+  }
+  else{
+    console.log("mole");
+    properties = {};
+  }
   res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
 });
+
+
 
 router.get('/blogs', userContoller.isLoggedIn, blogController.getAllBlogs, (req, res) => {
   let blogArray = req.blogs;
@@ -80,8 +99,15 @@ router.get('/blog/:id', userContoller.isLoggedIn, async (req, res) => {
   res.render('blogDetails', { blog: blog, user: req.user });
 });
 
-router.get('/my-properties', userContoller.isLoggedIn, (req, res) => {
-  res.render('myProperties', { user: req.user });
+router.get('/my-properties', userContoller.isLoggedIn, async (req, res) => {
+  const userId = req.user._id;
+  const properties = await propertyModel.Property.find({ user_id: userId });
+  if(properties.length == 0){
+    res.send("Please list properties to list property");
+  }
+  else{
+    res.render('myProperties', { user: req.user , propertyArray: properties });
+  }
 });
 
 router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) => {
@@ -220,9 +246,8 @@ router.get('/admin-control', userContoller.isLoggedIn, async (req, res) => {
   const users = await userModel.User.find({ _id: { $ne: req.user._id } });
 
   const properties = await propertyModel.Property.find({});
-
+  
   const blogs = await blogModel.Blog.find({});
-  console.log(blogs);
   res.render('adminControl', { user: req.user, users, properties, blogs });
 });
 

@@ -56,3 +56,6 @@ const searchBuy = () => {
   const location = document.getElementById('locationBuy').value;
   window.location.replace(`/show-properties/sale/${location}`);
 };
+
+
+

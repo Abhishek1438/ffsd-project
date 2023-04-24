@@ -25,7 +25,7 @@ const propertySchema = new mongoose.Schema({
         type:String,
         required:[true,'property name is required!']
     },
-    price:String,
+    price:Number,
     location:String,
     locality:String,
     bedsNum:Number,

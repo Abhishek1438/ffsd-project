@@ -38,3 +38,9 @@ exports.insertBlog = async (req, res, Blog, newImage, user) => {
     blogImage: newImage,
   });
 };
+
+exports.removeBlog = async (req, res) => {
+  const blog_id = req.params.id;
+  console.log("delete?");
+  // blogModel.Blog.deleteOne({ _id: blog_id }).then(() => console.log('deleted Blog'));
+};

@@ -8,18 +8,19 @@
     />
 
     <style>
-      .propertyCardAdminControl {
+      .blogCardAdminControl {
         background-color: white;
         color: black;
         padding: 1rem;
         display: flex;
         align-items: center;
+        margin-bottom: 2rem;
         border-radius: 0.5rem;
         justify-content: space-between;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       }
 
-      .propertyCardAdminControlChild {
+      .blogCardAdminControlChild {
         display: flex;
         gap: 1rem;
       }
@@ -35,11 +36,11 @@
         justify-content: center;
       }
 
-      .propertyCardAdminControlButtons {
+      .blogCardAdminControlButtons {
         justify-self: left;
       }
 
-      .propertyCardAdminControlButtons button {
+      .blogCardAdminControlButtons button {
         padding: 1rem 2rem;
         border-radius: 5px;
         outline: none;
@@ -53,11 +54,11 @@
       }
 
       @media (max-width: 700px) {
-        .propertyCardAdminControl {
+        .blogCardAdminControl {
           flex-direction: column;
           gap: 1rem;
         }
-        .propertyCardAdminControlButtons button {
+        .blogCardAdminControlButtons button {
           padding: 0.5rem 1rem;
         }
       }
@@ -65,39 +66,39 @@
   </head>
 
   <body>
-    <div class="propertyCardAdminControl" id="propertyCardAdminControl<%=property._id%>">
-      <div class="propertyCardAdminControlChild">
+    <div class="blogCardAdminControl" id="blogCardAdminControl<%=blog._id%>">
+      <div class="blogCardAdminControlChild">
         <div>
-          <p class="icon"><%= property.name[0] %></p>
+          <p class="icon"><%= blog.title[0] %> </p>
         </div>
         <div>
-          <h2><%= property.name %></h2>
+          <h2><%= blog.title %></h2>
           <div class="card__handle">
-            <span class="handle"><%= property.location %></span>
+            <span class="handle"><%= blog.date %></span>
           </div>
         </div>
       </div>
-      <div class="propertyCardAdminControlButtons">
-        <button onclick="deleteProperty('<%=property._id%>')" id="deleteButton<%=property._id%>">
-          Remove Property
+      <div class="blogCardAdminControlButtons">
+        <button onclick="deleteBlog('<%=blog._id%>')" id="deleteBlogButton<%=blog._id%>">
+          Remove Blog
         </button>
       </div>
     </div>
   </body>
 
   <script>
-    function deleteProperty(propertyId) {
-      const mainItem = document.querySelector(`#propertyCardAdminControl${propertyId}`);
-      const deleteButton = document.querySelector(`#deleteButton${propertyId}`);
+     function deleteBlog(blog_id) {
+      const mainBlogItem = document.querySelector(`#blogCardAdminControl${blog_id}`);
+      const deleteBlogButton = document.querySelector(`#deleteBlogButton${blog_id}`);
       const result = confirm('Are you sure?');
       if (result) {
-        fetch(`/remove/${propertyId}`, {
+         fetch(`/deleteBlog/${blog_id}`, {
           method: 'POST',
         }).then((res) => {
           console.log(res);
         });
       }
-      mainItem.classList.add('display_none');
+      mainBlogItem.classList.add('display_none');
     }
   </script>
 </html>
