@@ -16,3 +16,5 @@
 9.open the terminal and go to the src directory of the project (use cd src).
 10.run command 'node app.js'
 11.open your browser and go to http://localhost:3000/. to access the website.
+
+GITHUB: https://github.com/Abhishek1438/ffsd-project
