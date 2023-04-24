@@ -69,7 +69,7 @@
     <div class="blogCardAdminControl" id="blogCardAdminControl<%=blog._id%>">
       <div class="blogCardAdminControlChild">
         <div>
-          <p class="icon"><%= blog.title[0] %> </p>
+          <p class="icon"><%= blog.title[0] %></p>
         </div>
         <div>
           <h2><%= blog.title %></h2>
@@ -87,12 +87,12 @@
   </body>
 
   <script>
-     function deleteBlog(blog_id) {
+    function deleteBlog(blog_id) {
       const mainBlogItem = document.querySelector(`#blogCardAdminControl${blog_id}`);
       const deleteBlogButton = document.querySelector(`#deleteBlogButton${blog_id}`);
       const result = confirm('Are you sure?');
       if (result) {
-         fetch(`/deleteBlog/${blog_id}`, {
+        fetch(`/blogs/deleteBlog/${blog_id}`, {
           method: 'POST',
         }).then((res) => {
           console.log(res);

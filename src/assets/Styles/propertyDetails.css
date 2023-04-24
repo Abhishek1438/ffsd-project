@@ -22,7 +22,6 @@ body {
 
 .image-container {
   margin: 1rem 2rem;
-  
 }
 
 .header button:hover {
@@ -47,10 +46,6 @@ body {
   display: flex;
   margin: 1rem 2rem;
   gap: 1rem;
-}
-
-.detail_child_container {
-  width: 70%;
 }
 
 .detail_card {
@@ -227,6 +222,11 @@ body {
 
   .property_data {
     flex-wrap: wrap;
+  }
+
+  .detail_parent_container {
+    margin: 0;
+    margin-top: 1rem;
   }
 }
 

@@ -22,6 +22,23 @@
       rel="stylesheet"
     />
     <title>Property Detail</title>
+    <style>
+      .carousel-item{
+        width:100%; 
+        max-height: 90vh;
+      }
+
+      .carousel-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .display_none{
+        display: none;
+      }
+      
+    </style>
   </head>
   <body>
     <%- include('navbar',{user}); %>
@@ -62,10 +79,10 @@
         </div>
 
         <!-- Inner -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" >
           <!-- Single item -->
           <div class="carousel-item active">
-            <img
+            <img align="middle"
             <% if(property.propertyImage[0]){ %>
               src="data:<%= property.propertyImage[0].contentType %>;base64,<%= property.propertyImage[0].data.toString('base64') %>"
               <% } else{%>
@@ -74,13 +91,11 @@
               class="d-block w-100"
               alt="Sunset Over the City"
             />
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
 
           <!-- Single item -->
           <div class="carousel-item">
-            <img
+            <img 
             <% if(property.propertyImage[1]){ %>
             src="data:<%= property.propertyImage[1].contentType %>;base64,<%= property.propertyImage[1].data.toString('base64') %>"
             <% } else{%>
@@ -89,8 +104,6 @@
               class="d-block w-100"
               alt="Canyon at Nigh"
             />
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
 
           <!-- Single item -->
@@ -104,9 +117,6 @@
               class="d-block w-100"
               alt="Cliff Above a Stormy Sea"
             />
-            <div class="carousel-caption d-none d-md-block">
-  
-            </div>
           </div>
 
         <!-- Inner -->
@@ -165,11 +175,15 @@
                 <div>
                   <h4><%=property.lister.name%></h4>
                   <p><%=property.lister.description%></p>
+                  <div class="display_none" id="moreInfo">
+                    <p><%=property.lister.email%></p>
+                    <p><%=property.lister.mobileNumber%></p>
+                  </div>
                 </div>
               </div>
               <div class="buttons">
                 <button>Ask a question</button>
-                <button>Get more info</button>
+                <button onclick="getMoreInfo()">Get more info</button>
               </div>
             </div>
           </div>
@@ -270,7 +284,6 @@
           <div class="similar-container"></div>
         </div>
       </div>
-      <div class="detail_card">card</div>
     </div>
     <%- include('footer',); %>
 
@@ -294,6 +307,11 @@
           favButton.innerText = "Favourite";
         }
       };
+
+      function getMoreInfo(){
+        const moreInfo = document.getElementById('moreInfo');
+        moreInfo.classList.remove('display_none');
+      }
     </script>
 
   </body>

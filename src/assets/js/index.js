@@ -57,5 +57,12 @@ const searchBuy = () => {
   window.location.replace(`/show-properties/sale/${location}`);
 };
 
+function addMail() {
+  const mailId = document.getElementById('addMail').value;
 
-
+  fetch(`/mail/${mailId}`, {
+    method: 'POST',
+  }).then((res) => {
+    console.log(res);
+  });
+}
