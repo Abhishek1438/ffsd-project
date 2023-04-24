@@ -38,6 +38,15 @@
             <div class="card__handle">
               <span class="handle"><%= user.email %></span>
             </div>
+            <form action="/allMail" method="post" enctype="multipart/form-data" class="aform">
+              <label for="subject"></label>
+              <input type="text" placeholder="Enter subject">
+              <div class="content">
+                <textarea name="content" id="froala1" cols="300" rows="100" required >
+                </textarea>
+            </div>
+            <button id="BfButton1" type="submit">Mail all users</button>
+            </form>
           </section>
         </div>
     
@@ -94,4 +103,18 @@
       }
     }
   </script>
+  <script>
+    var editor = new FroalaEditor('#froala1', {
+        toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'color', 'emoticons', 'insertLink', 'insertTable', 'undo', 'redo', 'fullscreen', 'fontSize'],
+        pluginsEnabled: ['image', 'link', 'table', 'colors', 'emoticons', 'fontSize'],
+        heightMin: 200,
+        heightMax: 300,
+        placeholderText:'Mail Content...',
+        fontSize: {
+          selection: true,
+          defaultSelection: '20',
+          options: ['8', '10', '12', '14', '16', '18', '20', '24', '30']
+        }
+      });
+</script>
 </html>

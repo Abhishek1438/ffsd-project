@@ -3,6 +3,38 @@ main {
   display: block;
 }
 
+.aform{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.aform input{
+  border: 0;
+  border-bottom: 2px solid #7164f0;
+  max-width: 20em;
+  padding: 0.5rem;
+  outline-color: transparent;
+}
+
+.aform button{
+  padding: 0.6rem;
+  color: white;
+  background-color: #7164f0;
+  border: 0;
+  border-radius: 5px;
+  max-width: 20em;
+  margin-left: 2rem;
+}
+
+.aform input[type=file]::file-selector-button{
+  background-color: #7164f0;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  padding: 0.3rem;
+}
+
 @media (max-width: 700px) {
   main {
     padding: 0.5rem;
