@@ -91,7 +91,7 @@
       const deleteButton = document.querySelector(`#deleteButton${propertyId}`);
       const result = confirm('Are you sure?');
       if (result) {
-        fetch(`/remove/${propertyId}`, {
+        fetch(`properties/remove/${propertyId}`, {
           method: 'POST',
         }).then((res) => {
           console.log(res);

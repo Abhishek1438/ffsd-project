@@ -50,70 +50,61 @@ exports.getAllProperties = async (req, res, next) => {
 exports.getAllPropertiesByType = async (type, location) => {
   let propertyArray = [];
   if (location == 'undefined') {
-    await propertyModel.Property.find({ purpose: type,}).then((result) => {
+    await propertyModel.Property.find({ purpose: type }).then((result) => {
       propertyArray = result;
     });
   } else {
     await propertyModel.Property.find({
-
       $or: [
-        { location: { $regex: new RegExp(location, "i")}, },
-        { name: { $regex: new RegExp(location, "i") } }
+        { location: { $regex: new RegExp(location, 'i') } },
+        { name: { $regex: new RegExp(location, 'i') } },
       ],
-      
-      purpose: type
-    }).then(( results) => {
-       propertyArray = results;
-      
+
+      purpose: type,
+    }).then((results) => {
+      propertyArray = results;
     });
   }
   return propertyArray;
-  
 };
 
+exports.getPropertiesByFilters = async (type, location, query) => {
+  let query1 = { purpose: type };
 
-exports.getPropertiesByFilters = async (type, location,query) => {
+  if (typeof query.bedsNum !== 'undefined') {
+    query1.bedsNum = query.bedsNum;
+  }
 
-  let query1 = {purpose:type};
-
-    if (typeof query.bedsNum !== "undefined") {
-      query1.bedsNum = query.bedsNum;
-    }
-    
-    if (typeof query.propertyType !== "undefined") {
-      query1.propertyType = query.propertyType;
-    }
+  if (typeof query.propertyType !== 'undefined') {
+    query1.propertyType = query.propertyType;
+  }
 
   let sorter = {};
-  if(query.price == 'lh'){
-    sorter.price = 1
-  }else if(query.price == 'hl'){
-    sorter.price = -1
+  if (query.price == 'lh') {
+    sorter.price = 1;
+  } else if (query.price == 'hl') {
+    sorter.price = -1;
   }
   let propertyArray = [];
-  if (location == 'undefined' && Object.keys.length ==0) {
-    console.log("c1");
-    await propertyModel.Property.find({ purpose: type,}).then((result) => {
+  if (location == 'undefined' && Object.keys.length == 0) {
+    console.log('c1');
+    await propertyModel.Property.find({ purpose: type }).then((result) => {
       propertyArray = result;
     });
-  } 
-  else if (location !='undefined' && Object.keys(query).length !=0) {
+  } else if (location != 'undefined' && Object.keys(query).length != 0) {
     query1.$or = [];
-    query1.$or.push({ location: { $regex: new RegExp(location, "i")}, });
-    query1.$or.push({ name: { $regex: new RegExp(location, "i") } });
+    query1.$or.push({ location: { $regex: new RegExp(location, 'i') } });
+    query1.$or.push({ name: { $regex: new RegExp(location, 'i') } });
 
     propertyArray = await propertyModel.Property.find(query1).sort(sorter).exec();
-
-  }
-  else if(location == 'undefined' && Object.keys.length !=0){
-    console.log("c3");
+  } else if (location == 'undefined' && Object.keys.length != 0) {
+    console.log('c3');
     console.log(query.bedsNum);
     console.log(query.propertyType);
-    
+
     propertyArray = await propertyModel.Property.find(query1).sort(sorter).exec();
-  }
-  else{
-    console.log("c4");
+  } else {
+    console.log('c4');
   }
   return propertyArray;
 };
@@ -188,5 +179,6 @@ exports.insertProperty = async (req, res, property, newImages, user) => {
 
 exports.removeProperty = async (req, res) => {
   const propertyId = req.params.id;
+  console.log(propertyId);
   propertyModel.Property.deleteOne({ _id: propertyId }).then(() => console.log('deleted'));
 };
