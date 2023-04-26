@@ -9,6 +9,7 @@ const mailSchema = new mongoose.Schema({
 
 const Mail = new mongoose.model('mail', mailSchema);
 
+// create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -24,10 +25,6 @@ exports.addMail = async (req, res) => {
     mail: mailId,
   }).save();
   //send signup mail
-
-  // create reusable transporter object using the default SMTP transport
-
-  console.log(mailId);
 
   // setup email data with unicode symbols
   let mailOptions = {
@@ -58,7 +55,6 @@ exports.sendMailAll = async (req, res) => {
 
   // setup email data with unicode symbols
   userMails.forEach((mail) => {
-    console.log(mail);
     let mailOptions = {
       from: 'propertywala1438@gmail.com', // sender address
       to: mail, // list of receivers

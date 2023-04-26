@@ -5,10 +5,6 @@ const { promisify } = require('util');
 const mongoose = require('mongoose');
 const userModel = require('../models/user_model');
 
-// mongoose.connect(
-//   'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
-// );
-
 mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
 
 exports.login = async (req, res) => {
@@ -93,8 +89,7 @@ exports.register = async (req, res) => {
     isCertified: false,
     wishlist: [],
   }).save();
-  console.log(user);
-  console.log('registered');
+
   return res.render('register', {
     msg: 'User Registration Success, Login now',
     msg_type: 'good',

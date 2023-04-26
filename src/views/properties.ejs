@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/properties.css" rel="stylesheet" type="text/css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
-  <link href="/Styles/properties.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <title>Properties</title>
+  </head>
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
-  <title>Properties</title>
-</head>
-
-<body>
-  <%- include('navbar',{user}); %>
+  <body>
+    <%- include('navbar',{user}); %>
 
     <main>
       <header>
         <div class="header-class">
           <h1>Search Properties</h1>
-          <p>6900 properties available to <%= property.type %>
-          </p>
+          <p><%=propertyArray.length%> properties available to <%= property.type %></p>
 
           <div class="search-bar">
-          <input id="searchLocation1" type="text" name="" id="" />
-          <button onclick="searchPropertiesA()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input id="searchLocation1" type="text" name="" id="" />
+            <button onclick="searchPropertiesA()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
 
           <div class="search-bar-extended">
@@ -65,7 +78,6 @@
           <option value="hl">Price :high to low</option>
         </select>
 
-
         <button onclick="applyFilters()">+Apply filters</button>
       </div>
 
@@ -81,50 +93,56 @@
             <option value="4">4 Bedrooms</option>
           </select>
           <select name="property-type" id="propertyType1">
-          <option value="">property Type</option>
-          <option value="Flat">Flat/Apartment</option>
-          <option value="villa">Villa</option>
-          <option value="penthouse">Penthouse</option>
-          <option value="office">Comercial office Space</option>
+            <option value="">property Type</option>
+            <option value="Flat">Flat/Apartment</option>
+            <option value="villa">Villa</option>
+            <option value="penthouse">Penthouse</option>
+            <option value="office">Comercial office Space</option>
           </select>
         </div>
 
         <div>
           <select name="orderBy" id="price1">
-          <option value="">Sort by price</option>
+            <option value="">Sort by price</option>
             <option value="lh">Price :Low to high</option>
             <option value="hl">Price :high to low</option>
           </select>
-
         </div>
 
-        <button  onclick="applyFilters1()">+Apply filters</button>
+        <button onclick="applyFilters1()">+Apply filters</button>
       </div>
 
       <section>
         <div class="property-listings">
-          <% for(let i=0 ; i < propertyArray.length; i++ ){ %> <%- include('propertyCard',{property :
-              propertyArray[i]}); %>
-              <% } %>
+          <% for(let i=0 ; i < propertyArray.length; i++ ){ %> <%- include('propertyCard',{property
+          : propertyArray[i]}); %> <% } %>
         </div>
       </section>
     </main>
     <hr />
     <%- include('footer',); %>
 
-      <script src="/js/properties.js"></script>
-      <!-- MDB -->
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+    <script src="/js/properties.js"></script>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+    ></script>
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

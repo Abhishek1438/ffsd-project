@@ -5,7 +5,6 @@ const userContoller = require('../controllers/users');
 const propertyController = require('../controllers/properties');
 const blogController = require('../controllers/blogs');
 const multer = require('multer');
-const { join } = require('path');
 const propertyModel = require('../models/property_model');
 const userModel = require('../models/user_model');
 const blogModel = require('../models/blog_model');
@@ -30,26 +29,6 @@ const upload = multer({
 
 const blog_upload = multer({ storage });
 
-// const storage_property = multer.diskStorage({
-//   destination: function(req, file, cb) {
-//     cb(null, join(__dirname, "..", "assets", "Uploads", "property-images"));
-//   },
-//   filename: function(req, file, cb) {
-//     cb(null, Date.now() + '-' + file.originalname);
-//   }
-// });
-
-// const storage_blogs = multer.diskStorage({
-//   destination: function(req, file, cb) {
-//     cb(null, __dirname+'/src/assets/Uploads/property-images');
-//   },
-//   filename: function(req, file, cb) {
-//     cb(null, Date.now() + '-' + file.originalname+'propertyImage');
-//   }
-// });
-
-// const upload_property = multer({ storage: storage_property }).array('propertyImages');
-
 router.get('/', userContoller.isLoggedIn, propertyController.getAllProperties, async (req, res) => {
   res.render('index', { user: req.user, propertyArray: req.properties });
 });
@@ -64,29 +43,23 @@ router.get('/register', (req, res) => {
 
 router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async (req, res) => {
   const type = req.params.type;
-  let location = ""+req.params.location;
+  let location = '' + req.params.location;
   const query = req.query;
   let properties;
-  if(location == 'undefined' && Object.keys(query).length == 0){
+  if (location == 'undefined' && Object.keys(query).length == 0) {
     properties = await propertyController.getAllPropertiesByType(type, location);
-  }
-  else if(location != 'undefined' && Object.keys(query).length == 0){
+  } else if (location != 'undefined' && Object.keys(query).length == 0) {
     properties = await propertyController.getAllPropertiesByType(type, location);
-  }
-  else if (location == 'undefined' && Object.keys(query).length != 0){
-    properties =await propertyController.getPropertiesByFilters(type,location,query);
-  }
-  else if(location != 'undefined' && Object.keys(query).length != 0 ){
-    properties =await propertyController.getPropertiesByFilters(type,location,query);
-  }
-  else{
-    console.log("mole");
+  } else if (location == 'undefined' && Object.keys(query).length != 0) {
+    properties = await propertyController.getPropertiesByFilters(type, location, query);
+  } else if (location != 'undefined' && Object.keys(query).length != 0) {
+    properties = await propertyController.getPropertiesByFilters(type, location, query);
+  } else {
+    console.log('mole');
     properties = {};
   }
   res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
 });
-
-
 
 router.get('/blogs', userContoller.isLoggedIn, blogController.getAllBlogs, (req, res) => {
   let blogArray = req.blogs;
@@ -102,7 +75,7 @@ router.get('/blog/:id', userContoller.isLoggedIn, async (req, res) => {
 router.get('/my-properties', userContoller.isLoggedIn, async (req, res) => {
   const userId = req.user._id;
   const properties = await propertyModel.Property.find({ user_id: userId });
-  res.render('myProperties', { user: req.user , propertyArray: properties });
+  res.render('myProperties', { user: req.user, propertyArray: properties });
 });
 
 router.get('/property-details/:_id', userContoller.isLoggedIn, async (req, res) => {
@@ -123,35 +96,11 @@ router.get('/list-property', userContoller.isLoggedIn, (req, res) => {
   res.render('list-property', { user: req.user });
 });
 
-// router.post('/list-property', async (req, res) => {
-
-//   let propertyDetails = req.body;
-//   // await propertyController.insertProperty(req,res,propertyDetails);
-//   console.log(propertyDetails);
-//   console.log(req.files);
-
-//   upload_property(req, res, (err) => {
-//     if (err) {
-//       console.log(err);
-//       // return res.status(500).json({ message: 'Failed to upload images' });
-//     }
-//     console.log(req.files);
-//     // res.status(200).json({ message: 'Images uploaded successfully' });
-//   });
-//   res.send("The property has been successsfully listed!");
-// });
-
 router.post(
   '/list-property',
   userContoller.isLoggedIn,
-  upload.array('propertyImages', 5),
-  userContoller.isLoggedIn,
+  upload.array('propertyImages', 3),
   async function (req, res) {
-    // const property = await propertyController.getPropertyBy_id(property_id);
-    // if (!property) {
-    //   return res.status(404).json({ error: 'Property not found' });
-    // }
-
     if (!req.user) {
       res.redirect('/login');
     } else {
@@ -162,7 +111,6 @@ router.post(
         };
       });
       let propertyDetails = req.body;
-      console.log(propertyDetails);
       await propertyController.insertProperty(req, res, propertyDetails, newImages, req.user._id);
       res.redirect('/');
     }
@@ -186,8 +134,6 @@ router.post(
         contentType: req.file.mimetype,
       };
       let blogDetails = req.body;
-      console.log(blogDetails);
-      console.log(req.file);
       await blogController.insertBlog(req, res, blogDetails, newBlogImage, req.user);
 
       res.redirect('/blogs');
@@ -226,7 +172,6 @@ router.get('/help', userContoller.isLoggedIn, (req, res) => {
 router.get('/profile', userContoller.isLoggedIn, async (req, res) => {
   const userId = req.user._id;
   const properties = await propertyModel.Property.find({ user_id: userId });
-  const wishlistPropertiesId = await userModel.User.findById(userId).then((user) => user.wishlist);
   const wishlistProperties = await propertyModel.Property.find({ _id: { $in: req.user.wishlist } });
 
   if (req.user) {
@@ -240,7 +185,7 @@ router.get('/admin-control', userContoller.isLoggedIn, async (req, res) => {
   const users = await userModel.User.find({ _id: { $ne: req.user._id } });
 
   const properties = await propertyModel.Property.find({});
-  
+
   const blogs = await blogModel.Blog.find({});
   res.render('adminControl', { user: req.user, users, properties, blogs });
 });

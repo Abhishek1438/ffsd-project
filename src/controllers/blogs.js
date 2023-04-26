@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 const blogModel = require('../models/blog_model');
 
-// mongoose.connect(
-//     'mongodb+srv://Neam:Neelesh33@neam0.et8d59h.mongodb.net/FFSD_DB?retryWrites=true&w=majority'
-//   );
 mongoose.connect('mongodb://0.0.0.0:27017/FFSD_DB');
-const { Schema } = mongoose;
 
 exports.getAllBlogs = async (req, res, next) => {
   try {
@@ -41,6 +37,5 @@ exports.insertBlog = async (req, res, Blog, newImage, user) => {
 
 exports.removeBlog = async (req, res) => {
   const blog_id = req.params.id;
-  console.log('delete?');
   blogModel.Blog.deleteOne({ _id: blog_id }).then(() => console.log('deleted Blog'));
 };
