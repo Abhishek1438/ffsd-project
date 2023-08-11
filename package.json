@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -e js,ejs app"
+    "dev": "nodemon -e js,ejs app",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
