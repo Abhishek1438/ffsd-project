@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>List Your Property</title>
-    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Styles/list-property.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    <%- include('navbar',{user}); %>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Your Property</title>
+  <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="/Styles/list-property.css" rel="stylesheet" type="text/css" />
+</head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Your Property</title>
+  <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="/Styles/list-property.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <%- include('navbar',{user}); %>
     <header>
       <div>
         <h2>Rent/Sell your property</h2>
@@ -19,100 +29,78 @@
     </header>
 
     <section>
-      <form action="/list-property" method="post" enctype="multipart/form-data">
+      <form action="/list-property" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
         <div class="container">
           <div class="personal-details">
             <h3>Personal Details</h3>
             <label for="Ownership">I am the</label>
-            <select name="listerRelation" id="">
+            <select name="listerRelation" id="listerRelation" required>
               <option value="owner">Owner</option>
               <option value="agent">Agent</option>
               <option value="builder">Builder</option>
             </select>
             <label for="name">Name</label>
-            <input type="text" placeholder="Enter your name" name="listerName" required />
+            <input type="text" placeholder="Enter your name" name="listerName" id="listerName" required />
             <label for="name">Your profession</label>
-            <input
-              type="text"
-              placeholder="Enter your profession"
-              name="listerDescription"
-              required
-            />
+            <input type="text" placeholder="Enter your profession" name="listerDescription" id="listerDescription"
+              required />
 
             <label for="mobileNumber">Mobile number</label>
-            <input
-              type="number"
-              for="mobileNumber"
-              placeholder="Enter your mobile number"
-              name="listerMobileNumber"
-              required
-            />
+            <input type="tel" placeholder="Enter your mobile number" name="listerMobileNumber" id="listerMobileNumber"
+              required />
 
             <label for="email">Email</label>
-            <input type="email" name="listerEmail" required />
+            <input type="email" name="listerEmail" id="listerEmail" required />
           </div>
 
           <div class="property-details">
             <h3>Property Details</h3>
             <label for="propertyName">Property Name</label>
-            <input
-              type="text"
-              placeholder="Enter the name of property"
-              name="propertyName"
-              required
-            />
+            <input type="text" placeholder="Enter the name of property" name="propertyName" id="propertyName"
+              required />
             <label for="propertyPrice">Property Price</label>
-            <input
-              type="number"
-              placeholder="Enter price of the property"
-              name="propertyPrice"
-              required
-            />
+            <input type="number" placeholder="Enter price of the property" name="propertyPrice" id="propertyPrice"
+              required min="1000" />
             <label for="propertyType">For</label>
             <div class="custom-select" style="max-width: 21em">
-              <select id="" name="propertyPurpose">
+              <select id="propertyPurpose" name="propertyPurpose" required>
                 <option value="sale">Sale</option>
                 <option value="rent">Rent</option>
               </select>
             </div>
 
             <label for="City">City</label>
-            <input type="text" name="propertyCity" id="" placeholder="Enter City" required />
+            <input type="text" name="propertyCity" id="propertyCity" placeholder="Enter City" required />
 
             <label for="area">Property area in sqft</label>
-            <input type="number" name="propertyArea" id="" placeholder="Enter area" required />
+            <input type="number" name="propertyArea" id="propertyArea" placeholder="Enter area" required />
 
             <label for="lot">Lot Size in sqft</label>
-            <input type="number" name="lotSize" id="" placeholder="Enter lot size" required />
+            <input type="number" name="lotSize" id="lotSize" placeholder="Enter lot size" required />
 
             <label for="year">Year Built:</label>
-            <input
-              type="number"
-              name="yearBuilt"
-              id=""
-              placeholder="Enter year built"
-              min="1950"
-              max="2023"
-            />
+            <input type="number" name="yearBuilt" id="yearBuilt" placeholder="Enter year built" min="1900" max="2023" />
 
             <label for="parking">Does your property have parking?</label>
-            <select id="" name="propertyParking">
+            <select id="propertyParking" name="propertyParking" required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
+
           </div>
 
           <div class="property-location">
             <h3>Property Details</h3>
 
             <label for="locality">Locality</label>
-            <input type="text" placeholder="Enter Locality" name="propertyLocality" required />
+            <input type="text" placeholder="Enter Locality" name="propertyLocality" id="propertyLocality" required />
 
             <label for="image">Property Images</label>
-            <input type="file" name="propertyImages" multiple="multiple" required />
+            <input type="file" name="propertyImages" id="propertyImages" multiple="multiple" accept="image/*"
+              required />
 
             <label>Property Type</label>
-            <select name="propertyType" required>
+            <select name="propertyType" id="propertyType" required>
               <option value="select_propertyType">Select Property Type</option>
               <option value="Flat">Flat/Apartment</option>
               <option value="home">Residential Home</option>
@@ -120,10 +108,10 @@
               <option value="penthouse">Penthouse</option>
               <option value="studioApartment">Studio Apartment</option>
               <option value="serviceApartment">Service Apartment</option>
-              <option value="office">Comercial office Space</option>
-              <option value="shop">Comercial Shop</option>
-              <option value="showroom">Comercial Showroom</option>
-              <option value="land">Comercial Land</option>
+              <option value="office">Commercial office Space</option>
+              <option value="shop">Commercial Shop</option>
+              <option value="showroom">Commercial Showroom</option>
+              <option value="land">Commercial Land</option>
               <option value="warehouse">Warehouse/Godown</option>
               <option value="industrialBuilding">Industrial Building</option>
               <option value="agriculturalLand">Agricultural Land</option>
@@ -131,29 +119,93 @@
             </select>
 
             <label for="beds">Please Enter the number of bedrooms:</label>
-            <input type="number" name="bedsNum" id="" min="0" />
+            <input type="number" name="bedsNum" id="bedsNum" min="0" max="50">
             <label for="beds">Please Enter the number of washrooms:</label>
-            <input type="number" name="bathsNum" id="" min="0" />
+            <input type="number" name="bathsNum" id="bathsNum" min="0" max="50">
             <label for="description">Please provide a description of your property:</label>
-            <textarea
-              name="propertyDescription"
-              id=""
-              cols="30"
-              rows="5"
-              style="border-color: #6a5dfd"
-            ></textarea>
+            <textarea name="propertyDescription" id="propertyDescription" cols="30" rows="5"
+              style="border-color: #6a5dfd;"></textarea>
+
           </div>
         </div>
 
         <div class="form-footer">
-          <span style="text-align: left"
-            ><input type="checkbox" name="" id="" required /> I agree to the Terms and Conditions of
-            PropertyWala</span
-          >
+          <span style="text-align: left"><input type="checkbox" name="terms" id="terms" required /> I agree to the
+            Terms
+            and Conditions of PropertyWala</span>
           <button type="submit">List Property</button>
         </div>
       </form>
     </section>
     <%- include('footer',); %>
-  </body>
+      <script>
+        function validateForm() {
+          var listerName = document.getElementById("listerName").value;
+          var listerEmail = document.getElementById("listerEmail").value;
+          var listerCity = document.getElementById("propertyCity").value;
+          var listerProfession = document.getElementById("listerDescription").value;
+          var listerLocality = document.getElementById("propertyLocality").value;
+          var listerMobileNumber = document.getElementById("listerMobileNumber").value;
+          var propertyName = document.getElementById("propertyName").value;
+          var terms = document.getElementById("terms").checked;
+
+          // Validation for name: Check if it contains only letters and spaces
+          var namePattern = /^[a-zA-Z\s]+$/;
+          if (!namePattern.test(listerName)) {
+            alert("Name can only contain letters and spaces");
+            return false;
+          }
+
+          //validation for listerProfession
+          if (!namePattern.test(listerProfession)) {
+            alert("Profession can only contain letters and spaces");
+            return false;
+          }
+
+          //validation for PropertyName
+          if (!namePattern.test(propertyName)) {
+            alert("Property name can only contain letters and spaces");
+            return false;
+          }
+
+          //validation for City
+          if (!namePattern.test(listerCity)) {
+            alert("City name can only contain letters and spaces");
+            return false;
+          }
+
+          //Validation for Loacality
+          if (!namePattern.test(listerLocality)) {
+            alert("Locality name can only contain letters and spaces");
+            return false;
+          }
+
+          // Validation for email: Check if it's a valid email address
+          var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+          if (!emailPattern.test(listerEmail)) {
+            alert("Please enter a valid email address");
+            return false;
+          }
+
+          // Validation for mobile number: Check if it's a valid 10-digit number
+          var mobilePattern = /^[0-9]{10}$/;
+          if (!mobilePattern.test(listerMobileNumber)) {
+            alert("Please enter a valid 10-digit mobile number");
+            return false;
+          }
+
+          // Check if the terms and conditions checkbox is checked
+          if (!terms) {
+            alert("Please agree to the Terms and Conditions");
+            return false;
+          }
+
+          // If all validations pass, the form will be submitted
+          return true;
+        }
+      </script>
+
+
+</body>
+
 </html>
