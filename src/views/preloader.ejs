@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Styles/preloader.css" rel="stylesheet" type="text/css" />
+    <title>Your Property Website</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .preloader-container {
+        background-color: #847bf3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Style your construction animation here */
+    .loading-line {
+        fill: #fff;
+        /* White fill color */
+        width: 50px;
+        /* Make the lines a bit longer */
+        height: 10px;
+        /* Adjust the height to make the lines bigger */
+    }
+
+    /* Adjust the vertical space between loading lines to make it even */
+    .loading-line:nth-child(1) {
+        y: 40;
+        /* Adjust the vertical gap */
+    }
+
+    .loading-line:nth-child(2) {
+        y: 55;
+        /* Adjust the vertical gap */
+    }
+
+    .loading-line:nth-child(3) {
+        y: 70;
+        /* Adjust the vertical gap */
+    }
+</style>
+
+<body>
+    <div class="preloader-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+            <rect class="loading-line" x="25" y="40" width="0" height="10">
+                <animate attributeName="width" from="0" to="50" dur="1s" begin="0s" fill="freeze"
+                    repeatCount="indefinite"></animate>
+            </rect>
+            <rect class="loading-line" x="25" y="55" width="0" height="10">
+                <animate attributeName="width" from="0" to="50" dur="1s" begin="0.1s" fill="freeze"
+                    repeatCount="indefinite"></animate>
+            </rect>
+            <rect class="loading-line" x="25" y="70" width="0" height="10">
+                <animate attributeName="width" from="0" to="50" dur="1s" begin="0.2s" fill="freeze"
+                    repeatCount="indefinite"></animate>
+            </rect>
+
+            <!-- Make the triangle equal in size to the bars -->
+            <polygon points="50,0 82,35 20,35" fill="#fff">
+                <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.3s" fill="freeze"
+                    repeatCount="indefinite"></animate>
+            </polygon>
+        </svg>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            const body = document.querySelector("body");
+            const preloader = document.querySelector('.preloader-container');
+            preloader.style.transition = 'opacity 3s'; // Adjust the duration as needed
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                body.style.overflow = "visible";
+            }, 1000); // Change the delay as needed
+        });
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+
+</html>

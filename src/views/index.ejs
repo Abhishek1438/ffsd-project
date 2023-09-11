@@ -14,12 +14,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->  
+  <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
 </head>
 
 <body>
- 
   <%- include('navbar',{user}); %>
     <header>
       <div class="HeroBackground">
@@ -36,82 +35,82 @@
         </div>
 
         <div class="header-part-2">
-              <div class="rbsTabs">
-                <div class="rbsNav">
-                  <div class="rbsOption rbsSelected">Rent</div>
-                  <div class="rbsOption">Buy</div>
-                  <div class="rbsOption">Sell</div>
-                </div>
-                <div class="rbsInfoMobile">
-                  <div class="rbsRS">
-                    <input type="text" placeholder="Search properties..">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                  </div>
-                  <div class="rbsSell">
-                    <a href="#" target="_blank"><button>List your property <i
-                          class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
-                  </div>
-                </div>
-                <div class="rbsInfoExtended">
-                    <form class="rbsInfo1">
-                      <div>
-                        <p class="greyText1">
-                          Location
-                        </p>
-                        <input id="locationRent" type="text" name="location" value="Mumbai">
-                      </div>
-                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                      <div>
-                        <p class="greyText1">
-                          When
-                        </p>
-                        <input type="date" name="dateTime" id="">
-                      </div>
-                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                      <button type="button" onclick="searchRent()">Search Properties</button>
-                    </form>
-                    <form class="rbsInfo2">
-                      <div>
-                        <p class="greyText1">
-                          Location
-                        </p>
-                        <input id="locationBuy" type="text" name="location" value="Mumbai">
-                      </div>
-                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                      <div>
-                        <p class="greyText1">
-                          When
-                        </p>
-                        <input type="date" name="dateTime">
-                      </div>
-                      <span style="font-size: 2.5rem; color:#e1def6;">|</span>
-                      <button onclick="searchBuy()" type="button">Search Properties</button>
-                    </form>
-                  <div class="rbsInfo3">
-                    <p>Increase the reach of your property and get higher bids!</p>
-                    <a href="/list-property" "><button>List your property <i
-                          class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
-                  </div>
-
-                </div>
-              </div>
-
-
-
+          <div class="rbsTabs">
+            <div class="rbsNav">
+              <div class="rbsOption rbsSelected">Rent</div>
+              <div class="rbsOption">Buy</div>
+              <div class="rbsOption">Sell</div>
             </div>
-            <div class="p2">
-              <div class="propertyNumbers">
-                <div>
-                  <p class="colorText"><span class="faded">|</span>50k+</p>
-                  <p>renters</p>
-                </div>
-                <div>
-                  <p class="colorText"><span class="faded">|</span>10k+</p>
-                  <p>properties</p>
-                </div>
+            <div class="rbsInfoMobile">
+              <div class="rbsRS">
+                <input type="text" placeholder="Search properties..">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
+              <div class="rbsSell">
+                <a href="#" target="_blank"><button>List your property <i
+                      class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
+              </div>
+            </div>
+            <div class="rbsInfoExtended">
+              <form class="rbsInfo1">
+                <div>
+                  <p class="greyText1">
+                    Location
+                  </p>
+                  <input id="locationRent" type="text" name="location" value="Mumbai">
+                </div>
+                <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                <div>
+                  <p class="greyText1">
+                    When
+                  </p>
+                  <input type="date" name="dateTime" id="">
+                </div>
+                <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                <button type="button" onclick="searchRent()">Search Properties</button>
+              </form>
+              <form class="rbsInfo2">
+                <div>
+                  <p class="greyText1">
+                    Location
+                  </p>
+                  <input id="locationBuy" type="text" name="location" value="Mumbai">
+                </div>
+                <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                <div>
+                  <p class="greyText1">
+                    When
+                  </p>
+                  <input type="date" name="dateTime">
+                </div>
+                <span style="font-size: 2.5rem; color:#e1def6;">|</span>
+                <button onclick="searchBuy()" type="button">Search Properties</button>
+              </form>
+              <div class="rbsInfo3">
+                <p>Increase the reach of your property and get higher bids!</p>
+                <a href="/list-property" "><button>List your property <i
+                          class=" fa-sharp fa-solid fa-arrow-up-right-from-square"></i></button></a>
+              </div>
+
             </div>
           </div>
+
+
+
+        </div>
+        <div class="p2">
+          <div class="propertyNumbers">
+            <div>
+              <p class="colorText"><span class="faded">|</span>50k+</p>
+              <p>renters</p>
+            </div>
+            <div>
+              <p class="colorText"><span class="faded">|</span>10k+</p>
+              <p>properties</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
 
@@ -180,12 +179,12 @@
       <div class="container">
         <div class="row">
           <p class="s2Hero">Based on your location</p>
-        <% for(let j = 1; j<10;j++){  %>
-          <div class="col">
-            <%- include('propertyCard',{property:propertyArray[j]}); %>
-          </div>
+          <% for(let j=1; j<10;j++){ %>
+            <div class="col">
+              <%- include('propertyCard',{property:propertyArray[j]}); %>
+            </div>
 
-        <% } %>
+            <% } %>
         </div>
       </div>
     </div>
@@ -210,7 +209,8 @@
 
       </div>
       <div class="emailInputFields">
-        <input type="text" id="addMail" placeholder="Enter your email address" /><button onclick="addMail()">Submit</button>
+        <input type="text" id="addMail" placeholder="Enter your email address" /><button
+          onclick="addMail()">Submit</button>
       </div>
       <span class="display_none greyText" id="thanksMessage">Thank you for signing up for Newsletter</span>
       <span class="greyText">Join 6000+ other landlords in our propertyWala community.</span>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Styles/navbar.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+
+<head>
+  <link href="/Styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="/Styles/navbar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <%- include('preloader');%>
     <div class="mobileNav">
       <p class="logoName"><a href="/">PropertyWala</a></p>
       <button><i class="fa-solid fa-bars"></i></button>
@@ -37,27 +40,35 @@
         <a href="/about-us">About Us</a>
         <a href="/pricing-plans">Premium</a>
         <% if(user && user.isCertified){ %>
-        <a href="/compose-blog">Compose</a>
-        <% } %> <% if(user && user.isAdmin){ %>
-        <a href="/admin-control">Admin Controls</a>
-        <% } %>
+          <a href="/compose-blog">Compose</a>
+          <% } %>
+            <% if(user && user.isAdmin){ %>
+              <a href="/admin-control">Admin Controls</a>
+              <% } %>
       </div>
 
       <% if(user){ %>
-      <div class="user-profile">
-        <a href="/profile" style="text-decoration: none"><p class="icon"><%= user.name[0] %></p></a>
-        <p><%= user.name %></p>
-        <a href="/auth/logout"><button class="navSignup">Logout</button></a>
-      </div>
-      <% } else{ %>
-      <div class="navButton">
-        <a href="/login"><button class="navLogin">Login</button></a>
-        <a href="/register"><button class="navSignup">register</button></a>
-      </div>
-      <% } %>
+        <div class="user-profile">
+          <a href="/profile" style="text-decoration: none">
+            <p class="icon">
+              <%= user.name[0] %>
+            </p>
+          </a>
+          <p>
+            <%= user.name %>
+          </p>
+          <a href="/auth/logout"><button class="navSignup">Logout</button></a>
+        </div>
+        <% } else{ %>
+          <div class="navButton">
+            <a href="/login"><button class="navLogin">Login</button></a>
+            <a href="/register"><button class="navSignup">register</button></a>
+          </div>
+          <% } %>
     </div>
 
     <script src="https://kit.fontawesome.com/1448b6dc4e.js" crossorigin="anonymous"></script>
     <script src="/js/navbar.js"></script>
-  </body>
+</body>
+
 </html>
