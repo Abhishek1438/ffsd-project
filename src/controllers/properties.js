@@ -123,3 +123,5 @@ exports.removeProperty = async (req, res) => {
   const propertyId = req.params.id;
   propertyModel.Property.deleteOne({ _id: propertyId }).then(() => console.log('deleted'));
 };
+
+

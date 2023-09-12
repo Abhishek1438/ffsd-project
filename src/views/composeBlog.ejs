@@ -17,38 +17,75 @@
 <body>
     <%- include('navbar',user) %>
         <h1>Compose your Blog</h1>
-        <form action="/post-blog" method="post" enctype="multipart/form-data">
+        <form enctype="multipart/form-data" id="blogForm">
             <div class="blog-form">
                 <div class="blogCTitle">
                     <input type="text" name="blogTitle" id="" placeholder="Enter your blog title" required>
                     <label for="image">Blog Cover Image</label>
-                    <input type="file" name="blogImage" required/>
+                    <input type="file" name="blogImage" required />
                 </div>
                 <div class="blogContent">
-                    <textarea name="blogContent" id="froala" cols="300" rows="100" required >
+                    <textarea name="blogContent" id="froala" cols="300" rows="100" required>
                     </textarea>
                 </div>
                 <button id="BfButton" type="submit">Post</button>
+                <div id="submited">
+
+                </div>
             </div>
-            
         </form>
 
         <%- include('footer') %>
-            
+
 </body>
+
+<script>
+    document.getElementById("blogForm").onsubmit = function (e) {
+        e.preventDefault();
+        console.log("manad");
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    //window.location.href = "http://localhost:3000/blogs";
+                    alert("Your blog has been successfully posted");
+                    document.getElementById("blogForm").reset();
+                } else if (xhr.status == 404) {
+                    console.log("404 Error");
+                } else if (xhr.status == 315) {
+                    window.location.href = "http://localhost:3000/login";
+                }
+                else if (xhr.status == 403) {
+                    console.log("403 Error");
+                } else {
+                    console.log("Other Error");
+                    console.log("readystate " + xhr.readyState);
+                    console.log("Status " + xhr.status);
+                    console.log(xhr);
+                }
+            }
+        };
+        const formData = new FormData(document.getElementById("blogForm"));
+        xhr.open("POST", "http://localhost:3000/post-blog", true);
+        xhr.send(formData);
+    };
+
+
+</script>
+
 <script>
     var editor = new FroalaEditor('#froala', {
         toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'color', 'emoticons', 'insertLink', 'insertTable', 'undo', 'redo', 'fullscreen'],
         pluginsEnabled: ['image', 'link', 'table', 'colors', 'emoticons', 'fontSize'],
         heightMin: 200,
         heightMax: 300,
-        placeholderText:'Compose your Blog',
+        placeholderText: 'Compose your Blog',
         fontSize: {
-          selection: true,
-          defaultSelection: '20',
-          options: ['8', '10', '12', '14', '16', '18', '20', '24', '30']
+            selection: true,
+            defaultSelection: '20',
+            options: ['8', '10', '12', '14', '16', '18', '20', '24', '30']
         }
-      });
+    });
 </script>
 
 </html>

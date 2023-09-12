@@ -10,7 +10,7 @@
 //   filter: dataFilter,
 // });
 
-let applyFilters= () => {
+let applyFilters = () => {
   let type = window.location.pathname.split('/')[2];
   let location = document.getElementById('searchLocation').value;
   let bedsNum = document.getElementById('beds').value;
@@ -18,19 +18,19 @@ let applyFilters= () => {
   let price = document.getElementById('price').value;
   // window.location.href = `/show-properties/${type}/${location}/${bedsNum}/${propertyType}/${price}`
   let params = "";
-  if(bedsNum && bedsNum.length) {
-    params += "bedsNum="+bedsNum
+  if (bedsNum && bedsNum.length) {
+    params += "bedsNum=" + bedsNum
   }
-  if(propertyType && propertyType.length) {
-    params += (params.length?"&":"")+"propertyType="+propertyType
+  if (propertyType && propertyType.length) {
+    params += (params.length ? "&" : "") + "propertyType=" + propertyType
   }
-  if(price && price.length) {
-    params += (params.length?"&":"")+"price="+price
+  if (price && price.length) {
+    params += (params.length ? "&" : "") + "price=" + price
   }
   window.location.href = `/show-properties/${type}/${location}?${params}`
 };
 
-let applyFilters1= () => {
+let applyFilters1 = () => {
   let type = window.location.pathname.split('/')[2];
   let location = document.getElementById('searchLocation1').value;
   let bedsNum = document.getElementById('beds1').value;
@@ -38,14 +38,14 @@ let applyFilters1= () => {
   let price = document.getElementById('price1').value;
   // window.location.href = `/show-properties/${type}/${location}/${bedsNum}/${propertyType}/${price}`
   let params = "";
-  if(bedsNum && bedsNum.length) {
-    params += "bedsNum="+bedsNum
+  if (bedsNum && bedsNum.length) {
+    params += "bedsNum=" + bedsNum
   }
-  if(propertyType && propertyType.length) {
-    params += (params.length?"&":"")+"propertyType="+propertyType
+  if (propertyType && propertyType.length) {
+    params += (params.length ? "&" : "") + "propertyType=" + propertyType
   }
-  if(price && price.length) {
-    params += (params.length?"&":"")+"price="+price
+  if (price && price.length) {
+    params += (params.length ? "&" : "") + "price=" + price
   }
   window.location.href = `/show-properties/${type}/${location}?${params}`
 };

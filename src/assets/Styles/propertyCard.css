@@ -49,3 +49,37 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.propertyCard {
+  margin: 0 auto;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 10px;
+  max-width: 25em;
+  min-width: 25em;
+  border: 3px #f1effa;
+  border-style: double;
+  padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(43, 0, 77, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.propertyCard:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.2);
+}
+
+.propertyCard img {
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 15em;
+  transition: transform 0.3s ease;
+}
+
+.propertyCard:hover img {
+  transform: scale(1.1); /* Scale up image on hover */
+}

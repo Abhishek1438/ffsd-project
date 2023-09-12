@@ -58,8 +58,9 @@ router.get('/show-properties/:type/:location?', userContoller.isLoggedIn, async 
     console.log('mole');
     properties = {};
   }
-  res.render('properties', { property: { type }, user: req.user, propertyArray: properties });
-});
+  const filteredProperties = { property: { type }, user: req.user, propertyArray: properties };
+  res.render('properties', filteredProperties);
+}); 
 
 router.get('/blogs', userContoller.isLoggedIn, blogController.getAllBlogs, (req, res) => {
   let blogArray = req.blogs;
@@ -136,7 +137,8 @@ router.post(
       let blogDetails = req.body;
       await blogController.insertBlog(req, res, blogDetails, newBlogImage, req.user);
 
-      res.redirect('/blogs');
+      // res.redirect('/blogs');
+      res.status(200).json({ message: 'done' });
     }
   }
 );
